@@ -19,6 +19,7 @@
 		1E29E69518A852AC008B7667 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E29E67D18A852AB008B7667 /* UIKit.framework */; };
 		1E29E69D18A852AC008B7667 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1E29E69B18A852AC008B7667 /* InfoPlist.strings */; };
 		1E29E69F18A852AC008B7667 /* Borrow_From_FriendsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E29E69E18A852AC008B7667 /* Borrow_From_FriendsTests.m */; };
+		1E29E6A918A85C1F008B7667 /* iPhoneMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E29E6A818A85C1F008B7667 /* iPhoneMain.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		1E29E69A18A852AC008B7667 /* Borrow From FriendsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Borrow From FriendsTests-Info.plist"; sourceTree = "<group>"; };
 		1E29E69C18A852AC008B7667 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1E29E69E18A852AC008B7667 /* Borrow_From_FriendsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Borrow_From_FriendsTests.m; sourceTree = "<group>"; };
+		1E29E6A818A85C1F008B7667 /* iPhoneMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhoneMain.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 		1E29E67F18A852AB008B7667 /* Borrow From Friends */ = {
 			isa = PBXGroup;
 			children = (
+				1E29E6A818A85C1F008B7667 /* iPhoneMain.storyboard */,
 				1E29E68818A852AB008B7667 /* BFFAppDelegate.h */,
 				1E29E68918A852AB008B7667 /* BFFAppDelegate.m */,
 				1E29E68B18A852AB008B7667 /* Images.xcassets */,
@@ -222,6 +225,7 @@
 			files = (
 				1E29E68418A852AB008B7667 /* InfoPlist.strings in Resources */,
 				1E29E68C18A852AB008B7667 /* Images.xcassets in Resources */,
+				1E29E6A918A85C1F008B7667 /* iPhoneMain.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +448,7 @@
 				1E29E6A418A852AC008B7667 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1E29E6A518A852AC008B7667 /* Build configuration list for PBXNativeTarget "Borrow From FriendsTests" */ = {
 			isa = XCConfigurationList;
@@ -452,6 +457,7 @@
 				1E29E6A718A852AC008B7667 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
