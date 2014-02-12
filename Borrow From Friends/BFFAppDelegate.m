@@ -7,7 +7,7 @@
 //
 
 #import "BFFAppDelegate.h"
-
+#import <FacebookSDK/FacebookSDK.h>
 @implementation BFFAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -15,6 +15,9 @@
     // Override point for customizaion after application launch.
     // Alex Koh point
     // Alex Koh's ass point
+    [FBLoginView class];
+    [FBProfilePictureView class];
+    
     return YES;
 }
 
@@ -43,6 +46,20 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+//this method handles opening url response from facebook app
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    
+    // Call FBAppCall's handleOpenURL:sourceApplication to handle Facebook app responses
+    BOOL wasHandled = [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
+    
+    // You can add your app-specific url handling code here if needed
+    
+    return wasHandled;
 }
 
 @end
