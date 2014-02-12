@@ -24,13 +24,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vKM-2O-Q5T" customClass="FBLoginView">
-                                <rect key="frame" x="80" y="210" width="160" height="284"/>
+                                <rect key="frame" x="80" y="279" width="160" height="284"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="delegate" destination="gCA-yq-tdK" id="wAm-8X-zc9"/>
                                 </connections>
                             </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XEj-wY-hGL">
+                                <rect key="frame" x="80" y="179" width="136" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -39,6 +45,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="aRg-KG-TEg"/>
                     <connections>
+                        <outlet property="friendLabel" destination="XEj-wY-hGL" id="KyX-8E-tdO"/>
                         <outlet property="loginButton" destination="vKM-2O-Q5T" id="QHm-i3-AxY"/>
                         <outlet property="nameLabel" destination="Sdx-PX-0x1" id="lTr-hZ-lSd"/>
                     </connections>
