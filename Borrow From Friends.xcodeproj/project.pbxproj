@@ -20,6 +20,7 @@
 		1E29E69D18A852AC008B7667 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1E29E69B18A852AC008B7667 /* InfoPlist.strings */; };
 		1E29E69F18A852AC008B7667 /* Borrow_From_FriendsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E29E69E18A852AC008B7667 /* Borrow_From_FriendsTests.m */; };
 		1E29E6A918A85C1F008B7667 /* iPhoneMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E29E6A818A85C1F008B7667 /* iPhoneMain.storyboard */; };
+		1E29E6AB18AB2A8D008B7667 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E29E6AA18AB2A8D008B7667 /* FacebookSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		1E29E69C18A852AC008B7667 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1E29E69E18A852AC008B7667 /* Borrow_From_FriendsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Borrow_From_FriendsTests.m; sourceTree = "<group>"; };
 		1E29E6A818A85C1F008B7667 /* iPhoneMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhoneMain.storyboard; sourceTree = "<group>"; };
+		1E29E6AA18AB2A8D008B7667 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E29E67C18A852AB008B7667 /* CoreGraphics.framework in Frameworks */,
+				1E29E6AB18AB2A8D008B7667 /* FacebookSDK.framework in Frameworks */,
 				1E29E67E18A852AB008B7667 /* UIKit.framework in Frameworks */,
 				1E29E67A18A852AB008B7667 /* Foundation.framework in Frameworks */,
 			);
@@ -98,6 +101,7 @@
 		1E29E67818A852AB008B7667 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1E29E6AA18AB2A8D008B7667 /* FacebookSDK.framework */,
 				1E29E67918A852AB008B7667 /* Foundation.framework */,
 				1E29E67B18A852AB008B7667 /* CoreGraphics.framework */,
 				1E29E67D18A852AB008B7667 /* UIKit.framework */,
@@ -366,6 +370,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/nikhilkhanna/Documents/FacebookSDK,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Borrow From Friends/Borrow From Friends-Prefix.pch";
 				INFOPLIST_FILE = "Borrow From Friends/Borrow From Friends-Info.plist";
@@ -379,6 +387,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/nikhilkhanna/Documents/FacebookSDK,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Borrow From Friends/Borrow From Friends-Prefix.pch";
 				INFOPLIST_FILE = "Borrow From Friends/Borrow From Friends-Info.plist";

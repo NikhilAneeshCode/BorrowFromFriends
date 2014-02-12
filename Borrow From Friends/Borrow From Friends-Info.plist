@@ -26,6 +26,19 @@
 	<true/>
 	<key>UIMainStoryboardFile</key>
 	<string>iPhoneMain</string>
+	<key>FacebookAppID</key>
+	<string>1380151798920066</string>
+	<key>FacebookDisplayName</key>
+	<string>Borrow From Friends Final</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb1380151798920066</string>
+			</array>
+		</dict>
+	</array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
