@@ -22,7 +22,7 @@
 		1E29E6A918A85C1F008B7667 /* iPhoneMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E29E6A818A85C1F008B7667 /* iPhoneMain.storyboard */; };
 		1E29E6AB18AB2A8D008B7667 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E29E6AA18AB2A8D008B7667 /* FacebookSDK.framework */; };
 		1E29E6AE18AB2D9B008B7667 /* BFFLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E29E6AD18AB2D9B008B7667 /* BFFLoginViewController.m */; };
-		1E29E6B118AB385F008B7667 /* BFFTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E29E6B018AB385F008B7667 /* BFFTestViewController.m */; };
+		1E29E6B118AB385F008B7667 /* BFFMainPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E29E6B018AB385F008B7667 /* BFFMainPageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,8 +56,8 @@
 		1E29E6AA18AB2A8D008B7667 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		1E29E6AC18AB2D9B008B7667 /* BFFLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFFLoginViewController.h; sourceTree = "<group>"; };
 		1E29E6AD18AB2D9B008B7667 /* BFFLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFFLoginViewController.m; sourceTree = "<group>"; };
-		1E29E6AF18AB385F008B7667 /* BFFTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFFTestViewController.h; sourceTree = "<group>"; };
-		1E29E6B018AB385F008B7667 /* BFFTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFFTestViewController.m; sourceTree = "<group>"; };
+		1E29E6AF18AB385F008B7667 /* BFFMainPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFFMainPageViewController.h; sourceTree = "<group>"; };
+		1E29E6B018AB385F008B7667 /* BFFMainPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFFMainPageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,8 +119,8 @@
 		1E29E67F18A852AB008B7667 /* Borrow From Friends */ = {
 			isa = PBXGroup;
 			children = (
-				1E29E6AF18AB385F008B7667 /* BFFTestViewController.h */,
-				1E29E6B018AB385F008B7667 /* BFFTestViewController.m */,
+				1E29E6AF18AB385F008B7667 /* BFFMainPageViewController.h */,
+				1E29E6B018AB385F008B7667 /* BFFMainPageViewController.m */,
 				1E29E6AC18AB2D9B008B7667 /* BFFLoginViewController.h */,
 				1E29E6AD18AB2D9B008B7667 /* BFFLoginViewController.m */,
 				1E29E68818A852AB008B7667 /* BFFAppDelegate.h */,
@@ -261,7 +261,7 @@
 				1E29E68618A852AB008B7667 /* main.m in Sources */,
 				1E29E6AE18AB2D9B008B7667 /* BFFLoginViewController.m in Sources */,
 				1E29E68A18A852AB008B7667 /* BFFAppDelegate.m in Sources */,
-				1E29E6B118AB385F008B7667 /* BFFTestViewController.m in Sources */,
+				1E29E6B118AB385F008B7667 /* BFFMainPageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

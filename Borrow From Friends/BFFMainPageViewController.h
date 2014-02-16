@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import <FacebookSDK/FacebookSDK.h>
-@interface BFFTestViewController : UIViewController
+@interface BFFMainPageViewController : UIViewController
 
 @end

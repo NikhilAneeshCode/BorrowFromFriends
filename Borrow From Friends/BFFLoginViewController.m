@@ -46,13 +46,7 @@
 //Called when it enters loggedin mode
 -(void)loginViewShowingLoggedInUser:(FBLoginView *)loginView
 {
-    FBRequest *friendsRequest = [FBRequest requestForMyFriends];
-    //async method where callback handles the friend data
-    [friendsRequest startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-        NSArray* friends = [result objectForKey:@"data"];
-        NSDictionary<FBGraphUser>* firstFriend = [friends objectAtIndex:0];
-        self.friendLabel.text = firstFriend.name;
-    }];
+    [self performSegueWithIdentifier:@"loginSegue" sender:self];
 }
 //Called when enter loggedout mode
 -(void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView

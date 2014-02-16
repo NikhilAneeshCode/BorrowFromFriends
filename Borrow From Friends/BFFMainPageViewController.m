@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Nikhil and Aneesh. All rights reserved.
 //
 
-#import "BFFTestViewController.h"
+#import "BFFMainPageViewController.h"
 
-@interface BFFTestViewController ()
+@interface BFFMainPageViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @end
 
-@implementation BFFTestViewController
+@implementation BFFMainPageViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

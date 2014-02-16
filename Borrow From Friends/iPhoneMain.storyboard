@@ -37,14 +37,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s5b-7x-NIT">
-                                <rect key="frame" x="118" y="328" width="85" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Next Page"/>
-                                <connections>
-                                    <segue destination="CLR-wM-Gkf" kind="modal" id="CmM-Sh-umy"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -60,16 +52,17 @@
                         <outlet property="friendLabel" destination="XEj-wY-hGL" id="KyX-8E-tdO"/>
                         <outlet property="loginButton" destination="vKM-2O-Q5T" id="QHm-i3-AxY"/>
                         <outlet property="nameLabel" destination="Sdx-PX-0x1" id="lTr-hZ-lSd"/>
+                        <segue destination="CLR-wM-Gkf" kind="modal" identifier="loginSegue" id="pNi-gS-sf5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OWO-XO-iea" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="556" y="-51"/>
         </scene>
-        <!--Test View Controller-->
+        <!--Main Page View Controller-->
         <scene sceneID="sik-P3-1FL">
             <objects>
-                <viewController id="CLR-wM-Gkf" customClass="BFFTestViewController" sceneMemberID="viewController">
+                <viewController id="CLR-wM-Gkf" customClass="BFFMainPageViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jfH-a8-0D5"/>
                         <viewControllerLayoutGuide type="bottom" id="1Mt-OT-3jq"/>
