@@ -110,8 +110,6 @@
         <!--Add Item View Controller-->
         <scene sceneID="2BO-1k-ttw">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MEx-ga-eNY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="tUG-dg-zVB" userLabel="Exit" sceneMemberID="exit"/>
                 <viewController id="aDI-ou-yka" customClass="BFFAddItemViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WSW-o3-opb"/>
@@ -150,24 +148,22 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lgn-na-uww">
-                                <rect key="frame" x="20" y="343" width="89" height="30"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gO7-yL-XoJ">
+                                <rect key="frame" x="70" y="271" width="181" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="I Borrowed It">
+                                <segments>
+                                    <segment title="I borrowed it"/>
+                                    <segment title="I lent it"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2qg-6n-8fd">
+                                <rect key="frame" x="137" y="372" width="49" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Submit">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="adw-R5-TMU" kind="modal" identifier="borrowedSegue" id="YZg-Hg-WRK"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EEe-o9-Iq1">
-                                <rect key="frame" x="210" y="343" width="47" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="I lent it">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="adw-R5-TMU" kind="modal" identifier="lentSegue" id="bD2-Gy-4bS"/>
+                                    <segue destination="Bwo-sz-HIV" kind="modal" id="60J-UF-2Sz"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -182,6 +178,8 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MEx-ga-eNY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="tUG-dg-zVB" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2677" y="-51"/>
         </scene>
@@ -202,7 +200,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jG9-Yi-fPZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3181" y="-51"/>
+            <point key="canvasLocation" x="3707" y="-51"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="poo-bP-l2c">
@@ -225,7 +223,6 @@
         <!--Navigation Controller-->
         <scene sceneID="fO1-ec-1wU">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="98x-5V-eDH" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="k6o-Sh-bMa" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jjc-VR-9gV">
@@ -237,6 +234,7 @@
                         <segue destination="CLR-wM-Gkf" kind="relationship" relationship="rootViewController" id="LYg-N4-Suy"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="98x-5V-eDH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1064" y="-51"/>
         </scene>
@@ -258,13 +256,28 @@
             </objects>
             <point key="canvasLocation" x="2151" y="-51"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Lj8-eD-Umw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Bwo-sz-HIV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5XQ-Hr-ZYj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="adw-R5-TMU" kind="relationship" relationship="rootViewController" id="g0e-d0-kc5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MkT-ff-Ebq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3181" y="-51"/>
+        </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="bD2-Gy-4bS"/>
-    </inferredMetricsTieBreakers>
 </document>
