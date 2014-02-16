@@ -45,6 +45,8 @@
         BFFFriendPickerViewController *friendController = (BFFFriendPickerViewController *)navController.topViewController;
         friendController.name = self.nameField.text;
         friendController.amount = [NSNumber numberWithInt:(int)self.amountSlider.value];
+        //if its the first segment (i.e. lent it) set it to true else it'll be false
+        friendController.lent = self.borrowedSwitch.selectedSegmentIndex == 0;
     }
 }
 
