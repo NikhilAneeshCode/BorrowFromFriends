@@ -23,6 +23,7 @@
 		1E29E6AB18AB2A8D008B7667 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E29E6AA18AB2A8D008B7667 /* FacebookSDK.framework */; };
 		1E29E6AE18AB2D9B008B7667 /* BFFLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E29E6AD18AB2D9B008B7667 /* BFFLoginViewController.m */; };
 		1E29E6B118AB385F008B7667 /* BFFMainPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E29E6B018AB385F008B7667 /* BFFMainPageViewController.m */; };
+		1E2E17D618B1546500012ECE /* BFFAddItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E2E17D518B1546500012ECE /* BFFAddItemViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		1E29E6AD18AB2D9B008B7667 /* BFFLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFFLoginViewController.m; sourceTree = "<group>"; };
 		1E29E6AF18AB385F008B7667 /* BFFMainPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFFMainPageViewController.h; sourceTree = "<group>"; };
 		1E29E6B018AB385F008B7667 /* BFFMainPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFFMainPageViewController.m; sourceTree = "<group>"; };
+		1E2E17D418B1546500012ECE /* BFFAddItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFFAddItemViewController.h; sourceTree = "<group>"; };
+		1E2E17D518B1546500012ECE /* BFFAddItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFFAddItemViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +122,8 @@
 		1E29E67F18A852AB008B7667 /* Borrow From Friends */ = {
 			isa = PBXGroup;
 			children = (
+				1E2E17D418B1546500012ECE /* BFFAddItemViewController.h */,
+				1E2E17D518B1546500012ECE /* BFFAddItemViewController.m */,
 				1E29E6AF18AB385F008B7667 /* BFFMainPageViewController.h */,
 				1E29E6B018AB385F008B7667 /* BFFMainPageViewController.m */,
 				1E29E6AC18AB2D9B008B7667 /* BFFLoginViewController.h */,
@@ -258,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E2E17D618B1546500012ECE /* BFFAddItemViewController.m in Sources */,
 				1E29E68618A852AB008B7667 /* main.m in Sources */,
 				1E29E6AE18AB2D9B008B7667 /* BFFLoginViewController.m in Sources */,
 				1E29E68A18A852AB008B7667 /* BFFAppDelegate.m in Sources */,
