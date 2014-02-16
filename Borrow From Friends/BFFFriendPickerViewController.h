@@ -10,7 +10,7 @@
 #import <FacebookSDK/FacebookSDK.h>
 
 @interface BFFFriendPickerViewController : UIViewController
-@property(nonatomic) BOOL *lent;
-@property(nonatomic) NSInteger *amount;
+@property(nonatomic) BOOL lent;
+@property(nonatomic) NSNumber *amount;
 @property(nonatomic) NSString *name;
 @end
