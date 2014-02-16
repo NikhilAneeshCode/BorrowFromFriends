@@ -29,7 +29,7 @@
     FBRequest* meRequest = [FBRequest requestForMe];
     [meRequest startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
         NSDictionary<FBGraphUser>* user = result;
-        self.nameLabel.text = user.name;
+        self.nameLabel.text = [NSString stringWithFormat:@"Welcome %@", user.name];
     }];
 	// Do any additional setup after loading the view.
 }
@@ -37,7 +37,7 @@
 //called if login button pressed, handles logging out and sending to login screen
 -(void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView
 {
-    [self performSegueWithIdentifier:@"logoutSegue" sender:self];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning
