@@ -1,17 +1,18 @@
 //
-//  BFFAddItemViewController.m
+//  BFFFriendPickerViewController.m
 //  Borrow From Friends
 //
 //  Created by Nikhil Khanna on 2/16/14.
 //  Copyright (c) 2014 Nikhil and Aneesh. All rights reserved.
 //
 
-#import "BFFAddItemViewController.h"
+#import "BFFFriendPickerViewController.h"
 
-@interface BFFAddItemViewController ()
+@interface BFFFriendPickerViewController ()
+
 @end
 
-@implementation BFFAddItemViewController
+@implementation BFFFriendPickerViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

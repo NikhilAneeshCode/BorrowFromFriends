@@ -1,5 +1,5 @@
 //
-//  BFFAddItemViewController.h
+//  BFFFriendPickerViewController.h
 //  Borrow From Friends
 //
 //  Created by Nikhil Khanna on 2/16/14.
@@ -8,5 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <FacebookSDK/FacebookSDK.h>
-@interface BFFAddItemViewController : UIViewController
+
+@interface BFFFriendPickerViewController : UIViewController
+
 @end

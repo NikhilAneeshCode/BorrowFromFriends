@@ -13,7 +13,7 @@
                         <viewControllerLayoutGuide type="bottom" id="kqB-n5-ENg"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="mKN-42-0SN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Please Log In" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sdx-PX-0x1">
@@ -68,7 +68,7 @@
                         <viewControllerLayoutGuide type="bottom" id="1Mt-OT-3jq"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="GmK-GW-Lm4">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XcJ-Oa-a76">
@@ -92,7 +92,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="aDI-ou-yka" kind="push" id="uy7-WT-VoI"/>
+                                    <segue destination="MnE-9D-VT4" kind="modal" id="uy7-WT-VoI"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -111,17 +111,18 @@
         <scene sceneID="2BO-1k-ttw">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MEx-ga-eNY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="tUG-dg-zVB" userLabel="Exit" sceneMemberID="exit"/>
                 <viewController id="aDI-ou-yka" customClass="BFFAddItemViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WSW-o3-opb"/>
                         <viewControllerLayoutGuide type="bottom" id="Avy-fA-2w2"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="FBp-ga-S6v">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Your Item" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T37-tn-8b7">
-                                <rect key="frame" x="106" y="57" width="109" height="21"/>
+                                <rect key="frame" x="107" y="74" width="109" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -155,6 +156,9 @@
                                 <state key="normal" title="I Borrowed It">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="adw-R5-TMU" kind="modal" identifier="borrowedSegue" id="YZg-Hg-WRK"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EEe-o9-Iq1">
                                 <rect key="frame" x="210" y="343" width="47" height="30"/>
@@ -162,14 +166,43 @@
                                 <state key="normal" title="I lent it">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="adw-R5-TMU" kind="modal" identifier="lentSegue" id="bD2-Gy-4bS"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="gFt-yk-RHb"/>
+                    <navigationItem key="navigationItem" id="rIn-4W-eSU">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="35m-ZL-nwT">
+                            <connections>
+                                <segue destination="tUG-dg-zVB" kind="unwind" unwindAction="unwindToMain:" id="UJX-gs-yT2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="2151" y="-51"/>
+            <point key="canvasLocation" x="2677" y="-51"/>
+        </scene>
+        <!--Friend Picker View Controller-->
+        <scene sceneID="4MM-kX-beC">
+            <objects>
+                <viewController id="adw-R5-TMU" customClass="BFFFriendPickerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Dwb-bE-uim"/>
+                        <viewControllerLayoutGuide type="bottom" id="soX-ZV-M9r"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FC4-IC-Dpo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="IzT-g8-csh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jG9-Yi-fPZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3181" y="-51"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="poo-bP-l2c">
@@ -192,6 +225,7 @@
         <!--Navigation Controller-->
         <scene sceneID="fO1-ec-1wU">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="98x-5V-eDH" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="k6o-Sh-bMa" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jjc-VR-9gV">
@@ -203,14 +237,34 @@
                         <segue destination="CLR-wM-Gkf" kind="relationship" relationship="rootViewController" id="LYg-N4-Suy"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="98x-5V-eDH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1074" y="-51"/>
+            <point key="canvasLocation" x="1064" y="-51"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="aJB-GD-CsU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MnE-9D-VT4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5WX-Dp-44h">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="aDI-ou-yka" kind="relationship" relationship="rootViewController" id="elz-EC-E2z"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aFA-65-O9m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2151" y="-51"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="bD2-Gy-4bS"/>
+    </inferredMetricsTieBreakers>
 </document>

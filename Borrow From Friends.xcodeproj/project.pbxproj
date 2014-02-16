@@ -24,6 +24,7 @@
 		1E29E6AE18AB2D9B008B7667 /* BFFLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E29E6AD18AB2D9B008B7667 /* BFFLoginViewController.m */; };
 		1E29E6B118AB385F008B7667 /* BFFMainPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E29E6B018AB385F008B7667 /* BFFMainPageViewController.m */; };
 		1E2E17D618B1546500012ECE /* BFFAddItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E2E17D518B1546500012ECE /* BFFAddItemViewController.m */; };
+		1E2E17D918B15B7400012ECE /* BFFFriendPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E2E17D818B15B7400012ECE /* BFFFriendPickerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,8 @@
 		1E29E6B018AB385F008B7667 /* BFFMainPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFFMainPageViewController.m; sourceTree = "<group>"; };
 		1E2E17D418B1546500012ECE /* BFFAddItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFFAddItemViewController.h; sourceTree = "<group>"; };
 		1E2E17D518B1546500012ECE /* BFFAddItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFFAddItemViewController.m; sourceTree = "<group>"; };
+		1E2E17D718B15B7400012ECE /* BFFFriendPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFFFriendPickerViewController.h; sourceTree = "<group>"; };
+		1E2E17D818B15B7400012ECE /* BFFFriendPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFFFriendPickerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +125,8 @@
 		1E29E67F18A852AB008B7667 /* Borrow From Friends */ = {
 			isa = PBXGroup;
 			children = (
+				1E2E17D718B15B7400012ECE /* BFFFriendPickerViewController.h */,
+				1E2E17D818B15B7400012ECE /* BFFFriendPickerViewController.m */,
 				1E2E17D418B1546500012ECE /* BFFAddItemViewController.h */,
 				1E2E17D518B1546500012ECE /* BFFAddItemViewController.m */,
 				1E29E6AF18AB385F008B7667 /* BFFMainPageViewController.h */,
@@ -264,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E2E17D618B1546500012ECE /* BFFAddItemViewController.m in Sources */,
+				1E2E17D918B15B7400012ECE /* BFFFriendPickerViewController.m in Sources */,
 				1E29E68618A852AB008B7667 /* main.m in Sources */,
 				1E29E6AE18AB2D9B008B7667 /* BFFLoginViewController.m in Sources */,
 				1E29E68A18A852AB008B7667 /* BFFAppDelegate.m in Sources */,
