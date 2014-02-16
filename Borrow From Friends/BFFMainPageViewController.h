@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import <FacebookSDK/FacebookSDK.h>
-@interface BFFMainPageViewController : UIViewController
+@interface BFFMainPageViewController : UIViewController <FBLoginViewDelegate>
 
 @end

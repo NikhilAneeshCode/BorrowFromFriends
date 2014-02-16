@@ -34,6 +34,12 @@
 	// Do any additional setup after loading the view.
 }
 
+//called if login button pressed, handles logging out and sending to login screen
+-(void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView
+{
+    [self performSegueWithIdentifier:@"logoutSegue" sender:self];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
