@@ -10,4 +10,5 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import "BFFFriendPickerViewController.h"
 @interface BFFAddItemViewController : UIViewController
+- (IBAction)valueChanged:(UIStepper *)sender;
 @end
