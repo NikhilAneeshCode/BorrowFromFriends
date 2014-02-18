@@ -209,11 +209,29 @@
                     <view key="view" contentMode="scaleToFill" id="FC4-IC-Dpo">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmc-T2-dX2">
+                                <rect key="frame" x="55" y="89" width="210" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="IzT-g8-csh"/>
+                    <navigationItem key="navigationItem" id="IzT-g8-csh">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="63E-L3-Dg8">
+                            <connections>
+                                <segue destination="xra-AZ-BID" kind="unwind" unwindAction="unwindToAddItem:" id="KnW-9K-FPf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="titleLabel" destination="bmc-T2-dX2" id="pqb-jJ-Df2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jG9-Yi-fPZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="xra-AZ-BID" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3707" y="-51"/>
         </scene>

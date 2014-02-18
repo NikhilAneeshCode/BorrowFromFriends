@@ -11,4 +11,5 @@
 #import "BFFFriendPickerViewController.h"
 @interface BFFAddItemViewController : UIViewController
 - (IBAction)valueChanged:(UIStepper *)sender;
+- (IBAction)unwindToAddItem:(UIStoryboardSegue *) segue;
 @end

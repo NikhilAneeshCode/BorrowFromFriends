@@ -9,7 +9,7 @@
 #import "BFFFriendPickerViewController.h"
 
 @interface BFFFriendPickerViewController ()
-
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @end
 
 @implementation BFFFriendPickerViewController
@@ -26,7 +26,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    if(self.lent)
+    {
+        self.titleLabel.text = @"Who did you lend to?";
+	}
+    else
+    {
+        self.titleLabel.text = @"Who did you borrow from";
+    }
+        // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning
