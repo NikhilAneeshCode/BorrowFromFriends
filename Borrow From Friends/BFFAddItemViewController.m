@@ -129,8 +129,13 @@
     {
         Toast* t = [Toast toastWithMessage:@"Please select a friend"];
         [t showOnView:self.friendPickerController.view];
+        return;
     }
     id<FBGraphUser> user = self.friendPickerController.selection.firstObject;
+    //TODO add logic for permanently saving added friends
+    [self dismissViewControllerAnimated:YES completion:^() {
+        [self performSegueWithIdentifier:@"mainSegue" sender:self];
+    }];
 }
 
 - (void)viewDidUnload {
