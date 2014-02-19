@@ -110,6 +110,8 @@
         <!--Add Item View Controller-->
         <scene sceneID="2BO-1k-ttw">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MEx-ga-eNY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="tUG-dg-zVB" userLabel="Exit" sceneMemberID="exit"/>
                 <viewController id="aDI-ou-yka" customClass="BFFAddItemViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WSW-o3-opb"/>
@@ -159,7 +161,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Bwo-sz-HIV" kind="modal" identifier="friendSegue" id="60J-UF-2Sz"/>
+                                    <action selector="pickFriendsButtonClick:" destination="aDI-ou-yka" eventType="touchUpInside" id="O6y-Q1-34D"/>
                                 </connections>
                             </button>
                             <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="500" translatesAutoresizingMaskIntoConstraints="NO" id="E4B-AI-rUz">
@@ -193,47 +195,8 @@
                         <outlet property="nameField" destination="kg7-oz-elJ" id="9tI-XR-CcM"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MEx-ga-eNY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="tUG-dg-zVB" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2677" y="-51"/>
-        </scene>
-        <!--Friend Picker View Controller-->
-        <scene sceneID="4MM-kX-beC">
-            <objects>
-                <viewController id="adw-R5-TMU" customClass="BFFFriendPickerViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Dwb-bE-uim"/>
-                        <viewControllerLayoutGuide type="bottom" id="soX-ZV-M9r"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="FC4-IC-Dpo">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmc-T2-dX2">
-                                <rect key="frame" x="55" y="89" width="210" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="IzT-g8-csh">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="63E-L3-Dg8">
-                            <connections>
-                                <segue destination="xra-AZ-BID" kind="unwind" unwindAction="unwindToAddItem:" id="KnW-9K-FPf"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="titleLabel" destination="bmc-T2-dX2" id="pqb-jJ-Df2"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jG9-Yi-fPZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="xra-AZ-BID" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="3707" y="-51"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="poo-bP-l2c">
@@ -274,6 +237,7 @@
         <!--Navigation Controller-->
         <scene sceneID="aJB-GD-CsU">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aFA-65-O9m" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MnE-9D-VT4" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5WX-Dp-44h">
@@ -285,27 +249,8 @@
                         <segue destination="aDI-ou-yka" kind="relationship" relationship="rootViewController" id="elz-EC-E2z"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aFA-65-O9m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2151" y="-51"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Lj8-eD-Umw">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Bwo-sz-HIV" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5XQ-Hr-ZYj">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="adw-R5-TMU" kind="relationship" relationship="rootViewController" id="g0e-d0-kc5"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MkT-ff-Ebq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3181" y="-51"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

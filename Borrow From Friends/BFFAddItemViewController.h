@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <FacebookSDK/FacebookSDK.h>
-#import "BFFFriendPickerViewController.h"
-@interface BFFAddItemViewController : UIViewController
+#import "Toast.h"
+
+@interface BFFAddItemViewController : UIViewController <FBFriendPickerDelegate>
+@property(nonatomic) BOOL lent;
+@property(nonatomic) NSNumber *amount;
+@property(nonatomic) NSString *name;
 - (IBAction)valueChanged:(UIStepper *)sender;
 - (IBAction)unwindToAddItem:(UIStoryboardSegue *) segue;
+- (IBAction)pickFriendsButtonClick:(id)sender;
 @end

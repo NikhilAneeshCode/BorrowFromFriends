@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIStepper *amountStepper;
 @property (weak, nonatomic) IBOutlet UILabel *amountField;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *borrowedSwitch;
+@property (strong, nonatomic) FBFriendPickerViewController *friendPickerController;
 @end
 
 @implementation BFFAddItemViewController
@@ -41,14 +42,10 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     //making it so all information is passed from buttons on this page to properties in friend picker
-    if ([segue.identifier isEqualToString:@"friendSegue"]) {
-        UINavigationController *navController =(UINavigationController *)segue.destinationViewController;
-        BFFFriendPickerViewController *friendController = (BFFFriendPickerViewController *)navController.topViewController;
-        friendController.name = self.nameField.text;
-        friendController.amount = [NSNumber numberWithInt:(int)self.amountStepper.value];
+        self.name = self.nameField.text;
+        self.amount = [NSNumber numberWithInt:(int)self.amountStepper.value];
         //if its the first segment (i.e. lent it) set it to true else it'll be false
-        friendController.lent = self.borrowedSwitch.selectedSegmentIndex == 0;
-    }
+        self.lent = self.borrowedSwitch.selectedSegmentIndex == 0;
 }
 
 -(void)dismissKeyboard
@@ -64,9 +61,82 @@
 {
     
 }
+-(void)loadFriendPicker
+{
+    if (!FBSession.activeSession.isOpen) {
+        // if the session is closed, then we open it here, and establish a handler for state changes
+        [FBSession openActiveSessionWithReadPermissions:nil
+                                           allowLoginUI:YES
+                                      completionHandler:^(FBSession *session,
+                                                          FBSessionState state,
+                                                          NSError *error) {
+                                          if (error) {
+                                              UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                                                                  message:error.localizedDescription
+                                                                                                 delegate:nil
+                                                                                        cancelButtonTitle:@"OK"
+                                                                                        otherButtonTitles:nil];
+                                              [alertView show];
+                                          } else if (session.isOpen) {
+                                              [self loadFriendPicker];
+                                          }
+                                      }];
+        return;
+    }
+    if (self.friendPickerController == nil) {
+        // Create friend picker, and get data loaded into it.
+        self.friendPickerController = [[FBFriendPickerViewController alloc] init];
+        self.friendPickerController.title = @"Pick Friends";
+        self.friendPickerController.delegate = self;
+        self.friendPickerController.allowsMultipleSelection = NO;
+    }
+    if(self.lent)
+    {
+        self.friendPickerController.title = @"Who did you lend to?";
+    }
+    else
+    {
+        self.friendPickerController.title = @"Who did you borrow from?";
+    }
+    [self.friendPickerController loadData];
+    [self.friendPickerController clearSelection];
+    
+    [self presentViewController:self.friendPickerController animated:YES completion:nil];
+    
+}
+//if submit is hit takes you to friendpicker page
+- (IBAction)pickFriendsButtonClick:(id)sender
+{
+    self.name = self.nameField.text;
+    self.amount = [NSNumber numberWithInt:(int)self.amountStepper.value];
+    //if its the first segment (i.e. lent it) set it to true else it'll be false
+    self.lent = self.borrowedSwitch.selectedSegmentIndex == 0;
+    [self loadFriendPicker];
+}
+- (void)facebookViewControllerCancelWasPressed:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
 //called when the stepper changes value
 - (IBAction)valueChanged:(UIStepper *)sender
 {
     self.amountField.text = [NSString stringWithFormat:@"%d", (int)sender.value];
 }
+- (void)facebookViewControllerDoneWasPressed:(id)sender
+{
+    //no one selected
+    if(self.friendPickerController.selection.count==0)
+    {
+        Toast* t = [Toast toastWithMessage:@"Please select a friend"];
+        [t showOnView:self.friendPickerController.view];
+    }
+    id<FBGraphUser> user = self.friendPickerController.selection.firstObject;
+}
+
+- (void)viewDidUnload {
+    self.friendPickerController = nil;
+    
+    [super viewDidUnload];
+}
+
 @end

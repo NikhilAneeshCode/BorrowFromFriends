@@ -12,12 +12,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customizaion after application launch.
-    // Alex Koh point
-    // Alex Koh's ass point
+    // forward declaring fb classes
     [FBLoginView class];
     [FBProfilePictureView class];
-    
+    [FBFriendPickerViewController class];
     return YES;
 }
 
