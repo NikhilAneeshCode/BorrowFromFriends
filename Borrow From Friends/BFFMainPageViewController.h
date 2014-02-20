@@ -12,6 +12,9 @@
 #import "BFFTransactionDetailViewController.h"
 @interface BFFMainPageViewController : UIViewController <FBLoginViewDelegate, UITableViewDelegate, UITableViewDataSource>
 @property(nonatomic) NSDictionary* selectedTransaction;
+@property(nonatomic) NSInteger transactionIndex;
 //called when this screen is unwinded to
 - (IBAction)unwindToMain:(UIStoryboardSegue *) segue;
+//called when table needs to be filled or reloaded
+-(void)fillTransactionTable;
 @end

@@ -16,4 +16,5 @@ extern NSString* const userIDKey;
 extern NSString* const userFirstKey;
 extern NSString* const userNameKey;
 extern NSString* const transactionArrayKey;
+extern NSString* const profilePictureDataKey;
 @end

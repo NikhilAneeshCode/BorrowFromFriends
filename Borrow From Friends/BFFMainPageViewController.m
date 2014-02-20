@@ -67,8 +67,8 @@
         //TODO handle empty array
         return;
     }
+    //simply reloads the data for the
     [self.transactionTable reloadData];
-    //TODO add logic for creating table of transactions (emptying table first)
 }
 
 //table view delgate method to show number of sections
@@ -97,10 +97,8 @@
     NSMutableArray* array = [[defaults objectForKey:transactionArrayKey] mutableCopy];
     NSDictionary* user = [array objectAtIndex:indexPath.row];
     
-    //logic for getting picutres to show up, causes massive lag (might either implement a callback or previously cache pictures)
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?", [user objectForKey:userIDKey]]];
-    NSData *data = [NSData dataWithContentsOfURL:url];
-    UIImage *profilePic = [[UIImage alloc] initWithData:data];
+    //gets profile data and assigns it to the picture
+    UIImage *profilePic = [[UIImage alloc] initWithData:[user objectForKey:profilePictureDataKey]];
     //assigning properties of the cells
     cell.textLabel.text = [user objectForKey:userNameKey];
     cell.imageView.image = profilePic;
@@ -108,23 +106,25 @@
     return cell;
 }
 
-//delegate method for the disclousre (right arrow) button being tapped
+//delegate method for the disclousre button being tapped on a cell
 -(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
     //sets the linked user to a class property
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     NSMutableArray* array = [[defaults objectForKey:transactionArrayKey] mutableCopy];
     self.selectedTransaction = [array objectAtIndex:indexPath.row];
+    self.transactionIndex = indexPath.row;
     [self performSegueWithIdentifier:@"transactionDetailSegue" sender:self];
 }
 
-//called when a segue is triggered
+//called when a segue is triggered used to assign values to transaction screen
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if([[segue identifier] isEqualToString:@"transactionDetailSegue"])
     {
         BFFTransactionDetailViewController* transactionView = segue.destinationViewController;
         transactionView.transactionToShow = self.selectedTransaction;
+        transactionView.transactionIndex = self.transactionIndex;
     }
 }
 @end

@@ -16,4 +16,5 @@ NSString* const userIDKey = @"userid";
 NSString* const userFirstKey = @"userfirst";
 NSString* const userNameKey = @"username";
 NSString* const transactionArrayKey = @"transactions";
+NSString* const profilePictureDataKey = @"profpic";
 @end

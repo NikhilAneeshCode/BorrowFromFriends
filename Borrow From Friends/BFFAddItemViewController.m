@@ -114,10 +114,12 @@
     }
     
     id<FBGraphUser> user = self.friendPickerController.selection.firstObject;
+    NSURL *profilePictureURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?", user.id]];
+    NSData *picData = [NSData dataWithContentsOfURL:profilePictureURL];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     //the dictionary that stores a single transaction
     NSDictionary* itemDict = [[NSDictionary alloc]initWithObjectsAndKeys:[NSNumber numberWithBool: self.lent], isLentKey,
-                              self.amount,amountKey,self.name,itemNameKey, user.id,userIDKey,user.first_name, userFirstKey, user.name,userNameKey, nil];
+                              self.amount,amountKey,self.name,itemNameKey, user.id,userIDKey,user.first_name, userFirstKey, user.name,userNameKey,picData, profilePictureDataKey, nil];
     //adds the dictionary to the transaction array (creating array if one doesn't exist)
     NSMutableArray* transactionArray;
     if([defaults objectForKey:transactionArrayKey]==nil)

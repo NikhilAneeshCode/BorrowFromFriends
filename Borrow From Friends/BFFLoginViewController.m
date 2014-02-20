@@ -30,7 +30,10 @@
 {
     [super viewDidLoad];
     self.loginButton.readPermissions = @[@"basic_info"];
-	// Do any additional setup after loading the view.
+    
+    //uncomment these lines to delete nsuserdefault data upon loading of the 
+    //NSString *domainName = [[NSBundle mainBundle] bundleIdentifier];
+    //[[NSUserDefaults standardUserDefaults] removePersistentDomainForName:domainName];
 }
 
 

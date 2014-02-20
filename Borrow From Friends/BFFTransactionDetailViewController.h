@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "BFFConstants.h"
+#import "BFFMainPageViewController.h"
+#import <FacebookSDK/FacebookSDK.h>
 @interface BFFTransactionDetailViewController : UIViewController
 //upon the controller being loaded, this should have the details of the transaction
 @property(nonatomic) NSDictionary* transactionToShow;
+@property(nonatomic) NSInteger transactionIndex;
+-(IBAction)deleteTransaction:(id)sender;
 @end
