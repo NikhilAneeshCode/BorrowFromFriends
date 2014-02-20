@@ -125,7 +125,7 @@
     }
     else
     {
-        transactionArray = [defaults objectForKey:transactionArrayKey];
+        transactionArray = [[defaults objectForKey:transactionArrayKey] mutableCopy];
     }
     [transactionArray addObject:itemDict];
     [defaults setObject:transactionArray forKey:transactionArrayKey];
