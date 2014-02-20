@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <FacebookSDK/FacebookSDK.h>
+#import "BFFConstants.h"
 @interface BFFMainPageViewController : UIViewController <FBLoginViewDelegate>
 //called when this screen is unwinded to
 - (IBAction)unwindToMain:(UIStoryboardSegue *) segue;

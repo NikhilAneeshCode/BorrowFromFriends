@@ -38,16 +38,6 @@
 	// Do any additional setup after loading the view.
 }
 
-//called when a segue occurs
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    //making it so all information is passed from buttons on this page to properties in friend picker
-        self.name = self.nameField.text;
-        self.amount = [NSNumber numberWithInt:(int)self.amountStepper.value];
-        //if its the first segment (i.e. lent it) set it to true else it'll be false
-        self.lent = self.borrowedSwitch.selectedSegmentIndex == 0;
-}
-
 -(void)dismissKeyboard
 {
     [self.nameField resignFirstResponder];
@@ -56,10 +46,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-- (IBAction)unwindToAddItem:(UIStoryboardSegue *) segue
-{
-    
 }
 -(void)loadFriendPicker
 {
@@ -90,14 +76,7 @@
         self.friendPickerController.delegate = self;
         self.friendPickerController.allowsMultipleSelection = NO;
     }
-    if(self.lent)
-    {
-        self.friendPickerController.title = @"Who did you lend to?";
-    }
-    else
-    {
-        self.friendPickerController.title = @"Who did you borrow from?";
-    }
+    self.friendPickerController.title = @"Which friend?";
     [self.friendPickerController loadData];
     [self.friendPickerController clearSelection];
     
@@ -122,6 +101,8 @@
 {
     self.amountField.text = [NSString stringWithFormat:@"%d", (int)sender.value];
 }
+
+//called when friend picker done is pressed
 - (void)facebookViewControllerDoneWasPressed:(id)sender
 {
     //no one selected
@@ -132,7 +113,24 @@
         return;
     }
     id<FBGraphUser> user = self.friendPickerController.selection.firstObject;
-    //TODO add logic for permanently saving added friends
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    //the dictionary that stores a single transaction
+    NSDictionary* itemDict = [[NSDictionary alloc]initWithObjectsAndKeys:[NSNumber numberWithBool: self.lent], isLentKey,
+                              self.amount,amountKey,self.name,itemNameKey, user.id,userIDKey,user.first_name, userFirstKey, user.name,userNameKey, nil];
+    //adds the dictionary to the transaction array (creating array if one doesn't exist)
+    NSMutableArray* transactionArray;
+    if([defaults objectForKey:transactionArrayKey]==nil)
+    {
+        transactionArray = [[NSMutableArray alloc] init];
+    }
+    else
+    {
+        transactionArray = [defaults objectForKey:transactionArrayKey];
+    }
+    [transactionArray addObject:itemDict];
+    [defaults setObject:transactionArray forKey:transactionArrayKey];
+    [defaults synchronize];
+    
     [self dismissViewControllerAnimated:YES completion:^() {
         [self performSegueWithIdentifier:@"mainSegue" sender:self];
     }];

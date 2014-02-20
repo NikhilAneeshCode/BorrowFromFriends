@@ -34,21 +34,36 @@
 	// Do any additional setup after loading the view.
 }
 
+
 //called if login button pressed, handles logging out and sending to login screen
 -(void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+//called when this screen is unwinded to
+
 -(IBAction)unwindToMain:(UIStoryboardSegue *)segue
 {
-    //called when this screen is unwinded to
+    [self fillTransactionTable];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+//called when transaction table needs to be filled
+-(void)fillTransactionTable
+{
+    //defaults stores an array of dictionaries, each dictionary representing a single transaction
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    NSArray* a = [defaults objectForKey:transactionArrayKey];
+    NSDictionary* d = [a firstObject];
+    NSString* s = [d objectForKey:userNameKey];
+    int x = 0;
+    //TODO add logic for creating table of transactions
 }
 
 @end

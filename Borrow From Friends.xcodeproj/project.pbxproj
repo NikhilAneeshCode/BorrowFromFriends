@@ -25,6 +25,7 @@
 		1E29E6B118AB385F008B7667 /* BFFMainPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E29E6B018AB385F008B7667 /* BFFMainPageViewController.m */; };
 		1E2E17D618B1546500012ECE /* BFFAddItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E2E17D518B1546500012ECE /* BFFAddItemViewController.m */; };
 		1E9F11F318B43BC300C8C6B4 /* Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9F11F218B43BC300C8C6B4 /* Toast.m */; };
+		1E9F11FC18B58B3E00C8C6B4 /* BFFConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9F11FB18B58B3E00C8C6B4 /* BFFConstants.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,8 @@
 		1E2E17D518B1546500012ECE /* BFFAddItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFFAddItemViewController.m; sourceTree = "<group>"; };
 		1E9F11F118B43BC300C8C6B4 /* Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Toast.h; sourceTree = "<group>"; };
 		1E9F11F218B43BC300C8C6B4 /* Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Toast.m; sourceTree = "<group>"; };
+		1E9F11FA18B58B3E00C8C6B4 /* BFFConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFFConstants.h; sourceTree = "<group>"; };
+		1E9F11FB18B58B3E00C8C6B4 /* BFFConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFFConstants.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +128,8 @@
 		1E29E67F18A852AB008B7667 /* Borrow From Friends */ = {
 			isa = PBXGroup;
 			children = (
+				1E9F11FA18B58B3E00C8C6B4 /* BFFConstants.h */,
+				1E9F11FB18B58B3E00C8C6B4 /* BFFConstants.m */,
 				1E9F11F118B43BC300C8C6B4 /* Toast.h */,
 				1E9F11F218B43BC300C8C6B4 /* Toast.m */,
 				1E2E17D418B1546500012ECE /* BFFAddItemViewController.h */,
@@ -274,6 +279,7 @@
 				1E9F11F318B43BC300C8C6B4 /* Toast.m in Sources */,
 				1E29E68A18A852AB008B7667 /* BFFAppDelegate.m in Sources */,
 				1E29E6B118AB385F008B7667 /* BFFMainPageViewController.m in Sources */,
+				1E9F11FC18B58B3E00C8C6B4 /* BFFConstants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
