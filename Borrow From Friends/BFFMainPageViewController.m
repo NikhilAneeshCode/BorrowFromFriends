@@ -31,6 +31,7 @@
         NSDictionary<FBGraphUser>* user = result;
         self.nameLabel.text = [NSString stringWithFormat:@"Welcome %@", user.name];
     }];
+    [self fillTransactionTable];
 	// Do any additional setup after loading the view.
 }
 
@@ -59,10 +60,15 @@
 {
     //defaults stores an array of dictionaries, each dictionary representing a single transaction
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-    NSArray* a = [defaults objectForKey:transactionArrayKey];
-    NSDictionary* d = [a firstObject];
-    NSString* s = [d objectForKey:userNameKey];
-    int x = 0;
+    if([defaults objectForKey:transactionArrayKey]==nil)
+    {
+        //TODO handle empty array
+        return;
+    }
+    NSArray* transactionArray = [defaults objectForKey:transactionArrayKey];
+    for(NSDictionary *userDict in transactionArray)
+    {
+    }
     //TODO add logic for creating table of transactions
 }
 
