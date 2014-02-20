@@ -111,7 +111,20 @@
 //delegate method for the disclousre (right arrow) button being tapped
 -(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
+    //sets the linked user to a class property
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    NSMutableArray* array = [[defaults objectForKey:transactionArrayKey] mutableCopy];
+    self.selectedTransaction = [array objectAtIndex:indexPath.row];
     [self performSegueWithIdentifier:@"transactionDetailSegue" sender:self];
- //TODO add logic for going to a new view that allows users to easily view details and other aspects of this trade
+}
+
+//called when a segue is triggered
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([[segue identifier] isEqualToString:@"transactionDetailSegue"])
+    {
+        BFFTransactionDetailViewController* transactionView = segue.destinationViewController;
+        transactionView.transactionToShow = self.selectedTransaction;
+    }
 }
 @end

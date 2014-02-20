@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "BFFConstants.h"
 @interface BFFTransactionDetailViewController : UIViewController
-
+//upon the controller being loaded, this should have the details of the transaction
+@property(nonatomic) NSDictionary* transactionToShow;
 @end

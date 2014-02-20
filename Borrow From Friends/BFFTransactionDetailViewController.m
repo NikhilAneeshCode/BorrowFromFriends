@@ -9,6 +9,7 @@
 #import "BFFTransactionDetailViewController.h"
 
 @interface BFFTransactionDetailViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *textLabel;
 
 @end
 
@@ -26,6 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.textLabel.text = [self.transactionToShow objectForKey:userNameKey];
 	// Do any additional setup after loading the view.
 }
 

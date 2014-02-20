@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <FacebookSDK/FacebookSDK.h>
 #import "BFFConstants.h"
+#import "BFFTransactionDetailViewController.h"
 @interface BFFMainPageViewController : UIViewController <FBLoginViewDelegate, UITableViewDelegate, UITableViewDataSource>
+@property(nonatomic) NSDictionary* selectedTransaction;
 //called when this screen is unwinded to
 - (IBAction)unwindToMain:(UIStoryboardSegue *) segue;
 @end
