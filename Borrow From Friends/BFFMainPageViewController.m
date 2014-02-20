@@ -85,25 +85,33 @@
 
 //delegate method to generate each cell
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    //getting a new cell (or existing one if possible)
     static NSString *CellIdentifier = @"Cell";
-    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
     if (cell == nil)
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
+    
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-    NSMutableArray* array = [defaults objectForKey:transactionArrayKey];
+    NSMutableArray* array = [[defaults objectForKey:transactionArrayKey] mutableCopy];
     NSDictionary* user = [array objectAtIndex:indexPath.row];
+    
+    //logic for getting picutres to show up, causes massive lag (might either implement a callback or previously cache pictures)
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?", [user objectForKey:userIDKey]]];
     NSData *data = [NSData dataWithContentsOfURL:url];
     UIImage *profilePic = [[UIImage alloc] initWithData:data];
+    //assigning properties of the cells
     cell.textLabel.text = [user objectForKey:userNameKey];
     cell.imageView.image = profilePic;
+    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
     return cell;
-    
 }
 
+//delegate method for the disclousre (right arrow) button being tapped
+-(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:@"transactionDetailSegue" sender:self];
+ //TODO add logic for going to a new view that allows users to easily view details and other aspects of this trade
+}
 @end

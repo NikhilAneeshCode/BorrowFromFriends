@@ -105,13 +105,14 @@
 //called when friend picker done is pressed
 - (void)facebookViewControllerDoneWasPressed:(id)sender
 {
-    //no one selected
+    //no one selected show the toast
     if(self.friendPickerController.selection.count==0)
     {
         Toast* t = [Toast toastWithMessage:@"Please select a friend"];
         [t showOnView:self.friendPickerController.view];
         return;
     }
+    
     id<FBGraphUser> user = self.friendPickerController.selection.firstObject;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     //the dictionary that stores a single transaction
