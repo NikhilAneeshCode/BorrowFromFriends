@@ -105,6 +105,7 @@
     }];
     
 }
+
 //if submit is hit takes you to friendpicker page
 - (IBAction)pickFriendsButtonClick:(id)sender
 {
@@ -118,6 +119,7 @@
 {
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
+
 //called when the stepper changes value
 - (IBAction)valueChanged:(UIStepper *)sender
 {
@@ -134,31 +136,37 @@
         [t showOnView:self.friendPickerController.view];
         return;
     }
-    
-    id<FBGraphUser> user = self.friendPickerController.selection.firstObject;
-    NSURL *profilePictureURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?", user.id]];
-    NSData *picData = [NSData dataWithContentsOfURL:profilePictureURL];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    //the dictionary that stores a single transaction
-    NSDictionary* itemDict = [[NSDictionary alloc]initWithObjectsAndKeys:[NSNumber numberWithBool: self.lent], isLentKey,
-                              self.amount,amountKey,self.name,itemNameKey, user.id,userIDKey,user.first_name, userFirstKey, user.name,userNameKey,picData, profilePictureDataKey, nil];
-    //adds the dictionary to the transaction array (creating array if one doesn't exist)
-    NSMutableArray* transactionArray;
-    if([defaults objectForKey:transactionArrayKey]==nil)
-    {
-        transactionArray = [[NSMutableArray alloc] init];
-    }
     else
     {
-        transactionArray = [[defaults objectForKey:transactionArrayKey] mutableCopy];
+        id<FBGraphUser> user = self.friendPickerController.selection.firstObject;
+        
+        //self.navigationController.title = [NSString stringWithFormat:@"%@?", user.name]; // change the title of the view to show selected name //TODO: Place this as soon as a user is selected, not when done is pressed. 
+        
+        NSURL *profilePictureURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?", user.id]];
+        NSData *picData = [NSData dataWithContentsOfURL:profilePictureURL];
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        //the dictionary that stores a single transaction
+        NSDictionary* itemDict = [[NSDictionary alloc]initWithObjectsAndKeys:[NSNumber numberWithBool: self.lent], isLentKey,
+                                  self.amount,amountKey,self.name,itemNameKey, user.id,userIDKey,user.first_name, userFirstKey, user.name,userNameKey,picData, profilePictureDataKey, nil];
+        //adds the dictionary to the transaction array (creating array if one doesn't exist)
+        NSMutableArray* transactionArray;
+        if([defaults objectForKey:transactionArrayKey]==nil)
+        {
+            transactionArray = [[NSMutableArray alloc] init];
+        }
+        else
+        {
+            transactionArray = [[defaults objectForKey:transactionArrayKey] mutableCopy];
+        }
+        [transactionArray addObject:itemDict];
+        [defaults setObject:transactionArray forKey:transactionArrayKey];
+        [defaults synchronize];
+        
+        [self dismissViewControllerAnimated:YES completion:^() {
+            [self performSegueWithIdentifier:@"mainSegue" sender:self];
+        }];
+ 
     }
-    [transactionArray addObject:itemDict];
-    [defaults setObject:transactionArray forKey:transactionArrayKey];
-    [defaults synchronize];
-    
-    [self dismissViewControllerAnimated:YES completion:^() {
-        [self performSegueWithIdentifier:@"mainSegue" sender:self];
-    }];
 }
 
 // loads the data of the search locally
@@ -178,7 +186,7 @@
 {
     self.searchText = nil;
     [searchBar resignFirstResponder];
-    [self.friendPickerController updateView]; //ANEESH FIGURED THIS OUT. It kind of fixes the list reset problem. 
+    [self.friendPickerController updateView]; //ANEESH FIGURED THIS OUT. It kind of fixes the list reset problem.
 }
 
 // FBFriendPickerDelegate method. Updates which friends to show based on search (UI).
