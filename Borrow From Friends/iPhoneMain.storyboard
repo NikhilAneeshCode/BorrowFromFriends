@@ -293,6 +293,9 @@
                                 <state key="normal" title="Post Reminder Message">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="postToWall:" destination="Mn6-hw-c86" eventType="touchUpInside" id="Zr7-k5-s6c"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vOl-aK-MpW">
                                 <rect key="frame" x="90" y="385" width="140" height="30"/>

@@ -16,4 +16,5 @@
 @property(nonatomic) NSInteger transactionIndex;
 //called upon the delete button being hit
 -(IBAction)deleteTransaction:(id)sender;
+-(IBAction)postToWall:(id)sender;
 @end

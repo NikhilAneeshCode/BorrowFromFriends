@@ -80,5 +80,40 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-
+-(IBAction)postToWall:(id)sender
+{
+    //if app installed
+    if([FBDialogs canPresentOSIntegratedShareDialogWithSession:nil])
+    {
+       //TODO present via share dialog
+    }
+    else //presenting via feeds
+    {
+        //fill this with the appropriate parameters for each event (borrowed/lended and # of objects)
+        NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                       @"Sharing Tutorial", @"name",
+                                       @"Build great social apps and get more installs.", @"caption",
+                                       @"Allow your users to share stories on Facebook from your app using the iOS SDK.", @"description",
+                                       @"http://i.imgur.com/g3Qc1HN.png", @"picture",
+                                       [self.transactionToShow objectForKey:userIDKey], @"friends",
+                                       nil];
+        
+        
+        [FBWebDialogs presentFeedDialogModallyWithSession:[FBSession activeSession] parameters:params handler:^(FBWebDialogResult result, NSURL *resultURL, NSError *error) {
+            if (error) {
+                // An error occurred, we need to handle the error
+                // See: https://developers.facebook.com/docs/ios/errors
+                NSLog([NSString stringWithFormat:@"Error publishing story: %@", error.description]);
+            } else {
+                if (result == FBWebDialogResultDialogNotCompleted) {
+                    // User cancelled.
+                    NSLog(@"User cancelled.");
+                } else {
+                    // Handle the publish feed callback
+                    }
+            }
+        }];
+    }
+    
+}
 @end
