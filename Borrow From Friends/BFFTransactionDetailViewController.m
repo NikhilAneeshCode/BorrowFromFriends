@@ -32,15 +32,31 @@
     //setting the label based on lent/borrowed and the item amount
     NSString* stringToShow;
     NSNumber* isLent = [self.transactionToShow objectForKey:isLentKey];
+    NSNumber* itemAmount = [self.transactionToShow objectForKey:amountKey];
     [isLent boolValue];
     if([isLent boolValue])
     {
-        stringToShow = [NSString stringWithFormat:@"%@ still has your %d %@",[self.transactionToShow objectForKey:userFirstKey], [[self.transactionToShow objectForKey:amountKey] intValue], [self.transactionToShow objectForKey:itemNameKey] ];
+        if([itemAmount intValue] == 1)
+        {
+            stringToShow = [NSString stringWithFormat:@"%@ still has your %@",[self.transactionToShow objectForKey:userFirstKey], [self.transactionToShow objectForKey:itemNameKey] ];
+        }
+        else
+        {
+            stringToShow = [NSString stringWithFormat:@"%@ still has %d of your %@",[self.transactionToShow objectForKey:userFirstKey], [[self.transactionToShow objectForKey:amountKey] intValue], [self.transactionToShow objectForKey:itemNameKey] ];
+        }
     }
     else
     {
-        stringToShow = [NSString stringWithFormat:@"You still have %@'s %d %@",[self.transactionToShow objectForKey:userFirstKey], [[self.transactionToShow objectForKey:amountKey] intValue], [self.transactionToShow objectForKey:itemNameKey] ];
+        if([itemAmount intValue] == 1)
+        {
+            stringToShow = [NSString stringWithFormat:@"You still have %@'s %@",[self.transactionToShow objectForKey:userFirstKey], [self.transactionToShow objectForKey:itemNameKey] ];
+        }
+        else
+        {
+            stringToShow = [NSString stringWithFormat:@"You still have %d of %@'s  %@",[[self.transactionToShow objectForKey:amountKey] intValue], [self.transactionToShow objectForKey:userFirstKey], [self.transactionToShow objectForKey:itemNameKey] ];
+        }
     }
+    //TODO: We need to ensure that the text lable will expand vertically if it's going to get cut off by the edge of the screen.
     self.textLabel.text = stringToShow;
     self.profilePic.profileID = [self.transactionToShow objectForKey:userIDKey];
 	// Do any additional setup after loading the view.
