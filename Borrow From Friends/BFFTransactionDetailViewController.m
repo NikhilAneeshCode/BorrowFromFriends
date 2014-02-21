@@ -29,7 +29,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     //setting the label based on lent/borrowed and the item amount
     NSString* stringToShow;
     NSNumber* isLent = [self.transactionToShow objectForKey:isLentKey];

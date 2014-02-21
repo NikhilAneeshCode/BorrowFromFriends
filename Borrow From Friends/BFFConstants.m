@@ -9,12 +9,16 @@
 #import "BFFConstants.h"
 
 @implementation BFFConstants
+//KEYS FOR A TRANSACTION DICTIONARY
 NSString* const isLentKey = @"lent";
 NSString* const amountKey = @"amount";
 NSString* const itemNameKey = @"itemname";
 NSString* const userIDKey = @"userid";
 NSString* const userFirstKey = @"userfirst";
 NSString* const userNameKey = @"username";
-NSString* const transactionArrayKey = @"transactions";
 NSString* const profilePictureDataKey = @"profpic";
+
+//KEYS FOR NSUSERDEFAULTS
+NSString* const transactionArrayKey = @"transactions";
+
 @end

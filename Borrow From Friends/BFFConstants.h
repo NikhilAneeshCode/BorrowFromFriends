@@ -9,12 +9,14 @@
 #import <Foundation/Foundation.h>
 
 @interface BFFConstants : NSObject
+//KEYS FOR TRANSACTION DICIONTARY
 extern NSString* const isLentKey;
 extern NSString* const amountKey;
 extern NSString* const itemNameKey;
 extern NSString* const userIDKey;
 extern NSString* const userFirstKey;
 extern NSString* const userNameKey;
-extern NSString* const transactionArrayKey;
 extern NSString* const profilePictureDataKey;
+//KEYS FOR NSUSERDEFAULTS
+extern NSString* const transactionArrayKey;
 @end
