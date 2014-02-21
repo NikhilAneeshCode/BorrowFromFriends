@@ -8,12 +8,12 @@
 
 #import "BFFAddItemViewController.h"
 
-@interface BFFAddItemViewController ()
+@interface BFFAddItemViewController () <FBFriendPickerDelegate, UISearchBarDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UIStepper *amountStepper;
 @property (weak, nonatomic) IBOutlet UILabel *amountField;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *borrowedSwitch;
-@property (strong, nonatomic) FBFriendPickerViewController *friendPickerController;
+//@property (strong, nonatomic) FBFriendPickerViewController *friendPickerController;
 @end
 
 @implementation BFFAddItemViewController
@@ -36,9 +36,29 @@
     
     [self.view addGestureRecognizer:tap];
 	// Do any additional setup after loading the view.
+    self.friendPickerController = nil;
+    self.searchBar = nil;
 }
 
--(void)dismissKeyboard
+- (void)addSearchBarToFriendPickerView
+{
+    if(self.searchBar == nil)
+    {
+        CGFloat searchBarHeight = 44.0;
+        self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, searchBarHeight)];
+        self.searchBar.autoresizingMask = self.searchBar.autoresizingMask | UIViewAutoresizingFlexibleWidth;
+        self.searchBar.delegate = self;
+        self.searchBar.showsCancelButton = YES;
+        
+        [self.friendPickerController.canvasView addSubview:self.searchBar];
+        CGRect newFrame = self.friendPickerController.view.bounds;
+        newFrame.size.height -= searchBarHeight;
+        newFrame.origin.y = searchBarHeight;
+        self.friendPickerController.tableView.frame = newFrame;
+    }
+}
+
+- (void)dismissKeyboard
 {
     [self.nameField resignFirstResponder];
 }
@@ -80,7 +100,9 @@
     [self.friendPickerController loadData];
     [self.friendPickerController clearSelection];
     
-    [self presentViewController:self.friendPickerController animated:YES completion:nil];
+    [self presentViewController:self.friendPickerController animated:YES completion:^(void){
+        [self addSearchBarToFriendPickerView];
+    }];
     
 }
 //if submit is hit takes you to friendpicker page
@@ -137,6 +159,48 @@
     [self dismissViewControllerAnimated:YES completion:^() {
         [self performSegueWithIdentifier:@"mainSegue" sender:self];
     }];
+}
+
+// loads the data of the search locally
+- (void)handleSearchBar:(UISearchBar *)searchBar
+{
+    [searchBar resignFirstResponder];
+    self.searchText = searchBar.text;
+    [self.friendPickerController updateView];
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    [self handleSearchBar:searchBar];
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    self.searchText = nil;
+    [searchBar resignFirstResponder];
+    [self.friendPickerController updateView]; //ANEESH FIGURED THIS OUT. It kind of fixes the list reset problem. 
+}
+
+// FBFriendPickerDelegate method. Updates which friends to show based on search (UI).
+- (BOOL)friendPickerViewController:(FBFriendPickerViewController *)friendPicker shouldIncludeUser:(id<FBGraphUser>)user
+{
+    if(self.searchText && ![self.searchText isEqualToString:@""])
+    {
+        NSRange result = [user.name rangeOfString:self.searchText options:NSCaseInsensitiveSearch];
+        if (result.location != NSNotFound)
+        {
+            return YES;
+        }
+        else
+        {
+            return NO;
+        }
+    }
+    else
+    {
+        return YES;
+    }
+    return YES;
 }
 
 - (void)viewDidUnload {

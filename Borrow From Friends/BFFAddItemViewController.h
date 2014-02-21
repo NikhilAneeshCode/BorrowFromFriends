@@ -14,6 +14,12 @@
 @property(nonatomic) BOOL lent;
 @property(nonatomic) NSNumber *amount;
 @property(nonatomic) NSString *name;
+
+// search bar properties
+@property(retain, nonatomic) FBFriendPickerViewController *friendPickerController; // store private friendPicker instance
+@property(retain, nonatomic) UISearchBar *searchBar;
+@property(retain, nonatomic) NSString *searchText;
+
 - (IBAction)valueChanged:(UIStepper *)sender;
 - (IBAction)pickFriendsButtonClick:(id)sender;
 @end
