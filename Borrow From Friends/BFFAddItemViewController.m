@@ -115,6 +115,21 @@
     self.lent = self.borrowedSwitch.selectedSegmentIndex == 0;
     [self loadFriendPicker];
 }
+
+//Updates the title of the friendpicker when a user is selected
+//TODO: Not working. It could be that I'm detecting touches in the view incorrectly. 
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    if(self.friendPickerController != nil)
+    {
+        if(self.friendPickerController.selection != nil)
+        {
+            id<FBGraphUser> user = self.friendPickerController.selection.firstObject;
+            self.friendPickerController.title = [NSString stringWithFormat:@"%@?", user.first_name];
+        }
+    }
+}
+
 - (void)facebookViewControllerCancelWasPressed:(id)sender
 {
     [self dismissViewControllerAnimated:YES completion:NULL];
