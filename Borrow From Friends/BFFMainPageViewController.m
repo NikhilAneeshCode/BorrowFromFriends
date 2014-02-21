@@ -64,7 +64,7 @@
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     if([defaults objectForKey:transactionArrayKey]==nil)
     {
-        //TODO handle empty array
+        //TODO handle empty array (ideally hide table and add text saying something like add items)
         return;
     }
     //simply reloads the data for the
