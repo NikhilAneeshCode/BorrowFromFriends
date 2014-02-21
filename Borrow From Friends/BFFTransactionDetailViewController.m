@@ -45,6 +45,8 @@
         {
             stringToShow = [NSString stringWithFormat:@"%@ still has %d of your %@",[self.transactionToShow objectForKey:userFirstKey], [[self.transactionToShow objectForKey:amountKey] intValue], [self.transactionToShow objectForKey:itemNameKey] ];
         }
+        
+        [self.communicateButton setTitle:@"Yell!" forState:UIControlStateNormal];
     }
     else
     {
@@ -56,6 +58,8 @@
         {
             stringToShow = [NSString stringWithFormat:@"You still have %d of %@'s  %@",[[self.transactionToShow objectForKey:amountKey] intValue], [self.transactionToShow objectForKey:userFirstKey], [self.transactionToShow objectForKey:itemNameKey] ];
         }
+        
+        [self.communicateButton setTitle:@"Notify" forState:UIControlStateNormal];
     }
     //TODO: We need to ensure that the text lable will expand vertically if it's going to get cut off by the edge of the screen.
     self.textLabel.text = stringToShow;

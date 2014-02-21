@@ -121,8 +121,6 @@
         <!--Add Item View Controller-->
         <scene sceneID="2BO-1k-ttw">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MEx-ga-eNY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="tUG-dg-zVB" userLabel="Exit" sceneMemberID="exit"/>
                 <viewController id="aDI-ou-yka" customClass="BFFAddItemViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WSW-o3-opb"/>
@@ -206,6 +204,8 @@
                         <outlet property="nameField" destination="kg7-oz-elJ" id="9tI-XR-CcM"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MEx-ga-eNY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="tUG-dg-zVB" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2677" y="-51"/>
         </scene>
@@ -248,7 +248,6 @@
         <!--Navigation Controller-->
         <scene sceneID="aJB-GD-CsU">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aFA-65-O9m" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MnE-9D-VT4" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5WX-Dp-44h">
@@ -260,6 +259,7 @@
                         <segue destination="aDI-ou-yka" kind="relationship" relationship="rootViewController" id="elz-EC-E2z"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aFA-65-O9m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2151" y="-51"/>
         </scene>
@@ -290,14 +290,14 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ke-V5-9k7">
                                 <rect key="frame" x="137" y="317" width="41" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Shout">
+                                <state key="normal" title="Yell">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vOl-aK-MpW">
                                 <rect key="frame" x="90" y="385" width="140" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Remove Transaction">
+                                <state key="normal" title="Returned">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -309,6 +309,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="t3k-FO-9dM"/>
                     <connections>
+                        <outlet property="communicateButton" destination="7ke-V5-9k7" id="zCI-PR-iCe"/>
+                        <outlet property="deleteButton" destination="vOl-aK-MpW" id="Mfd-sZ-gu9"/>
                         <outlet property="profilePic" destination="SNg-nb-fOn" id="N9E-mD-vTn"/>
                         <outlet property="textLabel" destination="86N-Ia-oOr" id="i4E-6w-Xg9"/>
                     </connections>
