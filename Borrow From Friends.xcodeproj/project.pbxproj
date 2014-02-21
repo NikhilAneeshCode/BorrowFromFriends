@@ -27,6 +27,7 @@
 		1E9F11F318B43BC300C8C6B4 /* Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9F11F218B43BC300C8C6B4 /* Toast.m */; };
 		1E9F11FC18B58B3E00C8C6B4 /* BFFConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9F11FB18B58B3E00C8C6B4 /* BFFConstants.m */; };
 		1E9F11FF18B68CD900C8C6B4 /* BFFTransactionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9F11FE18B68CD900C8C6B4 /* BFFTransactionDetailViewController.m */; };
+		A54CE4DC18B6E22A0040F936 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54CE4DB18B6E22A0040F936 /* FacebookSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		1E9F11FB18B58B3E00C8C6B4 /* BFFConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFFConstants.m; sourceTree = "<group>"; };
 		1E9F11FD18B68CD900C8C6B4 /* BFFTransactionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFFTransactionDetailViewController.h; sourceTree = "<group>"; };
 		1E9F11FE18B68CD900C8C6B4 /* BFFTransactionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFFTransactionDetailViewController.m; sourceTree = "<group>"; };
+		A54CE4DB18B6E22A0040F936 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = "../../iPhone Resources/FacebookSDK/FacebookSDK.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E29E67C18A852AB008B7667 /* CoreGraphics.framework in Frameworks */,
+				A54CE4DC18B6E22A0040F936 /* FacebookSDK.framework in Frameworks */,
 				1E29E6AB18AB2A8D008B7667 /* FacebookSDK.framework in Frameworks */,
 				1E29E67E18A852AB008B7667 /* UIKit.framework in Frameworks */,
 				1E29E67A18A852AB008B7667 /* Foundation.framework in Frameworks */,
@@ -119,6 +122,7 @@
 		1E29E67818A852AB008B7667 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A54CE4DB18B6E22A0040F936 /* FacebookSDK.framework */,
 				1E29E6AA18AB2A8D008B7667 /* FacebookSDK.framework */,
 				1E29E67918A852AB008B7667 /* Foundation.framework */,
 				1E29E67B18A852AB008B7667 /* CoreGraphics.framework */,
@@ -409,6 +413,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/nikhilkhanna/Documents/FacebookSDK,
+					"/Users/AneeshSachdeva/Documents/Programming/iPhone\\ Resources/FacebookSDK",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Borrow From Friends/Borrow From Friends-Prefix.pch";
@@ -426,6 +431,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/nikhilkhanna/Documents/FacebookSDK,
+					"/Users/AneeshSachdeva/Documents/Programming/iPhone\\ Resources/FacebookSDK",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Borrow From Friends/Borrow From Friends-Prefix.pch";
