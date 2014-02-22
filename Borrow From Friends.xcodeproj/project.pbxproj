@@ -28,6 +28,14 @@
 		1E9F11FC18B58B3E00C8C6B4 /* BFFConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9F11FB18B58B3E00C8C6B4 /* BFFConstants.m */; };
 		1E9F11FF18B68CD900C8C6B4 /* BFFTransactionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9F11FE18B68CD900C8C6B4 /* BFFTransactionDetailViewController.m */; };
 		A54CE4DC18B6E22A0040F936 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54CE4DB18B6E22A0040F936 /* FacebookSDK.framework */; };
+		A54CE50E18B96A390040F936 /* settings-25.png in Resources */ = {isa = PBXBuildFile; fileRef = A54CE50618B96A390040F936 /* settings-25.png */; };
+		A54CE50F18B96A390040F936 /* settings-32.png in Resources */ = {isa = PBXBuildFile; fileRef = A54CE50718B96A390040F936 /* settings-32.png */; };
+		A54CE51018B96A390040F936 /* settings-50.png in Resources */ = {isa = PBXBuildFile; fileRef = A54CE50818B96A390040F936 /* settings-50.png */; };
+		A54CE51118B96A390040F936 /* settings-75.png in Resources */ = {isa = PBXBuildFile; fileRef = A54CE50918B96A390040F936 /* settings-75.png */; };
+		A54CE51218B96A390040F936 /* settings-100.png in Resources */ = {isa = PBXBuildFile; fileRef = A54CE50A18B96A390040F936 /* settings-100.png */; };
+		A54CE51318B96A390040F936 /* settings-128.png in Resources */ = {isa = PBXBuildFile; fileRef = A54CE50B18B96A390040F936 /* settings-128.png */; };
+		A54CE51418B96A390040F936 /* settings-256.png in Resources */ = {isa = PBXBuildFile; fileRef = A54CE50C18B96A390040F936 /* settings-256.png */; };
+		A54CE51518B96A390040F936 /* settings-512.png in Resources */ = {isa = PBXBuildFile; fileRef = A54CE50D18B96A390040F936 /* settings-512.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +80,14 @@
 		1E9F11FD18B68CD900C8C6B4 /* BFFTransactionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFFTransactionDetailViewController.h; sourceTree = "<group>"; };
 		1E9F11FE18B68CD900C8C6B4 /* BFFTransactionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFFTransactionDetailViewController.m; sourceTree = "<group>"; };
 		A54CE4DB18B6E22A0040F936 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = "../../iPhone Resources/FacebookSDK/FacebookSDK.framework"; sourceTree = "<group>"; };
+		A54CE50618B96A390040F936 /* settings-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-25.png"; sourceTree = "<group>"; };
+		A54CE50718B96A390040F936 /* settings-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-32.png"; sourceTree = "<group>"; };
+		A54CE50818B96A390040F936 /* settings-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-50.png"; sourceTree = "<group>"; };
+		A54CE50918B96A390040F936 /* settings-75.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-75.png"; sourceTree = "<group>"; };
+		A54CE50A18B96A390040F936 /* settings-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-100.png"; sourceTree = "<group>"; };
+		A54CE50B18B96A390040F936 /* settings-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-128.png"; sourceTree = "<group>"; };
+		A54CE50C18B96A390040F936 /* settings-256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-256.png"; sourceTree = "<group>"; };
+		A54CE50D18B96A390040F936 /* settings-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-512.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +119,7 @@
 		1E29E66D18A852AB008B7667 = {
 			isa = PBXGroup;
 			children = (
+				A54CE4E418B968030040F936 /* Resources */,
 				1E29E67F18A852AB008B7667 /* Borrow From Friends */,
 				1E29E69818A852AC008B7667 /* Borrow From FriendsTests */,
 				1E29E67818A852AB008B7667 /* Frameworks */,
@@ -185,6 +202,29 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		A54CE4E418B968030040F936 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A54CE4E518B968090040F936 /* Images */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		A54CE4E518B968090040F936 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				A54CE50618B96A390040F936 /* settings-25.png */,
+				A54CE50718B96A390040F936 /* settings-32.png */,
+				A54CE50818B96A390040F936 /* settings-50.png */,
+				A54CE50918B96A390040F936 /* settings-75.png */,
+				A54CE50A18B96A390040F936 /* settings-100.png */,
+				A54CE50B18B96A390040F936 /* settings-128.png */,
+				A54CE50C18B96A390040F936 /* settings-256.png */,
+				A54CE50D18B96A390040F936 /* settings-512.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -264,9 +304,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A54CE51418B96A390040F936 /* settings-256.png in Resources */,
 				1E29E68418A852AB008B7667 /* InfoPlist.strings in Resources */,
 				1E29E68C18A852AB008B7667 /* Images.xcassets in Resources */,
+				A54CE51218B96A390040F936 /* settings-100.png in Resources */,
 				1E29E6A918A85C1F008B7667 /* iPhoneMain.storyboard in Resources */,
+				A54CE51518B96A390040F936 /* settings-512.png in Resources */,
+				A54CE50E18B96A390040F936 /* settings-25.png in Resources */,
+				A54CE50F18B96A390040F936 /* settings-32.png in Resources */,
+				A54CE51318B96A390040F936 /* settings-128.png in Resources */,
+				A54CE51118B96A390040F936 /* settings-75.png in Resources */,
+				A54CE51018B96A390040F936 /* settings-50.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
