@@ -30,7 +30,7 @@
     FBRequest* meRequest = [FBRequest requestForMe];
     [meRequest startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
         NSDictionary<FBGraphUser>* user = result;
-        self.nameLabel.text = [NSString stringWithFormat:@"Welcome %@", user.name];
+        self.nameLabel.text = [NSString stringWithFormat:@"Welcome, %@", user.first_name];
     }];
     [self fillTransactionTable];
 	// Do any additional setup after loading the view.
@@ -100,7 +100,8 @@
     //gets profile data and assigns it to the picture
     UIImage *profilePic = [[UIImage alloc] initWithData:[user objectForKey:profilePictureDataKey]];
     //assigning properties of the cells
-    cell.textLabel.text = [user objectForKey:userNameKey];
+    //cell.textLabel.text = [user objectForKey:userNameKey];
+    cell.textLabel.text = [user objectForKey:itemNameKey];
     cell.imageView.image = profilePic;
     cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
     return cell;
