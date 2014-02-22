@@ -92,6 +92,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="1Mi-jw-a0L">
+                        <barButtonItem key="leftBarButtonItem" image="settings-25.png" id="67t-Ke-4uM"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="XJA-8N-EEi">
                             <connections>
                                 <segue destination="MnE-9D-VT4" kind="modal" id="0qr-ZE-VjS"/>
@@ -312,6 +313,9 @@
             <point key="canvasLocation" x="2677" y="531"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="settings-25.png" width="25" height="25"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
