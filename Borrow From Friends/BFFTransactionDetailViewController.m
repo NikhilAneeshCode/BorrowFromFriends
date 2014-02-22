@@ -86,38 +86,39 @@
 
 -(IBAction)postToWall:(id)sender
 {
-    //if app installed
-    if([FBDialogs canPresentOSIntegratedShareDialogWithSession:nil])
-    {
-       //TODO present via share dialog
-    }
-    else //presenting via feeds
-    {
-        //fill this with the appropriate parameters for each event (borrowed/lended and # of objects)
-        NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                       @"Sharing Tutorial", @"name",
-                                       @"Build great social apps and get more installs.", @"caption",
-                                       @"Allow your users to share stories on Facebook from your app using the iOS SDK.", @"description",
-                                       @"http://i.imgur.com/g3Qc1HN.png", @"picture",
-                                       [self.transactionToShow objectForKey:userIDKey], @"friends",
-                                       nil];
+        //share an open graph story using share dialog
+       // id<FBOpenGraphObject> object = [FBGraphObject openGraphObjectForPostWithType:@"borrowfromfriends:borrowed item" title:[self.transactionToShow objectForKey:itemNameKey] image:@"http://i.imgur.com/g3Qc1HN.png" url:@"https://google.com" description:@"give me it back!"];
+        id<FBOpenGraphObject> object = [FBGraphObject openGraphObjectForPost];
+        [object setType:@"borrowfromfriend:borrowed item"];
+        [object setTitle:[self.transactionToShow objectForKey:itemNameKey]];
+        [object setImage:@"http://i.imgur.com/g3Qc1HN.png" ];
+        id<FBOpenGraphAction> action = (id<FBOpenGraphAction>)[FBGraphObject graphObject];
+        [action setObject:object forKey:@"borrowed item"];
+        [action setTags:@[[self.transactionToShow objectForKey:userIDKey]]];
         
+        FBOpenGraphActionShareDialogParams *params = [[FBOpenGraphActionShareDialogParams alloc] init];
+        params.action = action;
+        params.actionType = @"borrowfromfriends:want";
         
-        [FBWebDialogs presentFeedDialogModallyWithSession:[FBSession activeSession] parameters:params handler:^(FBWebDialogResult result, NSURL *resultURL, NSError *error) {
-            if (error) {
-                // An error occurred, we need to handle the error
-                // See: https://developers.facebook.com/docs/ios/errors
-                NSLog([NSString stringWithFormat:@"Error publishing story: %@", error.description]);
-            } else {
-                if (result == FBWebDialogResultDialogNotCompleted) {
-                    // User cancelled.
-                    NSLog(@"User cancelled.");
-                } else {
-                    // Handle the publish feed callback
-                    }
-            }
-        }];
-    }
+        if([FBDialogs canPresentShareDialogWithOpenGraphActionParams:params]) {
+            // Show the share dialog
+            [FBDialogs presentShareDialogWithOpenGraphAction:action
+                                                  actionType:@"borrowfromfriends:want"
+                                         previewPropertyName:@"borrowed item"
+                                                     handler:^(FBAppCall *call, NSDictionary *results, NSError *error) {
+                                                         if(error) {
+                                                             // There was an error
+                                                             NSLog([NSString stringWithFormat:@"Error publishing story: %@", error.description]);
+                                                         } else {
+                                                             // Success
+                                                             NSLog(@"result %@", results);
+                                                         }
+                                                     }];
+            
+            // If the Facebook app is NOT installed and we can't present the share dialog
+        } else {
+            // FALLBACK GOES HERE
+        }
     
 }
 @end

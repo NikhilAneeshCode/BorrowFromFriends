@@ -14,7 +14,8 @@
 //upon the controller being loaded, this should have the details of the transaction
 @property(nonatomic) NSDictionary* transactionToShow;
 @property(nonatomic) NSInteger transactionIndex;
-//called upon the delete button being hit
+@property (weak, nonatomic) IBOutlet UIButton *deleteButton;
+@property (weak, nonatomic) IBOutlet UIButton *communicateButton;
 -(IBAction)deleteTransaction:(id)sender;
 -(IBAction)postToWall:(id)sender;
 @end
