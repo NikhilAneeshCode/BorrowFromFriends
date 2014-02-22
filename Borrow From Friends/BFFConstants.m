@@ -17,7 +17,6 @@ NSString* const userIDKey = @"userid";
 NSString* const userFirstKey = @"userfirst";
 NSString* const userNameKey = @"username";
 NSString* const profilePictureDataKey = @"profpic";
-
 //KEYS FOR NSUSERDEFAULTS
 NSString* const transactionArrayKey = @"transactions";
 

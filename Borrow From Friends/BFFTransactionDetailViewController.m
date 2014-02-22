@@ -87,13 +87,14 @@
 -(IBAction)postToWall:(id)sender
 {
         //share an open graph story using share dialog
-       // id<FBOpenGraphObject> object = [FBGraphObject openGraphObjectForPostWithType:@"borrowfromfriends:borrowed item" title:[self.transactionToShow objectForKey:itemNameKey] image:@"http://i.imgur.com/g3Qc1HN.png" url:@"https://google.com" description:@"give me it back!"];
         id<FBOpenGraphObject> object = [FBGraphObject openGraphObjectForPost];
-        [object setType:@"borrowfromfriend:borrowed item"];
+        [object setType:@"borrowfromfriend:lent item"];
+        //this the viarble in the "give me my <borrowed_item> back" phrase
         [object setTitle:[self.transactionToShow objectForKey:itemNameKey]];
+        [[object data] setObject:[NSString stringWithFormat:@"%@", [self.transactionToShow objectForKey:itemNameKey]]forKey:@"name"];
         [object setImage:@"http://i.imgur.com/g3Qc1HN.png" ];
         id<FBOpenGraphAction> action = (id<FBOpenGraphAction>)[FBGraphObject graphObject];
-        [action setObject:object forKey:@"borrowed item"];
+        [action setObject:object forKey:@"lent item"];
         [action setTags:@[[self.transactionToShow objectForKey:userIDKey]]];
         
         FBOpenGraphActionShareDialogParams *params = [[FBOpenGraphActionShareDialogParams alloc] init];
@@ -104,7 +105,7 @@
             // Show the share dialog
             [FBDialogs presentShareDialogWithOpenGraphAction:action
                                                   actionType:@"borrowfromfriends:want"
-                                         previewPropertyName:@"borrowed item"
+                                         previewPropertyName:@"lent item"
                                                      handler:^(FBAppCall *call, NSDictionary *results, NSError *error) {
                                                          if(error) {
                                                              // There was an error
