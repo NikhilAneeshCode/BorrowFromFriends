@@ -62,6 +62,12 @@
                                     <outlet property="delegate" destination="CLR-wM-Gkf" id="pue-hf-dJ8"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Press the + button to add lent or borrowed items!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="248" translatesAutoresizingMaskIntoConstraints="NO" id="VDG-46-LFz">
+                                <rect key="frame" x="36" y="217" width="248" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -78,6 +84,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="emptyLabel" destination="VDG-46-LFz" id="VNa-S4-wKA"/>
                         <outlet property="transactionTable" destination="X4w-3S-GvH" id="d2W-sv-Wcf"/>
                         <segue destination="Mn6-hw-c86" kind="push" identifier="transactionDetailSegue" id="FNr-rL-Wgw"/>
                     </connections>

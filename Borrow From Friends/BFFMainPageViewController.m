@@ -10,8 +10,8 @@
 
 @interface BFFMainPageViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *emptyLabel;
 @property (weak, nonatomic) IBOutlet UITableView *transactionTable;
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @end
 
 @implementation BFFMainPageViewController
@@ -160,8 +160,12 @@
     {
         //to do handle empty array an
         [self.transactionTable reloadData];
+        [self.transactionTable setHidden:TRUE];
+        [self.emptyLabel setHidden:FALSE];
         return;
     }
+    [self.emptyLabel setHidden:TRUE];
+    [self.transactionTable setHidden:FALSE];
     //simply reloads the data for the
     [self.transactionTable reloadData];
     
