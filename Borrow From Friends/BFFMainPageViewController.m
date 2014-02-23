@@ -124,12 +124,60 @@
     //gets profile data and assigns it to the picture
     UIImage *profilePic = [[UIImage alloc] initWithData:[user objectForKey:profilePictureDataKey]];
     //assigning properties of the cells
-    //cell.textLabel.text = [user objectForKey:userNameKey];
-    cell.textLabel.text = [user objectForKey:itemNameKey];
+
+    NSString* cellTitle;
+    cellTitle = [self getCellTitle:user];
+    
+    cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    cell.textLabel.numberOfLines = 0;
+    cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:17];
+    cell.textLabel.text = cellTitle;
     cell.imageView.image = profilePic;
     cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
     return cell;
 }
+- (NSString *) getCellTitle: (NSDictionary*) user
+{
+    if([[user objectForKey:isLentKey] boolValue])
+    {
+        if([[user objectForKey:amountKey] integerValue]==1)
+        {
+            return [NSString stringWithFormat:@"%@ still has your %@", [user objectForKey:userFirstKey], [user objectForKey:itemNameKey]];
+        }
+        else
+        {
+            return [NSString stringWithFormat:@"%@ still has your %d %@", [user objectForKey:userFirstKey], [[user objectForKey:amountKey] integerValue],[user objectForKey:itemNameKey]];
+        }
+    }
+    else
+    {
+        if([[user objectForKey:amountKey] integerValue]==1)
+        {
+            return [NSString stringWithFormat:@"You still have %@'s %@", [user objectForKey:userFirstKey], [user objectForKey:itemNameKey]];
+        }
+        else
+        {
+            return [NSString stringWithFormat:@"You still have %@'s %d %@", [user objectForKey:userFirstKey], [[user objectForKey:amountKey] integerValue],[user objectForKey:itemNameKey]];
+        }
+    }
+    
+}
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+//    NSMutableArray* array = [[defaults objectForKey:transactionArrayKey] mutableCopy];
+//    NSDictionary* user = [array objectAtIndex:indexPath.row];
+//    UITextView *cellText =[[UITextView alloc] init];
+//    [cellText setAttributedText:[self getCellTitle:user]];
+//    UIFont *cellFont = [UIFont fontWithName:@"Helvetica" size:17.0];
+//    CGSize constraintSize = CGSizeMake(280.0f, MAXFLOAT);
+//    CGSize labelSize = [cellText sizeWithFont:cellFont constrainedToSize:constraintSize lineBreakMode:NSLineBreakByWordWrapping];
+//    [cellText boundingRectWithSize:labelSize options:NSStringDrawingTruncatesLastVisibleLine attributes:nil contex]
+//    
+//    return labelSize.height + 20;
+//}
+
+
 
 //delegate method for the disclousre button being tapped on a cell
 -(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath

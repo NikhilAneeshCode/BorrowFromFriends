@@ -33,14 +33,9 @@
 //called if login button pressed, handles logging out and sending to login screen
 -(void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView
 {
-    //[self dismissViewControllerAnimated:YES completion:nil];
     
     [self.navigationController popViewControllerAnimated:YES];
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
-    //self.title = @"Method Works";
-    
-    //BFFLoginViewController loginView = [[BFFLoginViewController alloc] init];
-    //[self.view addSubview:loginView];
     
 }
 
