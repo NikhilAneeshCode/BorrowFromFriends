@@ -37,28 +37,94 @@
     [self fillTransactionTable];
 	// Do any additional setup after loading the view.
     
-    //recurrent notifcation
-    //NSCalendar *calendar = [[NSCalendar alloc] init];
-    //NSDateComponents *dateComps = [[NSDateComponents alloc] init];
-    NSDate *date = [[NSDate alloc] init];
+    [self createNotification];
     
-    UILocalNotification *localNotfication = [[UILocalNotification alloc] init];
-    if(localNotfication == nil)
-    {
-        return ;
-    }
-    int notificationTimeInterval = 3;
-    localNotfication.fireDate = [date dateByAddingTimeInterval:60*60*24*notificationTimeInterval];
-    localNotfication.timeZone = [NSTimeZone defaultTimeZone];
-    NSString *alertMessage = [[NSString alloc] init];
-    
-    //THIS IS HOW YOU ACCESS THE ARRAY
-    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];//this is object you use to get the saved data
-    NSMutableArray* array = [[defaults objectForKey:transactionArrayKey] mutableCopy];//this gets a mutable copy of the array of dictionaries(the transactionarraykey is a constant defined in Bffconstants.h
-    //if(
-    //localNotfication.alertBody = [NSString stringWithFormat:@""]
 }
 
+
+- (void)createNotification
+{
+    //THIS IS HOW YOU ACCESS THE ARRAY
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];//this is object you use to get the saved data
+    NSMutableArray* items = [[defaults objectForKey:transactionArrayKey] mutableCopy];//this gets a mutable copy of the array of dictionaries(the transactionarraykey is a constant defined in Bffconstants.h
+    
+    if(items != nil || items.count != 0)
+    {
+        //first count the amount of lent and borrowed items
+        int borrowedItemsCount = 0;
+        int lentItemsCount = 0;
+        
+        for(int i = 0; i < items.count; i++)
+        {
+            if([[items[i] objectForKey:isLentKey] boolValue])
+            {
+                lentItemsCount++;
+            }
+            else
+            {
+                borrowedItemsCount++;
+            }
+        }
+        
+        //create the notification object
+        NSDate *date = [[NSDate alloc] init];
+        
+        UILocalNotification *localNotfication = [[UILocalNotification alloc] init];
+        
+        if(localNotfication == nil)
+        {
+            return ; // Apple said to do this
+        }
+        int notificationTimeInterval = 3;
+        //localNotfication.fireDate = [date dateByAddingTimeInterval:60*60*24*notificationTimeInterval]; live code
+        localNotfication.fireDate = [date dateByAddingTimeInterval:30];
+        localNotfication.timeZone = [NSTimeZone defaultTimeZone];
+        NSString *alertMessage = [[NSString alloc] init];
+        
+        if(items.count == 1)
+        {
+            if(lentItemsCount > 0)
+            {
+                alertMessage = @"Your friend still has an item of yours!";
+            }
+            else
+            {
+                alertMessage = @"You still have your friend's item!";
+            }
+        }
+        else
+        {
+            if (lentItemsCount == 1 && borrowedItemsCount == 1)
+                alertMessage = @"You still have your friend's item, and a friend still has an item of yours!";
+            else if (lentItemsCount > 1 && borrowedItemsCount == 1)
+                alertMessage = [NSString stringWithFormat:@"You still have your friend's item, and your friends still have %d items of yours!", lentItemsCount];
+            else if (lentItemsCount > 1 && borrowedItemsCount > 1)
+                alertMessage = [NSString stringWithFormat:@"You still have %d of your friends' items, and your friends still have %d items of yours!", borrowedItemsCount, lentItemsCount];
+            else if (lentItemsCount == 1 && borrowedItemsCount > 1)
+                alertMessage = [NSString stringWithFormat:@"You still have %d of your friends' items, and a friend still has an item of yours!", borrowedItemsCount];
+            else if (lentItemsCount > 1 && borrowedItemsCount == 0)
+                alertMessage = [NSString stringWithFormat:@"Your friends still have %d items of yours!", lentItemsCount];
+            else if (lentItemsCount == 0 && borrowedItemsCount > 1)
+                alertMessage = [NSString stringWithFormat:@"You still have %d of your friends' items!", borrowedItemsCount];
+            else
+            {
+                // why can't grammar do itself. based god help me.
+            }
+            
+        }
+        
+        localNotfication.alertBody = alertMessage;
+        localNotfication.alertAction = NSLocalizedString(@"View Details", nil);
+        localNotfication.soundName = UILocalNotificationDefaultSoundName;
+        localNotfication.applicationIconBadgeNumber = 1;
+        [[UIApplication sharedApplication] scheduleLocalNotification:localNotfication];
+    }
+    else
+    {
+        // there are no items. make no notification
+    }
+
+}
 
 /*//called if login button pressed, handles logging out and sending to login screen
 -(void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView
