@@ -101,12 +101,12 @@
             objectName = @"lent items";
         }
         id<FBOpenGraphObject> object = [FBGraphObject openGraphObjectForPost];
-        [object setType:@"borrowfromfriends:lent item"];
+        [object setType:fullObjectName];
         //this the variable in the "give me my <item> back" phrase
         [object setTitle:[self.transactionToShow objectForKey:itemNameKey]];
         [object setImage:@"http://i.imgur.com/g3Qc1HN.png" ];
         id<FBOpenGraphAction> action = (id<FBOpenGraphAction>)[FBGraphObject graphObject];
-        [action setObject:object forKey:@"lent item"];
+        [action setObject:object forKey:objectName];
         [action setTags:@[[self.transactionToShow objectForKey:userIDKey]]];
         FBOpenGraphActionShareDialogParams *params = [[FBOpenGraphActionShareDialogParams alloc] init];
         params.action = action;
@@ -116,7 +116,7 @@
             // Show the share dialog
             [FBDialogs presentShareDialogWithOpenGraphAction:action
                                                   actionType:@"borrowfromfriends:want"
-                                         previewPropertyName:@"lent item"
+                                         previewPropertyName:objectName
                                                      handler:^(FBAppCall *call, NSDictionary *results, NSError *error) {
                                                          if(error) {
                                                              // There was an error
