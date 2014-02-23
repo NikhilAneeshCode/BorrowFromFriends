@@ -91,6 +91,8 @@
         NSString* fullObjectName;
         NSString* objectName;
         NSString* fullActionName;
+    
+        //figuring out the open graph object and action name based on the specifics of the transaction
         if([[self.transactionToShow objectForKey:isLentKey] boolValue])
         {
             fullActionName = @"borrowfromfriends:want";
@@ -107,7 +109,7 @@
         }
         else
         {
-            fullActionName = @"borrowfromfriends:still has";
+            fullActionName = @"borrowfromfriends:still_has";
             if([[self.transactionToShow objectForKey:amountKey] integerValue]==1)
             {
                 fullObjectName = @"borrowfromfriends:borrowed item";
@@ -115,22 +117,38 @@
             }
             else
             {
-                fullObjectName = @"borrowfromfriends:lent items";
-                objectName = @"lent items";
+                fullObjectName = @"borrowfromfriends:borrowed items";
+                objectName = @"borrowed items";
             }
         }
+    
         id<FBOpenGraphObject> object = [FBGraphObject openGraphObjectForPost];
         [object setType:fullObjectName];
-        //this the variable in the "give me my <item> back" phrase
+        //setting title,the variable in the "give me my <item> back" phrase
         NSString* title;
-        if([[self.transactionToShow objectForKey:amountKey] integerValue]==1)
+        if([[self.transactionToShow objectForKey:isLentKey] boolValue])
         {
-            title = [NSString stringWithFormat:@"%@ needs to give me my %@ back!", [self.transactionToShow objectForKey:userFirstKey], [self.transactionToShow objectForKey:itemNameKey]];
+            if([[self.transactionToShow objectForKey:amountKey] integerValue]==1)
+            {
+                title = [NSString stringWithFormat:@"%@ needs to give me my %@ back!", [self.transactionToShow objectForKey:userFirstKey], [self.transactionToShow objectForKey:itemNameKey]];
+            }
+            else
+            {
+                title = [NSString stringWithFormat:@"%@ needs to give me my %d %@ back!", [self.transactionToShow objectForKey:userFirstKey], [[self.transactionToShow objectForKey:amountKey] integerValue], [self.transactionToShow   objectForKey:itemNameKey]];
+            }
         }
         else
         {
-            title = [NSString stringWithFormat:@"%@ needs to give me my %d %@ back!", [self.transactionToShow objectForKey:userFirstKey], [[self.transactionToShow objectForKey:amountKey] integerValue], [self.transactionToShow objectForKey:itemNameKey]];
+            if([[self.transactionToShow objectForKey:amountKey] integerValue]==1)
+            {
+                title = [NSString stringWithFormat:@"Hey %@, I still have your %@.", [self.transactionToShow objectForKey:userFirstKey], [self.transactionToShow objectForKey:itemNameKey]];
+            }
+            else
+            {
+                title = [NSString stringWithFormat:@"Hey %@, I still have your %d %@.", [self.transactionToShow objectForKey:userFirstKey], [[self.transactionToShow objectForKey:amountKey] integerValue], [self.transactionToShow   objectForKey:itemNameKey]];
+            }
         }
+    
         [object setTitle:title];
         [object setImage:@"http://i.imgur.com/g3Qc1HN.png" ];
         id<FBOpenGraphAction> action = (id<FBOpenGraphAction>)[FBGraphObject graphObject];
