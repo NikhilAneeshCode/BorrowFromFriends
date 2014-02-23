@@ -36,8 +36,9 @@
 {
     //[self dismissViewControllerAnimated:YES completion:nil];
     
-    //[self.navigationController popViewControllerAnimated:YES];
-    self.title = @"Method Works";
+    [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    //self.title = @"Method Works";
     
     //BFFLoginViewController loginView = [[BFFLoginViewController alloc] init];
     //[self.view addSubview:loginView];

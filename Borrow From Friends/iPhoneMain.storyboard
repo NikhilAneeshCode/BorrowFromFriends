@@ -104,10 +104,10 @@
             </objects>
             <point key="canvasLocation" x="1600" y="-51"/>
         </scene>
-        <!--View Controller - Settings Page-->
+        <!--Settings Page View Controller - Settings Page-->
         <scene sceneID="kRy-lp-ePz">
             <objects>
-                <viewController title="Settings Page" id="Qh2-1h-HGd" sceneMemberID="viewController">
+                <viewController title="Settings Page" id="Qh2-1h-HGd" customClass="BFFSettingsPageViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HVX-GV-eM6"/>
                         <viewControllerLayoutGuide type="bottom" id="3tZ-cB-PlH"/>
@@ -121,7 +121,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="delegate" destination="oik-O3-Obw" id="ec5-vQ-cIi"/>
+                                    <outlet property="delegate" destination="Qh2-1h-HGd" id="xp1-TV-n1O"/>
                                 </connections>
                             </view>
                         </subviews>
