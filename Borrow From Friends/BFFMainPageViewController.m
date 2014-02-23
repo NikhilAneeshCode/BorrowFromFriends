@@ -12,7 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *transactionTable;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-
 @end
 
 @implementation BFFMainPageViewController
@@ -207,7 +206,7 @@
     cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:17];
     cell.textLabel.text = cellTitle;
     cell.imageView.image = profilePic;
-    //setting cell colors
+    //setting cell colors put final cell colors here (you can use rgb values as well via the UIColor colorwithRedMethod
     if([[user objectForKey:isLentKey] boolValue])
     {
         cell.contentView.backgroundColor = [UIColor orangeColor];
