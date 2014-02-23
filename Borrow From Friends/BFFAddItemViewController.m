@@ -108,8 +108,6 @@
     
 }
 
-- (IBAction)next:(id)sender
-
 //if submit is hit, checks pluralization before takes you to friendpicker page
 - (IBAction)pickFriendsButtonClick:(id)sender
 {
