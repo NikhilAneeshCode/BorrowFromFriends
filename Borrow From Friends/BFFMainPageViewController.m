@@ -207,6 +207,16 @@
     cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:17];
     cell.textLabel.text = cellTitle;
     cell.imageView.image = profilePic;
+    //setting cell colors
+    if([[user objectForKey:isLentKey] boolValue])
+    {
+        cell.contentView.backgroundColor = [UIColor orangeColor];
+    }
+    else
+    {
+        cell.contentView.backgroundColor = [UIColor blueColor];
+    }
+    
     cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
 
     return cell;
