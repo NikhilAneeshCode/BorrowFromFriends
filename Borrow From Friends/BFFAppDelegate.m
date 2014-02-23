@@ -19,7 +19,7 @@
     [FBProfilePictureView class];
     [FBFriendPickerViewController class];
     
-    //handle launching from a notification
+    //handle launching from a notification when app has not been opened (i.e not in foreground).
     UILocalNotification *localNotification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
     
     if(localNotification)
@@ -33,13 +33,14 @@
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
 {
+    // handle launching from a notification when app is either running or has been transitioned away from
     UIApplicationState state = [application applicationState];
     if(state == UIApplicationStateActive)
     {
         application.applicationIconBadgeNumber = 0;
         //do nothing else
     }
-    if(state == UIApplicationStateBackground)
+    if(state == UIApplicationStateInactive)
     {
         application.applicationIconBadgeNumber = 0;
         //TODO: Check login session and open the main screen
