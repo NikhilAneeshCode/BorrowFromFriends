@@ -87,16 +87,27 @@
 -(IBAction)postToWall:(id)sender
 {
         //share an open graph story using share dialog
+    
+        NSString* fullObjectName;
+        NSString* objectName;
+        if([[self.transactionToShow objectForKey:amountKey] integerValue]==1)
+        {
+            fullObjectName = @"borrowfromfriends: lent item";
+            objectName = @"lent item";
+        }
+        else
+        {
+            fullObjectName = @"borrowfromfriends: lent items";
+            objectName = @"lent items";
+        }
         id<FBOpenGraphObject> object = [FBGraphObject openGraphObjectForPost];
-        [object setType:@"borrowfromfriend:lent item"];
-        //this the viarble in the "give me my <borrowed_item> back" phrase
+        [object setType:@"borrowfromfriends:lent item"];
+        //this the variable in the "give me my <item> back" phrase
         [object setTitle:[self.transactionToShow objectForKey:itemNameKey]];
-        [[object data] setObject:[NSString stringWithFormat:@"%@", [self.transactionToShow objectForKey:itemNameKey]]forKey:@"name"];
         [object setImage:@"http://i.imgur.com/g3Qc1HN.png" ];
         id<FBOpenGraphAction> action = (id<FBOpenGraphAction>)[FBGraphObject graphObject];
         [action setObject:object forKey:@"lent item"];
         [action setTags:@[[self.transactionToShow objectForKey:userIDKey]]];
-        
         FBOpenGraphActionShareDialogParams *params = [[FBOpenGraphActionShareDialogParams alloc] init];
         params.action = action;
         params.actionType = @"borrowfromfriends:want";
