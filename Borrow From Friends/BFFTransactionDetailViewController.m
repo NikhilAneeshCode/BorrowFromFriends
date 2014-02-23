@@ -77,13 +77,27 @@
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     NSMutableArray* transactionArray = [[defaults objectForKey:transactionArrayKey] mutableCopy];
     [transactionArray removeObjectAtIndex:self.transactionIndex];
-    [defaults setObject:transactionArray forKey:transactionArrayKey];
+    if([transactionArray count]==0)
+    {
+        [defaults removeObjectForKey:transactionArrayKey];
+    }
+    else
+    {
+        [defaults setObject:transactionArray forKey:transactionArrayKey];
+    }
     [defaults synchronize];
     //kinda hackish but basiceally tells the main view controller to reload the transaction table
     [[[self.navigationController childViewControllers] firstObject] fillTransactionTable];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+
+
+
+
+
+
+//The monolithic method for posting to a wall
 -(IBAction)postToWall:(id)sender
 {
         //share an open graph story using share dialog
