@@ -52,10 +52,19 @@
   sourceApplication:(NSString *)sourceApplication
          annotation:(id)annotation {
     
-    // Call FBAppCall's handleOpenURL:sourceApplication to handle Facebook app responses
-    BOOL wasHandled = [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
-    
-    // You can add your app-specific url handling code here if needed
+    BOOL wasHandled = [FBAppCall handleOpenURL:url sourceApplication:sourceApplication fallbackHandler:^(FBAppCall *call) {
+        if([[call appLinkData] targetURL] != nil) {
+            // get the object ID string from the deep link URL
+            // we use the substringFromIndex so that we can delete the leading '/' from the targetURL
+            NSString *objectId = [[[call appLinkData] targetURL].path substringFromIndex:1];
+            
+            // now handle the deep link
+            // write whatever code you need to show a view controller that displays the object, etc.
+        } else {
+            //
+            NSLog([NSString stringWithFormat:@"Unhandled deep link: %@", [[call appLinkData] targetURL]]);
+        }
+    }];
     
     return wasHandled;
 }
