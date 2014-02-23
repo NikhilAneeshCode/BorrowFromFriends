@@ -50,6 +50,7 @@
     
     int notificationRepeatInvervalDays = 3;
     
+    //TODO MAKE IT SO IF THE ITEM COUNT IS NIL OR 0 (ELSE AT THE END OF THIS) UNSCHEDULE THE NOTIFICATIONS
     if(items != nil || items.count != 0)
     {
         //first count the amount of lent and borrowed items
@@ -79,9 +80,9 @@
         }
         
         //localNotfication.fireDate = [date dateByAddingTimeInterval:60*60*24*notificationTimeInterval]; live code
-        localNotification.fireDate = [date dateByAddingTimeInterval:30];
+        localNotification.fireDate = [date dateByAddingTimeInterval:30]; //comment this code out
         //localNotification.repeatInterval = NSDayCalendarUnit*notificationRepeatInvervalDays; live code
-        localNotification.repeatInterval = 30;
+        localNotification.repeatInterval = 30; //comment this code out in final
         localNotification.timeZone = [NSTimeZone defaultTimeZone];
         NSString *alertMessage = [[NSString alloc] init];
         
@@ -126,6 +127,7 @@
     else
     {
         // there are no items. make no notification
+        //TO DO UNSCHEDULE NOTIFICATION
     }
 
 }

@@ -27,7 +27,6 @@
         application.applicationIconBadgeNumber = 0;
         //TODO: Check login session and open the main screen
     }
-
     return YES;
 }
 

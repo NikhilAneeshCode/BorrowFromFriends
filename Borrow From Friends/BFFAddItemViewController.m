@@ -111,7 +111,13 @@
 //if submit is hit, checks pluralization before takes you to friendpicker page
 - (IBAction)pickFriendsButtonClick:(id)sender
 {
-    if(self.amountStepper.value > 1)
+    if([[self.nameField.text stringByTrimmingCharactersInSet:
+         [NSCharacterSet whitespaceAndNewlineCharacterSet]] length] ==0)
+    {
+        UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"No Item Name" message:@"Please enter an item name" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        [alert show];
+    }
+    else if(self.amountStepper.value > 1)
     {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Good to go?" message:@"Did you pluralize your item name?" delegate:self cancelButtonTitle:@"Let me change it" otherButtonTitles:@"It's pluralized", nil];
         
@@ -135,7 +141,7 @@
 
 - (void)goToFriendPicker
 {
-    self.name = self.nameField.text;
+    self.name = [self stringByTrimmingLeadingWhitespace:self.nameField.text];
     self.amount = [NSNumber numberWithInt:(int)self.amountStepper.value];
     //if its the first segment (i.e. lent it) set it to true else it'll be false
     self.lent = self.borrowedSwitch.selectedSegmentIndex == 0;
@@ -210,7 +216,15 @@
  
     }
 }
-
+-(NSString*)stringByTrimmingLeadingWhitespace:(NSString* )string {
+    NSInteger i = 0;
+    
+    while ((i < [string length])
+           && [[NSCharacterSet whitespaceCharacterSet] characterIsMember:[string characterAtIndex:i]]) {
+        i++;
+    }
+    return [string substringFromIndex:i];
+}
 // loads the data of the search locally
 - (void)handleSearchBar:(UISearchBar *)searchBar
 {
