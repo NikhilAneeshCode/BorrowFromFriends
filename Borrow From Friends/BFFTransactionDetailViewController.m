@@ -90,32 +90,60 @@
     
         NSString* fullObjectName;
         NSString* objectName;
-        if([[self.transactionToShow objectForKey:amountKey] integerValue]==1)
+        NSString* fullActionName;
+        if([[self.transactionToShow objectForKey:isLentKey] boolValue])
         {
-            fullObjectName = @"borrowfromfriends: lent item";
-            objectName = @"lent item";
+            fullActionName = @"borrowfromfriends:want";
+            if([[self.transactionToShow objectForKey:amountKey] integerValue]==1)
+            {
+                fullObjectName = @"borrowfromfriends:lent item";
+                objectName = @"lent item";
+            }
+            else
+            {
+                fullObjectName = @"borrowfromfriends:lent items";
+                objectName = @"lent items";
+            }
         }
         else
         {
-            fullObjectName = @"borrowfromfriends: lent items";
-            objectName = @"lent items";
+            fullActionName = @"borrowfromfriends:still has";
+            if([[self.transactionToShow objectForKey:amountKey] integerValue]==1)
+            {
+                fullObjectName = @"borrowfromfriends:borrowed item";
+                objectName = @"borrowed item";
+            }
+            else
+            {
+                fullObjectName = @"borrowfromfriends:lent items";
+                objectName = @"lent items";
+            }
         }
         id<FBOpenGraphObject> object = [FBGraphObject openGraphObjectForPost];
         [object setType:fullObjectName];
         //this the variable in the "give me my <item> back" phrase
-        [object setTitle:[self.transactionToShow objectForKey:itemNameKey]];
+        NSString* title;
+        if([[self.transactionToShow objectForKey:amountKey] integerValue]==1)
+        {
+            title = [NSString stringWithFormat:@"%@ needs to give me my %@ back!", [self.transactionToShow objectForKey:userFirstKey], [self.transactionToShow objectForKey:itemNameKey]];
+        }
+        else
+        {
+            title = [NSString stringWithFormat:@"%@ needs to give me my %d %@ back!", [self.transactionToShow objectForKey:userFirstKey], [[self.transactionToShow objectForKey:amountKey] integerValue], [self.transactionToShow objectForKey:itemNameKey]];
+        }
+        [object setTitle:title];
         [object setImage:@"http://i.imgur.com/g3Qc1HN.png" ];
         id<FBOpenGraphAction> action = (id<FBOpenGraphAction>)[FBGraphObject graphObject];
         [action setObject:object forKey:objectName];
         [action setTags:@[[self.transactionToShow objectForKey:userIDKey]]];
         FBOpenGraphActionShareDialogParams *params = [[FBOpenGraphActionShareDialogParams alloc] init];
         params.action = action;
-        params.actionType = @"borrowfromfriends:want";
+        params.actionType = fullActionName;
         
         if([FBDialogs canPresentShareDialogWithOpenGraphActionParams:params]) {
             // Show the share dialog
             [FBDialogs presentShareDialogWithOpenGraphAction:action
-                                                  actionType:@"borrowfromfriends:want"
+                                                  actionType:fullActionName
                                          previewPropertyName:objectName
                                                      handler:^(FBAppCall *call, NSDictionary *results, NSError *error) {
                                                          if(error) {
