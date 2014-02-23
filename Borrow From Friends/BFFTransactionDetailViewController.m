@@ -61,6 +61,8 @@
         [self.communicateButton setTitle:@"Notify" forState:UIControlStateNormal];
     }
     //TODO: We need to ensure that the text lable will expand vertically if it's going to get cut off by the edge of the screen.
+    self.textLabel.numberOfLines = 0;
+    self.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
     self.textLabel.text = stringToShow;
     self.profilePic.profileID = [self.transactionToShow objectForKey:userIDKey];
 	// Do any additional setup after loading the view.
