@@ -9,8 +9,10 @@
 #import "BFFMainPageViewController.h"
 
 @interface BFFMainPageViewController ()
+
 @property (weak, nonatomic) IBOutlet UITableView *transactionTable;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+
 @end
 
 @implementation BFFMainPageViewController
@@ -34,6 +36,23 @@
     }];
     [self fillTransactionTable];
 	// Do any additional setup after loading the view.
+    
+    //recurrent notifcation
+    //NSCalendar *calendar = [[NSCalendar alloc] init];
+    //NSDateComponents *dateComps = [[NSDateComponents alloc] init];
+    NSDate *date = [[NSDate alloc] init];
+    
+    UILocalNotification *localNotfication = [[UILocalNotification alloc] init];
+    if(localNotfication == nil)
+    {
+        return ;
+    }
+    int notificationTimeInterval = 3;
+    localNotfication.fireDate = [date dateByAddingTimeInterval:60*60*24*notificationTimeInterval];
+    localNotfication.timeZone = [NSTimeZone defaultTimeZone];
+    NSString *alertMessage = [[NSString alloc] init];
+    if(
+    localNotfication.alertBody = [NSString stringWithFormat:@""]
 }
 
 
