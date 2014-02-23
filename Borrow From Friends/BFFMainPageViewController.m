@@ -51,8 +51,12 @@
     localNotfication.fireDate = [date dateByAddingTimeInterval:60*60*24*notificationTimeInterval];
     localNotfication.timeZone = [NSTimeZone defaultTimeZone];
     NSString *alertMessage = [[NSString alloc] init];
-    if(
-    localNotfication.alertBody = [NSString stringWithFormat:@""]
+    
+    //THIS IS HOW YOU ACCESS THE ARRAY
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];//this is object you use to get the saved data
+    NSMutableArray* array = [[defaults objectForKey:transactionArrayKey] mutableCopy];//this gets a mutable copy of the array of dictionaries(the transactionarraykey is a constant defined in Bffconstants.h
+    //if(
+    //localNotfication.alertBody = [NSString stringWithFormat:@""]
 }
 
 
