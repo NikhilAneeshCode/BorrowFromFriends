@@ -80,7 +80,7 @@
         
         //localNotfication.fireDate = [date dateByAddingTimeInterval:60*60*24*notificationTimeInterval]; live code
         localNotification.fireDate = [date dateByAddingTimeInterval:30];
-        //localNotification.repeatInterval = 60*60*24*notificationRepeatInvervalDays; live code
+        //localNotification.repeatInterval = NSDayCalendarUnit*notificationRepeatInvervalDays; live code
         localNotification.repeatInterval = 30;
         localNotification.timeZone = [NSTimeZone defaultTimeZone];
         NSString *alertMessage = [[NSString alloc] init];
