@@ -10,6 +10,6 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import "BFFConstants.h"
 #import "BFFMainPageViewController.h"
-@interface BFFSettingsPageViewController : UIViewController <FBLoginViewDelegate>
+@interface BFFSettingsPageViewController : UIViewController <FBLoginViewDelegate, UIAlertViewDelegate>
 -(IBAction)deleteAllData:(id)sender;
 @end

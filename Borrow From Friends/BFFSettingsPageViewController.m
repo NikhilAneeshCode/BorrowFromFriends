@@ -46,13 +46,24 @@
 
 -(IBAction)deleteAllData:(id)sender
 {
-    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-    [defaults removeObjectForKey:transactionArrayKey];
-    [defaults synchronize];
-    //kinda hackish but basiceally tells the main view controller to reload the transaction table
-    [[[self.navigationController childViewControllers] firstObject] fillTransactionTable];
-    [self.navigationController popViewControllerAnimated:YES];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Are you sure?" message:@"This will delete all of your items!" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Yes I am sure", nil];
     
+    [alert show];
+}
+
+//alert view delegate method. handles buttons clicks
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    //if "I'm sure" is clicked
+    if(buttonIndex != [alertView cancelButtonIndex])
+    {
+        NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+        [defaults removeObjectForKey:transactionArrayKey];
+        [defaults synchronize];
+        //kinda hackish but basiceally tells the main view controller to reload the transaction table
+        [[[self.navigationController childViewControllers] firstObject] fillTransactionTable];
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 - (void)didReceiveMemoryWarning
