@@ -37,11 +37,11 @@
 }
 
 
-//called if login button pressed, handles logging out and sending to login screen
+/*//called if login button pressed, handles logging out and sending to login screen
 -(void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView
 {
     [self dismissViewControllerAnimated:YES completion:nil];
-}
+}*/
 
 
 //called when this screen is unwinded to
