@@ -8,7 +8,7 @@
 
 #import "BFFAddItemViewController.h"
 
-@interface BFFAddItemViewController () <FBFriendPickerDelegate, UISearchBarDelegate>
+@interface BFFAddItemViewController () <FBFriendPickerDelegate, UISearchBarDelegate, UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UIStepper *amountStepper;
 @property (weak, nonatomic) IBOutlet UILabel *amountField;
@@ -62,11 +62,13 @@
 {
     [self.nameField resignFirstResponder];
 }
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 -(void)loadFriendPicker
 {
     if (!FBSession.activeSession.isOpen) {
@@ -106,8 +108,32 @@
     
 }
 
-//if submit is hit takes you to friendpicker page
+//if submit is hit, checks pluralization before takes you to friendpicker page
 - (IBAction)pickFriendsButtonClick:(id)sender
+{
+    if(self.amountStepper.value > 1)
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Good to go?" message:@"Did you pluralize your item name?" delegate:self cancelButtonTitle:@"Let me change it" otherButtonTitles:@"It's pluralized", nil];
+        
+        [alert show];
+    }
+    else
+    {
+        [self goToFriendPicker];
+    }
+}
+
+//alert view delegate method. handles buttons clicks
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    //if "It's pluralized" (the OK) button is clicked
+    if(buttonIndex != [alertView cancelButtonIndex])
+    {
+        [self goToFriendPicker];
+    }
+}
+
+- (void)goToFriendPicker
 {
     self.name = self.nameField.text;
     self.amount = [NSNumber numberWithInt:(int)self.amountStepper.value];
@@ -139,13 +165,14 @@
 - (IBAction)valueChanged:(UIStepper *)sender
 {
     self.amountField.text = [NSString stringWithFormat:@"%d", (int)sender.value];
+    
 }
 
 //called when friend picker done is pressed
 - (void)facebookViewControllerDoneWasPressed:(id)sender
 {
     //no one selected show the toast
-    if(self.friendPickerController.selection.count==0)
+    if(self.friendPickerController.selection.count == 0)
     {
         Toast* t = [Toast toastWithMessage:@"Please select a friend"];
         [t showOnView:self.friendPickerController.view];
