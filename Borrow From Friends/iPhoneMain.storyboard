@@ -71,16 +71,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4dU-1B-RKn" customClass="FBLoginView">
-                                <rect key="frame" x="80" y="414" width="160" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="delegate" destination="CLR-wM-Gkf" id="UkU-C8-j9L"/>
-                                </connections>
-                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="X4w-3S-GvH">
-                                <rect key="frame" x="0.0" y="65" width="320" height="332"/>
+                                <rect key="frame" x="0.0" y="65" width="320" height="415"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -92,7 +84,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="1Mi-jw-a0L">
-                        <barButtonItem key="leftBarButtonItem" image="settings-25.png" id="67t-Ke-4uM"/>
+                        <barButtonItem key="leftBarButtonItem" image="settings-25.png" id="67t-Ke-4uM">
+                            <connections>
+                                <segue destination="Qh2-1h-HGd" kind="push" id="l8K-bf-UyI"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="XJA-8N-EEi">
                             <connections>
                                 <segue destination="MnE-9D-VT4" kind="modal" id="0qr-ZE-VjS"/>
@@ -107,6 +103,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="257-hI-yQk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1600" y="-51"/>
+        </scene>
+        <!--View Controller - Settings Page-->
+        <scene sceneID="kRy-lp-ePz">
+            <objects>
+                <viewController title="Settings Page" id="Qh2-1h-HGd" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HVX-GV-eM6"/>
+                        <viewControllerLayoutGuide type="bottom" id="3tZ-cB-PlH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oik-O3-Obw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4dU-1B-RKn" customClass="FBLoginView">
+                                <rect key="frame" x="20" y="77" width="280" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="oik-O3-Obw" id="ec5-vQ-cIi"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="gtR-UV-AD8"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nM1-pl-Quf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1777" y="630"/>
         </scene>
         <!--Add Item View Controller-->
         <scene sceneID="2BO-1k-ttw">

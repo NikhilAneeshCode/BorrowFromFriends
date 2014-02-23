@@ -36,6 +36,7 @@
 		A54CE51318B96A390040F936 /* settings-128.png in Resources */ = {isa = PBXBuildFile; fileRef = A54CE50B18B96A390040F936 /* settings-128.png */; };
 		A54CE51418B96A390040F936 /* settings-256.png in Resources */ = {isa = PBXBuildFile; fileRef = A54CE50C18B96A390040F936 /* settings-256.png */; };
 		A54CE51518B96A390040F936 /* settings-512.png in Resources */ = {isa = PBXBuildFile; fileRef = A54CE50D18B96A390040F936 /* settings-512.png */; };
+		A54CE51818B96EB30040F936 /* BFFSettingsPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A54CE51718B96EB30040F936 /* BFFSettingsPageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,8 @@
 		A54CE50B18B96A390040F936 /* settings-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-128.png"; sourceTree = "<group>"; };
 		A54CE50C18B96A390040F936 /* settings-256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-256.png"; sourceTree = "<group>"; };
 		A54CE50D18B96A390040F936 /* settings-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-512.png"; sourceTree = "<group>"; };
+		A54CE51618B96EB30040F936 /* BFFSettingsPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFFSettingsPageViewController.h; sourceTree = "<group>"; };
+		A54CE51718B96EB30040F936 /* BFFSettingsPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFFSettingsPageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +155,8 @@
 		1E29E67F18A852AB008B7667 /* Borrow From Friends */ = {
 			isa = PBXGroup;
 			children = (
+				A54CE51618B96EB30040F936 /* BFFSettingsPageViewController.h */,
+				A54CE51718B96EB30040F936 /* BFFSettingsPageViewController.m */,
 				1E9F11FD18B68CD900C8C6B4 /* BFFTransactionDetailViewController.h */,
 				1E9F11FE18B68CD900C8C6B4 /* BFFTransactionDetailViewController.m */,
 				1E9F11FA18B58B3E00C8C6B4 /* BFFConstants.h */,
@@ -335,6 +340,7 @@
 			files = (
 				1E2E17D618B1546500012ECE /* BFFAddItemViewController.m in Sources */,
 				1E29E68618A852AB008B7667 /* main.m in Sources */,
+				A54CE51818B96EB30040F936 /* BFFSettingsPageViewController.m in Sources */,
 				1E29E6AE18AB2D9B008B7667 /* BFFLoginViewController.m in Sources */,
 				1E9F11F318B43BC300C8C6B4 /* Toast.m in Sources */,
 				1E29E68A18A852AB008B7667 /* BFFAppDelegate.m in Sources */,
