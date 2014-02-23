@@ -12,11 +12,38 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    //place code here to add custom code after application launch
+    
     // forward declaring fb classes
     [FBLoginView class];
     [FBProfilePictureView class];
     [FBFriendPickerViewController class];
+    
+    //handle launching from a notification
+    UILocalNotification *localNotification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
+    
+    if(localNotification)
+    {
+        application.applicationIconBadgeNumber = 0;
+        //TODO: Check login session and open the main screen
+    }
+
     return YES;
+}
+
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
+{
+    UIApplicationState state = [application applicationState];
+    if(state == UIApplicationStateActive)
+    {
+        application.applicationIconBadgeNumber = 0;
+        //do nothing else
+    }
+    if(state == UIApplicationStateBackground)
+    {
+        application.applicationIconBadgeNumber = 0;
+        //TODO: Check login session and open the main screen
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
