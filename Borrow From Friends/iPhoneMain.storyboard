@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--Login View Controller-->
+        <!--Login View Controller - Please Login-->
         <scene sceneID="Ywr-tf-Cub">
             <objects>
                 <viewController id="gCA-yq-tdK" customClass="BFFLoginViewController" sceneMemberID="viewController">
@@ -16,13 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Please Log In" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sdx-PX-0x1">
-                                <rect key="frame" x="54" y="120" width="213" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vKM-2O-Q5T" customClass="FBLoginView">
                                 <rect key="frame" x="98" y="391" width="137" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -41,17 +34,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="XEj-wY-hGL" secondAttribute="centerX" constant="-6" id="AKp-j0-yqy"/>
-                            <constraint firstAttribute="centerX" secondItem="Sdx-PX-0x1" secondAttribute="centerX" id="D2o-Oy-Aqh"/>
-                            <constraint firstAttribute="centerX" secondItem="Sdx-PX-0x1" secondAttribute="centerX" constant="-0.5" id="Jrx-fy-S7V"/>
                             <constraint firstAttribute="centerX" secondItem="vKM-2O-Q5T" secondAttribute="centerX" constant="-6.5" id="KaZ-zB-fTq"/>
                             <constraint firstAttribute="centerX" secondItem="vKM-2O-Q5T" secondAttribute="centerX" constant="-6.5" id="c5q-Du-W11"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="aRg-KG-TEg"/>
+                    <navigationItem key="navigationItem" title="Please Login" id="aRg-KG-TEg"/>
                     <connections>
                         <outlet property="friendLabel" destination="XEj-wY-hGL" id="KyX-8E-tdO"/>
                         <outlet property="loginButton" destination="vKM-2O-Q5T" id="QHm-i3-AxY"/>
-                        <outlet property="nameLabel" destination="Sdx-PX-0x1" id="lTr-hZ-lSd"/>
                         <segue destination="k6o-Sh-bMa" kind="modal" identifier="loginSegue" id="pNi-gS-sf5"/>
                     </connections>
                 </viewController>
@@ -133,7 +123,7 @@
             </objects>
             <point key="canvasLocation" x="1777" y="630"/>
         </scene>
-        <!--Add Item View Controller-->
+        <!--Add Item View Controller - Add Your Item-->
         <scene sceneID="2BO-1k-ttw">
             <objects>
                 <viewController id="aDI-ou-yka" customClass="BFFAddItemViewController" sceneMemberID="viewController">
@@ -145,33 +135,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Your Item" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T37-tn-8b7">
-                                <rect key="frame" x="107" y="74" width="109" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Item Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kg7-oz-elJ">
-                                <rect key="frame" x="119" y="125" width="97" height="30"/>
+                                <rect key="frame" x="119" y="88" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Item Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1HK-Y6-yCP">
-                                <rect key="frame" x="18" y="134" width="84" height="21"/>
+                                <rect key="frame" x="18" y="97" width="84" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Item Amount" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4aY-Te-jWa">
-                                <rect key="frame" x="3" y="199" width="99" height="21"/>
+                                <rect key="frame" x="3" y="162" width="99" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gO7-yL-XoJ">
-                                <rect key="frame" x="70" y="271" width="181" height="29"/>
+                                <rect key="frame" x="70" y="234" width="181" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="I lent it"/>
@@ -179,7 +162,7 @@
                                 </segments>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2qg-6n-8fd">
-                                <rect key="frame" x="137" y="372" width="49" height="30"/>
+                                <rect key="frame" x="137" y="335" width="49" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Submit">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -189,14 +172,14 @@
                                 </connections>
                             </button>
                             <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="500" translatesAutoresizingMaskIntoConstraints="NO" id="E4B-AI-rUz">
-                                <rect key="frame" x="122" y="195" width="94" height="29"/>
+                                <rect key="frame" x="122" y="158" width="94" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <action selector="valueChanged:" destination="aDI-ou-yka" eventType="valueChanged" id="fFJ-At-xHw"/>
                                 </connections>
                             </stepper>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vky-ft-3p1">
-                                <rect key="frame" x="256" y="199" width="44" height="21"/>
+                                <rect key="frame" x="256" y="162" width="44" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
@@ -204,12 +187,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="rIn-4W-eSU">
+                    <navigationItem key="navigationItem" title="Add Your Item" id="rIn-4W-eSU">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="35m-ZL-nwT">
                             <connections>
                                 <segue destination="tUG-dg-zVB" kind="unwind" identifier="mainSegue" unwindAction="unwindToMain:" id="UJX-gs-yT2"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="e7I-eQ-XaA"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>

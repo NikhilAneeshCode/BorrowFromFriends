@@ -9,9 +9,8 @@
 #import "BFFLoginViewController.h"
 
 @interface BFFLoginViewController ()
+
 @property (weak, nonatomic) IBOutlet FBLoginView *loginButton;
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *friendLabel;
 
 @end
 
@@ -43,7 +42,7 @@
 // This method will be called when the user information has been fetched
 - (void)loginViewFetchedUserInfo:(FBLoginView *)loginView user:(id<FBGraphUser>)user
 {
-    self.nameLabel.text = [NSString stringWithFormat:@"Logged in as %@", user.name];
+    
 }
 //Called when it enters loggedin mode
 -(void)loginViewShowingLoggedInUser:(FBLoginView *)loginView
@@ -53,7 +52,7 @@
 //Called when enter loggedout mode
 -(void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView
 {
-    self.nameLabel.text = @"Please log in";
+    
 }
 
 
