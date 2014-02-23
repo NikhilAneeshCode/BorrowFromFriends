@@ -37,7 +37,7 @@
     [self fillTransactionTable];
 	// Do any additional setup after loading the view.
     
-    [self createNotification];
+    //[self createNotification];
     
 }
 
@@ -47,6 +47,8 @@
     //THIS IS HOW YOU ACCESS THE ARRAY
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];//this is object you use to get the saved data
     NSMutableArray* items = [[defaults objectForKey:transactionArrayKey] mutableCopy];//this gets a mutable copy of the array of dictionaries(the transactionarraykey is a constant defined in Bffconstants.h
+    
+    int notificationRepeatInvervalDays = 3;
     
     if(items != nil || items.count != 0)
     {
@@ -69,16 +71,18 @@
         //create the notification object
         NSDate *date = [[NSDate alloc] init];
         
-        UILocalNotification *localNotfication = [[UILocalNotification alloc] init];
+        UILocalNotification *localNotification = [[UILocalNotification alloc] init];
         
-        if(localNotfication == nil)
+        if(localNotification == nil)
         {
             return ; // Apple said to do this
         }
-        int notificationTimeInterval = 3;
+        
         //localNotfication.fireDate = [date dateByAddingTimeInterval:60*60*24*notificationTimeInterval]; live code
-        localNotfication.fireDate = [date dateByAddingTimeInterval:30];
-        localNotfication.timeZone = [NSTimeZone defaultTimeZone];
+        localNotification.fireDate = [date dateByAddingTimeInterval:30];
+        //localNotification.repeatInterval = 60*60*24*notificationRepeatInvervalDays; live code
+        localNotification.repeatInterval = 30;
+        localNotification.timeZone = [NSTimeZone defaultTimeZone];
         NSString *alertMessage = [[NSString alloc] init];
         
         if(items.count == 1)
@@ -113,11 +117,11 @@
             
         }
         
-        localNotfication.alertBody = alertMessage;
-        localNotfication.alertAction = NSLocalizedString(@"View Details", nil);
-        localNotfication.soundName = UILocalNotificationDefaultSoundName;
-        localNotfication.applicationIconBadgeNumber = 1;
-        [[UIApplication sharedApplication] scheduleLocalNotification:localNotfication];
+        localNotification.alertBody = alertMessage;
+        localNotification.alertAction = NSLocalizedString(@"View Details", nil);
+        localNotification.soundName = UILocalNotificationDefaultSoundName;
+        localNotification.applicationIconBadgeNumber = 1;
+        [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
     }
     else
     {
@@ -159,6 +163,8 @@
     }
     //simply reloads the data for the
     [self.transactionTable reloadData];
+    
+    [self createNotification];
 }
 
 //table view delgate method to show number of sections
