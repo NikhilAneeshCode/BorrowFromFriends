@@ -31,7 +31,6 @@
 }
 
 //called if login button pressed, handles logging out and sending to login screen
-//TODO: This method is not being called. 
 -(void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView
 {
     //[self dismissViewControllerAnimated:YES completion:nil];

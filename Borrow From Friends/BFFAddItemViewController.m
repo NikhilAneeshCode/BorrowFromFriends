@@ -177,7 +177,7 @@
         [defaults setObject:transactionArray forKey:transactionArrayKey];
         [defaults synchronize];
         
-        [self dismissViewControllerAnimated:YES completion:^() {
+        [self dismissViewControllerAnimated:NO completion:^() {
             [self performSegueWithIdentifier:@"mainSegue" sender:self];
         }];
  
