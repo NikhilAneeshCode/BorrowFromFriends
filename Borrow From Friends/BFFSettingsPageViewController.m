@@ -44,6 +44,17 @@
     
 }
 
+-(IBAction)deleteAllData:(id)sender
+{
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    [defaults removeObjectForKey:transactionArrayKey];
+    [defaults synchronize];
+    //kinda hackish but basiceally tells the main view controller to reload the transaction table
+    [[[self.navigationController childViewControllers] firstObject] fillTransactionTable];
+    [self.navigationController popViewControllerAnimated:YES];
+    
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
