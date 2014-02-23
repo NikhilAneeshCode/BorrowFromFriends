@@ -200,6 +200,7 @@
     cell.textLabel.text = cellTitle;
     cell.imageView.image = profilePic;
     cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+
     return cell;
 }
 - (NSString *) getCellTitle: (NSDictionary*) user
@@ -228,23 +229,25 @@
     }
     
 }
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-//    NSMutableArray* array = [[defaults objectForKey:transactionArrayKey] mutableCopy];
-//    NSDictionary* user = [array objectAtIndex:indexPath.row];
-//    UITextView *cellText =[[UITextView alloc] init];
-//    [cellText setAttributedText:[self getCellTitle:user]];
-//    UIFont *cellFont = [UIFont fontWithName:@"Helvetica" size:17.0];
-//    CGSize constraintSize = CGSizeMake(280.0f, MAXFLOAT);
-//    CGSize labelSize = [cellText sizeWithFont:cellFont constrainedToSize:constraintSize lineBreakMode:NSLineBreakByWordWrapping];
-//    [cellText boundingRectWithSize:labelSize options:NSStringDrawingTruncatesLastVisibleLine attributes:nil contex]
-//    
-//    return labelSize.height + 20;
-//}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    NSMutableArray* array = [[defaults objectForKey:transactionArrayKey] mutableCopy];
+    NSDictionary* user = [array objectAtIndex:indexPath.row];
+    NSString *content = [self getCellTitle:user];
+    
+    // Max size you will permit
+    CGSize maxSize = CGSizeMake(200, 1000);
+    CGSize size = [content sizeWithFont:[UIFont fontWithName:@"Helvetica" size:17] constrainedToSize:maxSize lineBreakMode:NSLineBreakByWordWrapping];
+    return size.height + 2*20;
+}
 
 
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    [self tableView:tableView accessoryButtonTappedForRowWithIndexPath:indexPath];
+}
 //delegate method for the disclousre button being tapped on a cell
 -(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
