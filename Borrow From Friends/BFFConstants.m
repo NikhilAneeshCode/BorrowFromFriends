@@ -9,6 +9,7 @@
 #import "BFFConstants.h"
 
 @implementation BFFConstants
+
 //KEYS FOR A TRANSACTION DICTIONARY
 NSString* const isLentKey = @"lent";
 NSString* const amountKey = @"amount";
