@@ -228,17 +228,29 @@
     cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:17];
     cell.textLabel.text = cellTitle;
     cell.imageView.image = profilePic;
+    
     //setting cell colors put final cell colors here (you can use rgb values as well via the UIColor colorwithRedMethod
+    UIView* backgroundView = [[UIView alloc] initWithFrame:CGRectZero];
+    
     if([[user objectForKey:isLentKey] boolValue])
     {
-        cell.contentView.backgroundColor = [UIColor orangeColor];
+        //cell.contentView.backgroundColor = [UIColor orangeColor]; this is the old code, don't use
+        
+        backgroundView.backgroundColor = [UIColor colorWithRed:(78.0/255.0) green:(98.0/255.0) blue:(250.0/255.0) alpha:0.05]; //blue/purple
+        //backgroundView.backgroundColor = [UIColor colorWithRed:(255.0/255.0) green:(50.0/255.0) blue:(0.0/255.0) alpha:0.1]; //orange
     }
     else
     {
-        cell.contentView.backgroundColor = [UIColor blueColor];
+        //cell.contentView.backgroundColor = [UIColor blueColor]; this is the old code, don't use
+        //backgroundView.backgroundColor = [UIColor colorWithRed:(71.0/255.0) green:(250.0/255.0) blue:(55.0/255.0) alpha:0.1]; //green
+        //backgroundView.backgroundColor = [UIColor colorWithRed:(0.0/255.0) green:(76.0/255.0) blue:(200.0/255.0) alpha:0.1]; //blue
+        backgroundView.backgroundColor = [UIColor colorWithRed:(255.0/255.0) green:(50.0/255.0) blue:(0.0/255.0) alpha:0.03]; //orange
     }
+    
+    cell.backgroundView = backgroundView;
+    
     //add/remove accessory button
-    //cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
 
     return cell;
 }
