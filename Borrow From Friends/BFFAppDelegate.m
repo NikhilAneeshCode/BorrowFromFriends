@@ -14,6 +14,8 @@
 {
     //place code here to add custom code after application launch
     
+    application.applicationIconBadgeNumber = 0;
+    
     // forward declaring fb classes
     [FBLoginView class];
     [FBProfilePictureView class];
