@@ -21,5 +21,5 @@ extern NSString* const profilePictureDataKey;
 //KEYS FOR NSUSERDEFAULTS
 extern NSString* const transactionArrayKey;
 extern NSString* const repeatNotificationKey;
-
+extern NSString* const currentUserKey;
 @end
