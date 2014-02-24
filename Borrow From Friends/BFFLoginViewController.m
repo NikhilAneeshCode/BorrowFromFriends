@@ -44,11 +44,12 @@
 {
     [[NSUserDefaults standardUserDefaults] setObject:user.first_name forKey:currentUserKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
+    [self performSegueWithIdentifier:@"loginSegue" sender:self];
 }
 //Called when it enters loggedin mode
 -(void)loginViewShowingLoggedInUser:(FBLoginView *)loginView
 {
-    [self performSegueWithIdentifier:@"loginSegue" sender:self];
+
 }
 //Called when enter loggedout mode
 -(void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView

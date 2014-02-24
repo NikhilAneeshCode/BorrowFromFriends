@@ -80,7 +80,7 @@
                                                           NSError *error) {
                                           if (error) {
                                               UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                                                                  message:error.localizedDescription
+                                                                                                    message:error.localizedDescription
                                                                                                  delegate:nil
                                                                                         cancelButtonTitle:@"OK"
                                                                                         otherButtonTitles:nil];
