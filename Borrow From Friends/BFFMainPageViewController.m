@@ -47,7 +47,7 @@
     int notificationRepeatInvervalDays = 3;
     
     //TODO MAKE IT SO IF THE ITEM COUNT IS NIL OR 0 (ELSE AT THE END OF THIS) UNSCHEDULE THE NOTIFICATIONS
-    if(items != nil || items.count != 0)
+    if(items != nil && items.count != 0)
     {
         //first count the amount of lent and borrowed items
         int borrowedItemsCount = 0;

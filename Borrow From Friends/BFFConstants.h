@@ -22,4 +22,5 @@ extern NSString* const profilePictureDataKey;
 extern NSString* const transactionArrayKey;
 extern NSString* const repeatNotificationKey;
 extern NSString* const currentUserKey;
+
 @end
