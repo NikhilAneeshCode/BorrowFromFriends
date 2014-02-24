@@ -163,6 +163,8 @@
 //called when transaction table needs to be filled
 -(void)fillTransactionTable
 {
+    [self updateNotification];
+    
     //defaults stores an array of dictionaries, each dictionary representing a single transaction
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     if([defaults objectForKey:transactionArrayKey]==nil)
@@ -177,8 +179,6 @@
     [self.transactionTable setHidden:FALSE];
     //simply reloads the data for the
     [self.transactionTable reloadData];
-    
-    [self updateNotification];
 }
 
 //table view delgate method to show number of sections
