@@ -41,7 +41,7 @@
 }
 
 
-- (void)createNotification
+- (void)updateNotification
 {
     //THIS IS HOW YOU ACCESS THE ARRAY
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];//this is object you use to get the saved data
@@ -121,12 +121,24 @@
         localNotification.alertAction = NSLocalizedString(@"View Details", nil);
         localNotification.soundName = UILocalNotificationDefaultSoundName;
         localNotification.applicationIconBadgeNumber = 1;
-        [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+        
+        //save the notification to NSUserDefaults
+        NSData *notificationData = [NSKeyedArchiver archivedDataWithRootObject:localNotification];
+        [[NSUserDefaults standardUserDefaults] setObject:notificationData forKey:repeatNotificationKey];
+        [[NSUserDefaults standardUserDefaults] synchronize]; //CHECK
+        
+        [[UIApplication sharedApplication] scheduleLocalNotification:localNotification]; //schedule the notification
     }
     else
     {
         // there are no items. make no notification
-        //TO DO UNSCHEDULE NOTIFICATION
+        //delete the notification
+        NSData *notificationData = [[NSUserDefaults standardUserDefaults] objectForKey:repeatNotificationKey];
+        
+        UILocalNotification *notification = [NSKeyedUnarchiver unarchiveObjectWithData:notificationData];
+        [[UIApplication sharedApplication] cancelLocalNotification:notification];
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:repeatNotificationKey];
+        [[NSUserDefaults standardUserDefaults] synchronize]; //CHECK
     }
 
 }
@@ -169,7 +181,7 @@
     //simply reloads the data for the
     [self.transactionTable reloadData];
     
-    [self createNotification];
+    [self updateNotification];
 }
 
 //table view delgate method to show number of sections

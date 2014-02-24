@@ -19,5 +19,6 @@ NSString* const userNameKey = @"username";
 NSString* const profilePictureDataKey = @"profpic";
 //KEYS FOR NSUSERDEFAULTS
 NSString* const transactionArrayKey = @"transactions";
+NSString* const repeatNotificationKey = @"notification";
 
 @end
