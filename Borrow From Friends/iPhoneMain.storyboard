@@ -204,6 +204,7 @@
                         <outlet property="amountStepper" destination="E4B-AI-rUz" id="GpK-UJ-Uq7"/>
                         <outlet property="borrowedSwitch" destination="gO7-yL-XoJ" id="N4U-rw-X17"/>
                         <outlet property="nameField" destination="kg7-oz-elJ" id="9tI-XR-CcM"/>
+                        <segue destination="tUG-dg-zVB" kind="unwind" identifier="loginSegue" unwindAction="unwindToLogin:" id="bA3-0U-nJ1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MEx-ga-eNY" userLabel="First Responder" sceneMemberID="firstResponder"/>
