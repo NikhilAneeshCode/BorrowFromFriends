@@ -40,6 +40,8 @@
 
 - (void)updateNotification
 {
+    [[UIApplication sharedApplication] cancelAllLocalNotifications]; // clear all local notifications, start from fresh
+    
     //THIS IS HOW YOU ACCESS THE ARRAY
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];//this is object you use to get the saved data
     NSMutableArray* items = [[defaults objectForKey:transactionArrayKey] mutableCopy];//this gets a mutable copy of the array of dictionaries(the transactionarraykey is a constant defined in Bffconstants.h
@@ -119,13 +121,13 @@
         localNotification.soundName = UILocalNotificationDefaultSoundName;
         localNotification.applicationIconBadgeNumber = 1;
         
-        //save the notification to NSUserDefaults
+        /*//save the notification to NSUserDefaults
         NSData *notificationData = [NSKeyedArchiver archivedDataWithRootObject:localNotification];
         if(notificationData != nil)
         {
             [[NSUserDefaults standardUserDefaults] setObject:notificationData forKey:repeatNotificationKey];
             [[NSUserDefaults standardUserDefaults] synchronize]; //CHECK
-        }
+        }*/
         
         [[UIApplication sharedApplication] scheduleLocalNotification:localNotification]; //schedule the notification
     }
@@ -133,7 +135,7 @@
     {
         // there are no items. make no notification
         //delete the notification
-        NSData *notificationData = [[NSUserDefaults standardUserDefaults] objectForKey:repeatNotificationKey];
+        /*NSData *notificationData = [[NSUserDefaults standardUserDefaults] objectForKey:repeatNotificationKey];
         
         if(notificationData != nil)
         {
@@ -141,7 +143,8 @@
             [[UIApplication sharedApplication] cancelLocalNotification:notification];
             [[NSUserDefaults standardUserDefaults] removeObjectForKey:repeatNotificationKey];
             [[NSUserDefaults standardUserDefaults] synchronize]; //CHECK
-        }
+        }*/
+        [[UIApplication sharedApplication] cancelAllLocalNotifications];
     }
 
 }
