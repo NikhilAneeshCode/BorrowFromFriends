@@ -237,8 +237,8 @@
     {
         cell.contentView.backgroundColor = [UIColor blueColor];
     }
-    
-    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+    //add/remove accessory button
+    //cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
 
     return cell;
 }
