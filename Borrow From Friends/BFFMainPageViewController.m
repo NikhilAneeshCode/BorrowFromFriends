@@ -121,8 +121,11 @@
         
         //save the notification to NSUserDefaults
         NSData *notificationData = [NSKeyedArchiver archivedDataWithRootObject:localNotification];
-        [[NSUserDefaults standardUserDefaults] setObject:notificationData forKey:repeatNotificationKey];
-        [[NSUserDefaults standardUserDefaults] synchronize]; //CHECK
+        if(notificationData != nil)
+        {
+            [[NSUserDefaults standardUserDefaults] setObject:notificationData forKey:repeatNotificationKey];
+            [[NSUserDefaults standardUserDefaults] synchronize]; //CHECK
+        }
         
         [[UIApplication sharedApplication] scheduleLocalNotification:localNotification]; //schedule the notification
     }
@@ -132,10 +135,13 @@
         //delete the notification
         NSData *notificationData = [[NSUserDefaults standardUserDefaults] objectForKey:repeatNotificationKey];
         
-        UILocalNotification *notification = [NSKeyedUnarchiver unarchiveObjectWithData:notificationData];
-        [[UIApplication sharedApplication] cancelLocalNotification:notification];
-        [[NSUserDefaults standardUserDefaults] removeObjectForKey:repeatNotificationKey];
-        [[NSUserDefaults standardUserDefaults] synchronize]; //CHECK
+        if(notificationData != nil)
+        {
+            UILocalNotification *notification = [NSKeyedUnarchiver unarchiveObjectWithData:notificationData];
+            [[UIApplication sharedApplication] cancelLocalNotification:notification];
+            [[NSUserDefaults standardUserDefaults] removeObjectForKey:repeatNotificationKey];
+            [[NSUserDefaults standardUserDefaults] synchronize]; //CHECK
+        }
     }
 
 }
