@@ -42,7 +42,8 @@
 // This method will be called when the user information has been fetched
 - (void)loginViewFetchedUserInfo:(FBLoginView *)loginView user:(id<FBGraphUser>)user
 {
-    
+    [[NSUserDefaults standardUserDefaults] setObject:user.first_name forKey:currentUserKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 //Called when it enters loggedin mode
 -(void)loginViewShowingLoggedInUser:(FBLoginView *)loginView
@@ -81,7 +82,8 @@
         // (like accessing FB-stored information or posting to Facebook)
     } else if ([FBErrorUtility errorCategoryForError:error] == FBErrorCategoryUserCancelled) {
         NSLog(@"user cancelled login");
-        
+        alertTitle = @"Cancelled Login";
+        alertMessage = @"Login has been cancelled";
         // For simplicity, this sample handles other errors with a generic message
         // You can checkout our error handling guide for more detailed information
         // https://developers.facebook.com/docs/ios/errors

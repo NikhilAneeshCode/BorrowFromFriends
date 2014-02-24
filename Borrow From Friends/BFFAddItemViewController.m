@@ -295,7 +295,7 @@
         } else {
             // All other errors that can happen need retries
             // Show the user a generic error message
-            alertTitle = @"Something went wrong";
+            alertTitle = @"Lost Connection";
             alertText = @"Please try again later";
             //[self showMessage:alertText withTitle:alertTitle];
         }

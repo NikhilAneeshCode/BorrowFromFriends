@@ -28,11 +28,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    FBRequest* meRequest = [FBRequest requestForMe];
-    [meRequest startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-        NSDictionary<FBGraphUser>* user = result;
-        self.title = [NSString stringWithFormat:@"Welcome, %@", user.first_name];
-    }];
+    NSString* userFirst = [[NSUserDefaults standardUserDefaults]objectForKey:currentUserKey];
+    self.title = [NSString stringWithFormat:@"Welcome, %@", userFirst];
     [self fillTransactionTable];
 	// Do any additional setup after loading the view.
     

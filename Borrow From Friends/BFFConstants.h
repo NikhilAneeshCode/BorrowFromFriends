@@ -19,4 +19,5 @@ extern NSString* const userNameKey;
 extern NSString* const profilePictureDataKey;
 //KEYS FOR NSUSERDEFAULTS
 extern NSString* const transactionArrayKey;
+extern NSString* const currentUserKey;
 @end
