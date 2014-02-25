@@ -38,6 +38,7 @@
 	// Do any additional setup after loading the view.
     self.friendPickerController = nil;
     self.searchBar = nil;
+    self.amountField.textAlignment = NSTextAlignmentCenter;
 }
 
 - (void)addSearchBarToFriendPickerView
