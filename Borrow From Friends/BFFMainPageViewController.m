@@ -40,7 +40,8 @@
 
 - (void)updateNotification
 {
-    [[UIApplication sharedApplication] cancelAllLocalNotifications]; // clear all local notifications, start from fresh
+    //[[UIApplication sharedApplication] cancelAllLocalNotifications]; // clear all local notifications, start from fresh
+    [self deleteAllNotifications];
     
     //THIS IS HOW YOU ACCESS THE ARRAY
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];//this is object you use to get the saved data
@@ -121,8 +122,8 @@
         localNotification.soundName = UILocalNotificationDefaultSoundName;
         localNotification.applicationIconBadgeNumber = 1;
         
-        /*//save the notification to NSUserDefaults
-        NSData *notificationData = [NSKeyedArchiver archivedDataWithRootObject:localNotification];
+        //save the notification to NSUserDefaults
+        /*NSData *notificationData = [NSKeyedArchiver archivedDataWithRootObject:localNotification];
         if(notificationData != nil)
         {
             [[NSUserDefaults standardUserDefaults] setObject:notificationData forKey:repeatNotificationKey];
@@ -134,7 +135,7 @@
     else
     {
         // there are no items. make no notification
-        //delete the notification
+        //delete the notification object
         /*NSData *notificationData = [[NSUserDefaults standardUserDefaults] objectForKey:repeatNotificationKey];
         
         if(notificationData != nil)
@@ -144,9 +145,24 @@
             [[NSUserDefaults standardUserDefaults] removeObjectForKey:repeatNotificationKey];
             [[NSUserDefaults standardUserDefaults] synchronize]; //CHECK
         }*/
-        [[UIApplication sharedApplication] cancelAllLocalNotifications];
+        
+        //[[UIApplication sharedApplication] cancelAllLocalNotifications];
+        [self deleteAllNotifications];
     }
 
+}
+
+- (void)deleteAllNotifications
+{
+    NSArray *notifications = [[UIApplication sharedApplication] scheduledLocalNotifications];
+    
+    if(notifications != nil)
+    {
+        for(int i = 0; i < notifications.count; i++)
+        {
+            [[UIApplication sharedApplication] cancelLocalNotification:notifications[i]];
+        }
+    }
 }
 
 /*//called if login button pressed, handles logging out and sending to login screen
@@ -157,7 +173,7 @@
 
 
 //called when this screen is unwinded to
--(IBAction)unwindToMain:(UIStoryboardSegue *)segue
+- (IBAction)unwindToMain:(UIStoryboardSegue *)segue
 {
     //refill transaction table incase of any changes
     [self fillTransactionTable];

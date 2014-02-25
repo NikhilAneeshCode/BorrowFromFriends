@@ -29,8 +29,26 @@
         application.applicationIconBadgeNumber = 0;
         //TODO: Check login session and open the main screen
     }
+    
+    //[application cancelAllLocalNotifications];
+    [self deleteAllNotifications]; 
+    
     return YES;
 }
+
+- (void)deleteAllNotifications
+{
+    NSArray *notifications = [[UIApplication sharedApplication] scheduledLocalNotifications];
+    
+    if(notifications != nil)
+    {
+        for(int i = 0; i < notifications.count; i++)
+        {
+            [[UIApplication sharedApplication] cancelLocalNotification:notifications[i]];
+        }
+    }
+}
+
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
 {
