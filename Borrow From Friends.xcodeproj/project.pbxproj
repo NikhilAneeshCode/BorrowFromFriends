@@ -24,6 +24,10 @@
 		1E29E6AE18AB2D9B008B7667 /* BFFLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E29E6AD18AB2D9B008B7667 /* BFFLoginViewController.m */; };
 		1E29E6B118AB385F008B7667 /* BFFMainPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E29E6B018AB385F008B7667 /* BFFMainPageViewController.m */; };
 		1E2E17D618B1546500012ECE /* BFFAddItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E2E17D518B1546500012ECE /* BFFAddItemViewController.m */; };
+		1E6B55F718BC67670075B706 /* Appirater.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E6B55F518BC67670075B706 /* Appirater.m */; };
+		1E6B55F918BC67F20075B706 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E6B55F818BC67F20075B706 /* CFNetwork.framework */; };
+		1E6B55FB18BC67FC0075B706 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E6B55FA18BC67FC0075B706 /* SystemConfiguration.framework */; };
+		1E6B55FD18BC68040075B706 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E6B55FC18BC68040075B706 /* StoreKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		1E9F11F318B43BC300C8C6B4 /* Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9F11F218B43BC300C8C6B4 /* Toast.m */; };
 		1E9F11FC18B58B3E00C8C6B4 /* BFFConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9F11FB18B58B3E00C8C6B4 /* BFFConstants.m */; };
 		1E9F11FF18B68CD900C8C6B4 /* BFFTransactionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9F11FE18B68CD900C8C6B4 /* BFFTransactionDetailViewController.m */; };
@@ -77,6 +81,12 @@
 		1E29E6B018AB385F008B7667 /* BFFMainPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFFMainPageViewController.m; sourceTree = "<group>"; };
 		1E2E17D418B1546500012ECE /* BFFAddItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFFAddItemViewController.h; sourceTree = "<group>"; };
 		1E2E17D518B1546500012ECE /* BFFAddItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFFAddItemViewController.m; sourceTree = "<group>"; };
+		1E6B55F418BC67670075B706 /* Appirater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Appirater.h; sourceTree = "<group>"; };
+		1E6B55F518BC67670075B706 /* Appirater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Appirater.m; sourceTree = "<group>"; };
+		1E6B55F618BC67670075B706 /* AppiraterDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppiraterDelegate.h; sourceTree = "<group>"; };
+		1E6B55F818BC67F20075B706 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		1E6B55FA18BC67FC0075B706 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		1E6B55FC18BC68040075B706 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		1E9F11F118B43BC300C8C6B4 /* Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Toast.h; sourceTree = "<group>"; };
 		1E9F11F218B43BC300C8C6B4 /* Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Toast.m; sourceTree = "<group>"; };
 		1E9F11FA18B58B3E00C8C6B4 /* BFFConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFFConstants.h; sourceTree = "<group>"; };
@@ -104,6 +114,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E6B55FD18BC68040075B706 /* StoreKit.framework in Frameworks */,
+				1E6B55FB18BC67FC0075B706 /* SystemConfiguration.framework in Frameworks */,
+				1E6B55F918BC67F20075B706 /* CFNetwork.framework in Frameworks */,
 				1E29E67C18A852AB008B7667 /* CoreGraphics.framework in Frameworks */,
 				A54CE4DC18B6E22A0040F936 /* FacebookSDK.framework in Frameworks */,
 				1E29E6AB18AB2A8D008B7667 /* FacebookSDK.framework in Frameworks */,
@@ -148,6 +161,9 @@
 		1E29E67818A852AB008B7667 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1E6B55FC18BC68040075B706 /* StoreKit.framework */,
+				1E6B55FA18BC67FC0075B706 /* SystemConfiguration.framework */,
+				1E6B55F818BC67F20075B706 /* CFNetwork.framework */,
 				A54CE4DB18B6E22A0040F936 /* FacebookSDK.framework */,
 				1E29E6AA18AB2A8D008B7667 /* FacebookSDK.framework */,
 				1E29E67918A852AB008B7667 /* Foundation.framework */,
@@ -161,6 +177,9 @@
 		1E29E67F18A852AB008B7667 /* Borrow From Friends */ = {
 			isa = PBXGroup;
 			children = (
+				1E6B55F418BC67670075B706 /* Appirater.h */,
+				1E6B55F518BC67670075B706 /* Appirater.m */,
+				1E6B55F618BC67670075B706 /* AppiraterDelegate.h */,
 				A54CE51618B96EB30040F936 /* BFFSettingsPageViewController.h */,
 				A54CE51718B96EB30040F936 /* BFFSettingsPageViewController.m */,
 				1E9F11FD18B68CD900C8C6B4 /* BFFTransactionDetailViewController.h */,
@@ -356,6 +375,7 @@
 				1E29E6AE18AB2D9B008B7667 /* BFFLoginViewController.m in Sources */,
 				1E9F11F318B43BC300C8C6B4 /* Toast.m in Sources */,
 				1E29E68A18A852AB008B7667 /* BFFAppDelegate.m in Sources */,
+				1E6B55F718BC67670075B706 /* Appirater.m in Sources */,
 				1E9F11FF18B68CD900C8C6B4 /* BFFTransactionDetailViewController.m in Sources */,
 				1E29E6B118AB385F008B7667 /* BFFMainPageViewController.m in Sources */,
 				1E9F11FC18B58B3E00C8C6B4 /* BFFConstants.m in Sources */,
