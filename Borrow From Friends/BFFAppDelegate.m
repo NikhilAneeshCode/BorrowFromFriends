@@ -8,11 +8,20 @@
 
 #import "BFFAppDelegate.h"
 #import <FacebookSDK/FacebookSDK.h>
+#import "Appirater.h"
 @implementation BFFAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     //place code here to add custom code after application launch
+    //TO DO CALL APPIRATER DID SOMETHING SIGNIFICANT WHEN NECCESSARY
+    //note about appirater: call [Appirater userDidSignificantEvent:YES] when the user does something significant
+    [Appirater setAppId:@"558312836"];//temporary app id TODO SWITCH THIS TO REAL APP ID
+    [Appirater setDaysUntilPrompt:1];
+    [Appirater setUsesUntilPrompt:2];
+    [Appirater setSignificantEventsUntilPrompt:3];
+    [Appirater setTimeBeforeReminding:2];
+    [Appirater setDebug:YES];//temp debug code
     
     application.applicationIconBadgeNumber = 0;
     
@@ -80,6 +89,7 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
+    [Appirater appEnteredForeground:YES];
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 }
 
