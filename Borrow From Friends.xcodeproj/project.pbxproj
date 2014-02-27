@@ -44,6 +44,7 @@
 		A5AB0A1B18BBE3B70036389C /* blackaccessorybutton.png in Resources */ = {isa = PBXBuildFile; fileRef = A5AB0A1A18BBE3B70036389C /* blackaccessorybutton.png */; };
 		A5AB0A1E18BBF9930036389C /* blue_accessory_button.png in Resources */ = {isa = PBXBuildFile; fileRef = A5AB0A1C18BBF9920036389C /* blue_accessory_button.png */; };
 		A5AB0A1F18BBF9930036389C /* orange_accessory_button.png in Resources */ = {isa = PBXBuildFile; fileRef = A5AB0A1D18BBF9920036389C /* orange_accessory_button.png */; };
+		A5AB0A2218BE634F0036389C /* BFFGlobalMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = A5AB0A2118BE634F0036389C /* BFFGlobalMethods.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,8 @@
 		A5AB0A1A18BBE3B70036389C /* blackaccessorybutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackaccessorybutton.png; sourceTree = "<group>"; };
 		A5AB0A1C18BBF9920036389C /* blue_accessory_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_accessory_button.png; sourceTree = "<group>"; };
 		A5AB0A1D18BBF9920036389C /* orange_accessory_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orange_accessory_button.png; sourceTree = "<group>"; };
+		A5AB0A2018BE634F0036389C /* BFFGlobalMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFFGlobalMethods.h; sourceTree = "<group>"; };
+		A5AB0A2118BE634F0036389C /* BFFGlobalMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFFGlobalMethods.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +180,8 @@
 		1E29E67F18A852AB008B7667 /* Borrow From Friends */ = {
 			isa = PBXGroup;
 			children = (
+				A5AB0A2018BE634F0036389C /* BFFGlobalMethods.h */,
+				A5AB0A2118BE634F0036389C /* BFFGlobalMethods.m */,
 				1E6B55F418BC67670075B706 /* Appirater.h */,
 				1E6B55F518BC67670075B706 /* Appirater.m */,
 				1E6B55F618BC67670075B706 /* AppiraterDelegate.h */,
@@ -371,6 +376,7 @@
 			files = (
 				1E2E17D618B1546500012ECE /* BFFAddItemViewController.m in Sources */,
 				1E29E68618A852AB008B7667 /* main.m in Sources */,
+				A5AB0A2218BE634F0036389C /* BFFGlobalMethods.m in Sources */,
 				A54CE51818B96EB30040F936 /* BFFSettingsPageViewController.m in Sources */,
 				1E29E6AE18AB2D9B008B7667 /* BFFLoginViewController.m in Sources */,
 				1E9F11F318B43BC300C8C6B4 /* Toast.m in Sources */,

@@ -9,6 +9,9 @@
 #import "BFFAppDelegate.h"
 #import <FacebookSDK/FacebookSDK.h>
 #import "Appirater.h"
+#import "BFFConstants.h"
+#import "BFFGlobalMethods.h"
+
 @implementation BFFAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -38,9 +41,9 @@
         application.applicationIconBadgeNumber = 0;
         //TODO: Check login session and open the main screen
     }
+    [Appirater appLaunched:YES];
     
-    //[application cancelAllLocalNotifications];
-    [self deleteAllNotifications]; 
+    [BFFGlobalMethods updateNotifications];
     
     return YES;
 }
@@ -65,11 +68,12 @@
     UIApplicationState state = [application applicationState];
     if(state == UIApplicationStateActive)
     {
+        [BFFGlobalMethods updateNotifications];
         application.applicationIconBadgeNumber = 0;
-        //do nothing else
     }
     if(state == UIApplicationStateInactive)
     {
+        [BFFGlobalMethods updateNotifications];
         application.applicationIconBadgeNumber = 0;
         //TODO: Check login session and open the main screen
     }
@@ -96,6 +100,9 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+    application.applicationIconBadgeNumber = 0;
+    [BFFGlobalMethods updateNotifications];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
