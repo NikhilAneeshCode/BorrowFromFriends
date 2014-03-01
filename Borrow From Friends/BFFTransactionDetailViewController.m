@@ -189,6 +189,7 @@
                                                          } else {
                                                              // Success
                                                              NSLog(@"result %@", results);
+                                                             [Appirater userDidSignificantEvent:TRUE];
                                                          }
                                                      }];
             

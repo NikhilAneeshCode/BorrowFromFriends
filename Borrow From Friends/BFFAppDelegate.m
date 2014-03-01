@@ -16,6 +16,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    [FBSettings setDefaultAppID:@"1380151798920066"];
+    [FBAppEvents activateApp];
     //place code here to add custom code after application launch
     //TO DO CALL APPIRATER DID SOMETHING SIGNIFICANT WHEN NECCESSARY
     //note about appirater: call [Appirater userDidSignificantEvent:YES] when the user does something significant
