@@ -132,7 +132,7 @@
             </objects>
             <point key="canvasLocation" x="1777" y="630"/>
         </scene>
-        <!--Add Item View Controller - Add Your Item-->
+        <!--Add Item View Controller - Add An Item-->
         <scene sceneID="2BO-1k-ttw">
             <objects>
                 <viewController id="aDI-ou-yka" customClass="BFFAddItemViewController" sceneMemberID="viewController">
@@ -180,7 +180,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Add Your Item" id="rIn-4W-eSU">
+                    <navigationItem key="navigationItem" title="Add An Item" id="rIn-4W-eSU">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="35m-ZL-nwT">
                             <connections>
                                 <segue destination="tUG-dg-zVB" kind="unwind" identifier="mainSegue" unwindAction="unwindToMain:" id="UJX-gs-yT2"/>

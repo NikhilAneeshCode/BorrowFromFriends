@@ -36,6 +36,7 @@
     [isLent boolValue];
     if([isLent boolValue])
     {
+        self.title = @"Lent Item";
         if([itemAmount intValue] == 1)
         {
             stringToShow = [NSString stringWithFormat:@"%@ still has your %@",[self.transactionToShow objectForKey:userFirstKey], [self.transactionToShow objectForKey:itemNameKey] ];
@@ -49,6 +50,7 @@
     }
     else
     {
+        self.title = @"Borrowed Item";
         if([itemAmount intValue] == 1)
         {
             stringToShow = [NSString stringWithFormat:@"You still have %@'s %@",[self.transactionToShow objectForKey:userFirstKey], [self.transactionToShow objectForKey:itemNameKey] ];

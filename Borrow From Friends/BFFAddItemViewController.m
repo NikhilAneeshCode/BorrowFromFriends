@@ -187,6 +187,16 @@
     }
     else
     {
+        //loading indicator
+        UIActivityIndicatorView *activityView=[[UIActivityIndicatorView alloc]     initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        
+        activityView.center=self.view.center;
+        
+        [activityView startAnimating];
+        
+        [self.view addSubview:activityView];
+        
+        //adding the stuff
         id<FBGraphUser> user = self.friendPickerController.selection.firstObject;
         
         //self.navigationController.title = [NSString stringWithFormat:@"%@?", user.name]; // change the title of the view to show selected name //TODO: Place this as soon as a user is selected, not when done is pressed. 

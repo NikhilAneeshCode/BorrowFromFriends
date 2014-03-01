@@ -94,6 +94,12 @@
 		1E9F11FB18B58B3E00C8C6B4 /* BFFConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFFConstants.m; sourceTree = "<group>"; };
 		1E9F11FD18B68CD900C8C6B4 /* BFFTransactionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFFTransactionDetailViewController.h; sourceTree = "<group>"; };
 		1E9F11FE18B68CD900C8C6B4 /* BFFTransactionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFFTransactionDetailViewController.m; sourceTree = "<group>"; };
+		1EB0999F18C1AA87001449E7 /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
+		1EB099A018C1AA87001449E7 /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
+		1EB099A118C1AA87001449E7 /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
+		1EB099A218C1AA87001449E7 /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
+		1EB099A318C1AA87001449E7 /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
+		1EB099A418C1AA87001449E7 /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
 		A54CE4DB18B6E22A0040F936 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = "../../iPhone Resources/FacebookSDK/FacebookSDK.framework"; sourceTree = "<group>"; };
 		A54CE50618B96A390040F936 /* settings-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-25.png"; sourceTree = "<group>"; };
 		A54CE50718B96A390040F936 /* settings-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-32.png"; sourceTree = "<group>"; };
@@ -203,6 +209,7 @@
 				1E29E68918A852AB008B7667 /* BFFAppDelegate.m */,
 				1E29E6A818A85C1F008B7667 /* iPhoneMain.storyboard */,
 				1E29E68B18A852AB008B7667 /* Images.xcassets */,
+				1EB0999818C1A7DA001449E7 /* Google Analytics */,
 				1E29E68018A852AB008B7667 /* Supporting Files */,
 			);
 			path = "Borrow From Friends";
@@ -235,6 +242,19 @@
 				1E29E69B18A852AC008B7667 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1EB0999818C1A7DA001449E7 /* Google Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				1EB0999F18C1AA87001449E7 /* GAI.h */,
+				1EB099A018C1AA87001449E7 /* GAIDictionaryBuilder.h */,
+				1EB099A118C1AA87001449E7 /* GAIFields.h */,
+				1EB099A218C1AA87001449E7 /* GAILogger.h */,
+				1EB099A318C1AA87001449E7 /* GAITrackedViewController.h */,
+				1EB099A418C1AA87001449E7 /* GAITracker.h */,
+			);
+			name = "Google Analytics";
 			sourceTree = "<group>";
 		};
 		A54CE4E418B968030040F936 /* Resources */ = {
