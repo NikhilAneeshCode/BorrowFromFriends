@@ -7,7 +7,7 @@
 //
 
 #import "BFFAddItemViewController.h"
-
+#import "Appirater.h"
 @interface BFFAddItemViewController () <FBFriendPickerDelegate, UISearchBarDelegate, UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UIStepper *amountStepper;
@@ -213,6 +213,7 @@
         
         [self dismissViewControllerAnimated:NO completion:^() {
             [self performSegueWithIdentifier:@"mainSegue" sender:self];
+            [Appirater userDidSignificantEvent:YES];
         }];
  
     }

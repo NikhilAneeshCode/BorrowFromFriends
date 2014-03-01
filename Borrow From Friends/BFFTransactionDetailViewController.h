@@ -10,6 +10,7 @@
 #import "BFFConstants.h"
 #import "BFFMainPageViewController.h"
 #import <FacebookSDK/FacebookSDK.h>
+#import "Appirater.h"
 @interface BFFTransactionDetailViewController : UIViewController
 //upon the controller being loaded, this should have the details of the transaction
 @property(nonatomic) NSDictionary* transactionToShow;

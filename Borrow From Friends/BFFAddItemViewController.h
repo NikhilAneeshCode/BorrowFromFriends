@@ -10,6 +10,7 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import "Toast.h"
 #import "BFFConstants.h"
+#import "Appirater.h"
 @interface BFFAddItemViewController : UIViewController <FBFriendPickerDelegate>
 @property(nonatomic) BOOL lent;
 @property(nonatomic) NSNumber *amount;
