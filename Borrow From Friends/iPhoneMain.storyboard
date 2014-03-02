@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--Login View Controller - Please Login-->
+        <!--Login View Controller - Login-->
         <scene sceneID="Ywr-tf-Cub">
             <objects>
                 <viewController id="gCA-yq-tdK" customClass="BFFLoginViewController" sceneMemberID="viewController">
@@ -24,6 +24,10 @@
                                     <outlet property="delegate" destination="gCA-yq-tdK" id="wAm-8X-zc9"/>
                                 </connections>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iTunesArtwork.png" translatesAutoresizingMaskIntoConstraints="NO" id="8ea-Hf-Zk7">
+                                <rect key="frame" x="30" y="91" width="260" height="260"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -31,7 +35,7 @@
                             <constraint firstAttribute="centerX" secondItem="vKM-2O-Q5T" secondAttribute="centerX" constant="-6.5" id="c5q-Du-W11"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Please Login" id="aRg-KG-TEg"/>
+                    <navigationItem key="navigationItem" title="Login" id="aRg-KG-TEg"/>
                     <connections>
                         <outlet property="loginButton" destination="vKM-2O-Q5T" id="QHm-i3-AxY"/>
                         <segue destination="k6o-Sh-bMa" kind="modal" identifier="loginSegue" id="pNi-gS-sf5"/>
@@ -321,6 +325,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="iTunesArtwork.png" width="512" height="512"/>
         <image name="settings-25.png" width="25" height="25"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
