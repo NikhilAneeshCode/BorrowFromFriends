@@ -59,7 +59,8 @@
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];//this is object you use to get the saved data
     NSMutableArray* items = [[defaults objectForKey:transactionArrayKey] mutableCopy];//this gets a mutable copy of the array of dictionaries(the transactionarraykey is a constant defined in Bffconstants.h
     
-    int notificationRepeatInvervalDays = 3;
+    //int notificationInitialFireTime = 60*60*24*3; //live, 3 days
+    int notificationInitialFireTime = 60*60; //test, 1 minute
     
     if(items != nil && items.count != 0)
     {
@@ -90,7 +91,7 @@
         }
         
         //localNotfication.fireDate = [date dateByAddingTimeInterval:60*60*24*notificationTimeInterval]; live code
-        localNotification.fireDate = [date dateByAddingTimeInterval:30]; //comment this code out
+        localNotification.fireDate = [date dateByAddingTimeInterval:notificationInitialFireTime]; //comment this code out
         //localNotification.repeatInterval = NSWeekCalendarUnit; live code
         localNotification.repeatInterval = NSMinuteCalendarUnit; //comment this code out in final
         localNotification.timeZone = [NSTimeZone defaultTimeZone];
