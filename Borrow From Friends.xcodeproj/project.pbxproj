@@ -45,6 +45,7 @@
 		A5AB0A1E18BBF9930036389C /* blue_accessory_button.png in Resources */ = {isa = PBXBuildFile; fileRef = A5AB0A1C18BBF9920036389C /* blue_accessory_button.png */; };
 		A5AB0A1F18BBF9930036389C /* orange_accessory_button.png in Resources */ = {isa = PBXBuildFile; fileRef = A5AB0A1D18BBF9920036389C /* orange_accessory_button.png */; };
 		A5AB0A2218BE634F0036389C /* BFFGlobalMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = A5AB0A2118BE634F0036389C /* BFFGlobalMethods.m */; };
+		A5AB0A2418C2D12C0036389C /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = A5AB0A2318C2D12C0036389C /* iTunesArtwork.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,7 @@
 		A5AB0A1D18BBF9920036389C /* orange_accessory_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orange_accessory_button.png; sourceTree = "<group>"; };
 		A5AB0A2018BE634F0036389C /* BFFGlobalMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFFGlobalMethods.h; sourceTree = "<group>"; };
 		A5AB0A2118BE634F0036389C /* BFFGlobalMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFFGlobalMethods.m; sourceTree = "<group>"; };
+		A5AB0A2318C2D12C0036389C /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +250,7 @@
 		A54CE4E518B968090040F936 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A5AB0A2318C2D12C0036389C /* iTunesArtwork.png */,
 				A5AB0A1C18BBF9920036389C /* blue_accessory_button.png */,
 				A5AB0A1D18BBF9920036389C /* orange_accessory_button.png */,
 				A5AB0A1A18BBE3B70036389C /* blackaccessorybutton.png */,
@@ -345,6 +348,7 @@
 				A54CE51418B96A390040F936 /* settings-256.png in Resources */,
 				1E29E68418A852AB008B7667 /* InfoPlist.strings in Resources */,
 				1E29E68C18A852AB008B7667 /* Images.xcassets in Resources */,
+				A5AB0A2418C2D12C0036389C /* iTunesArtwork.png in Resources */,
 				A54CE51218B96A390040F936 /* settings-100.png in Resources */,
 				1E29E6A918A85C1F008B7667 /* iPhoneMain.storyboard in Resources */,
 				A54CE51518B96A390040F936 /* settings-512.png in Resources */,
