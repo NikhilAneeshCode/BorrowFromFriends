@@ -24,7 +24,7 @@
                                     <outlet property="delegate" destination="gCA-yq-tdK" id="wAm-8X-zc9"/>
                                 </connections>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iTunesArtwork.png" translatesAutoresizingMaskIntoConstraints="NO" id="8ea-Hf-Zk7">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Borrow_From_Friends_Icon_Gray.png" translatesAutoresizingMaskIntoConstraints="NO" id="8ea-Hf-Zk7">
                                 <rect key="frame" x="30" y="91" width="260" height="260"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -325,7 +325,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="iTunesArtwork.png" width="512" height="512"/>
+        <image name="Borrow_From_Friends_Icon_Gray.png" width="1024" height="1024"/>
         <image name="settings-25.png" width="25" height="25"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
