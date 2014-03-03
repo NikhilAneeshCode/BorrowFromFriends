@@ -34,6 +34,13 @@
     //[[NSUserDefaults standardUserDefaults] removePersistentDomainForName:domainName];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Login"];
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+}
 
 //
 // LOGIN BUTTON DELEGATE METHODS

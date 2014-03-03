@@ -8,7 +8,9 @@
 
 #import "BFFSettingsPageViewController.h"
 #import "BFFLoginViewController.h"
-
+#import "GAIDictionaryBuilder.h"
+#import "GAI.h"
+#import "GAIFields.h"
 @interface BFFSettingsPageViewController ()
 
 @end
@@ -22,6 +24,13 @@
         // Custom initialization
     }
     return self;
+}
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Settings"];
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
 }
 
 - (void)viewDidLoad

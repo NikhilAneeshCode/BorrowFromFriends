@@ -16,9 +16,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    
+    //Fb Activiating app
     [FBSettings setDefaultAppID:@"1380151798920066"];
     [FBAppEvents activateApp];
+    
+    //Google Analytics setup
+    [GAI sharedInstance].trackUncaughtExceptions = YES;
+    [[GAI sharedInstance].logger setLogLevel:kGAILogLevelVerbose];
+    [GAI sharedInstance].dispatchInterval = 20;//120; live code
+    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-48548520-1"];
     //place code here to add custom code after application launch
     //TO DO CALL APPIRATER DID SOMETHING SIGNIFICANT WHEN NECCESSARY
     //note about appirater: call [Appirater userDidSignificantEvent:YES] when the user does something significant

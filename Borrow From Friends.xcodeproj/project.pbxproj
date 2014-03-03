@@ -31,6 +31,9 @@
 		1E9F11F318B43BC300C8C6B4 /* Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9F11F218B43BC300C8C6B4 /* Toast.m */; };
 		1E9F11FC18B58B3E00C8C6B4 /* BFFConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9F11FB18B58B3E00C8C6B4 /* BFFConstants.m */; };
 		1E9F11FF18B68CD900C8C6B4 /* BFFTransactionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9F11FE18B68CD900C8C6B4 /* BFFTransactionDetailViewController.m */; };
+		1EAB621718C4096400BF8FFE /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EAB621618C4096400BF8FFE /* libGoogleAnalyticsServices.a */; };
+		1EAB621918C4098100BF8FFE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EAB621818C4098100BF8FFE /* CoreData.framework */; };
+		1EAB621B18C409B500BF8FFE /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EAB621A18C409B500BF8FFE /* libz.dylib */; };
 		A54CE4DC18B6E22A0040F936 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54CE4DB18B6E22A0040F936 /* FacebookSDK.framework */; };
 		A54CE50E18B96A390040F936 /* settings-25.png in Resources */ = {isa = PBXBuildFile; fileRef = A54CE50618B96A390040F936 /* settings-25.png */; };
 		A54CE50F18B96A390040F936 /* settings-32.png in Resources */ = {isa = PBXBuildFile; fileRef = A54CE50718B96A390040F936 /* settings-32.png */; };
@@ -96,6 +99,9 @@
 		1E9F11FB18B58B3E00C8C6B4 /* BFFConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFFConstants.m; sourceTree = "<group>"; };
 		1E9F11FD18B68CD900C8C6B4 /* BFFTransactionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFFTransactionDetailViewController.h; sourceTree = "<group>"; };
 		1E9F11FE18B68CD900C8C6B4 /* BFFTransactionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFFTransactionDetailViewController.m; sourceTree = "<group>"; };
+		1EAB621618C4096400BF8FFE /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
+		1EAB621818C4098100BF8FFE /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		1EAB621A18C409B500BF8FFE /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		1EB0999F18C1AA87001449E7 /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
 		1EB099A018C1AA87001449E7 /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
 		1EB099A118C1AA87001449E7 /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
@@ -127,8 +133,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EAB621B18C409B500BF8FFE /* libz.dylib in Frameworks */,
+				1EAB621918C4098100BF8FFE /* CoreData.framework in Frameworks */,
 				1E6B55FD18BC68040075B706 /* StoreKit.framework in Frameworks */,
 				1E6B55FB18BC67FC0075B706 /* SystemConfiguration.framework in Frameworks */,
+				1EAB621718C4096400BF8FFE /* libGoogleAnalyticsServices.a in Frameworks */,
 				1E6B55F918BC67F20075B706 /* CFNetwork.framework in Frameworks */,
 				1E29E67C18A852AB008B7667 /* CoreGraphics.framework in Frameworks */,
 				A54CE4DC18B6E22A0040F936 /* FacebookSDK.framework in Frameworks */,
@@ -174,6 +183,9 @@
 		1E29E67818A852AB008B7667 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1EAB621A18C409B500BF8FFE /* libz.dylib */,
+				1EAB621818C4098100BF8FFE /* CoreData.framework */,
+				1EAB621618C4096400BF8FFE /* libGoogleAnalyticsServices.a */,
 				1E6B55FC18BC68040075B706 /* StoreKit.framework */,
 				1E6B55FA18BC67FC0075B706 /* SystemConfiguration.framework */,
 				1E6B55F818BC67F20075B706 /* CFNetwork.framework */,
@@ -542,6 +554,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Borrow From Friends/Borrow From Friends-Prefix.pch";
 				INFOPLIST_FILE = "Borrow From Friends/Borrow From Friends-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/nikhilkhanna/Documents/Programming/Borrow\\ From\\ Friends",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -562,6 +578,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Borrow From Friends/Borrow From Friends-Prefix.pch";
 				INFOPLIST_FILE = "Borrow From Friends/Borrow From Friends-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/nikhilkhanna/Documents/Programming/Borrow\\ From\\ Friends",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;

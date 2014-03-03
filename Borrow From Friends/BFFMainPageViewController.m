@@ -8,7 +8,9 @@
 
 #import "BFFMainPageViewController.h"
 #import "BFFGlobalMethods.h"
-
+#import "GAIDictionaryBuilder.h"
+#import "GAI.h"
+#import "GAIFields.h"
 @interface BFFMainPageViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *emptyLabel;
@@ -35,6 +37,13 @@
 	// Do any additional setup after loading the view.
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Main Page"];
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+}
 
 
 /*//called if login button pressed, handles logging out and sending to login screen

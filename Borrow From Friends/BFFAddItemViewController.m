@@ -8,6 +8,9 @@
 
 #import "BFFAddItemViewController.h"
 #import "Appirater.h"
+#import "GAIDictionaryBuilder.h"
+#import "GAI.h"
+#import "GAIFields.h"
 @interface BFFAddItemViewController () <FBFriendPickerDelegate, UISearchBarDelegate, UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UIStepper *amountStepper;
@@ -40,6 +43,14 @@
     self.searchBar = nil;
     self.amountField.textAlignment = NSTextAlignmentCenter;
 }
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Add Item"];
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+}
+
 
 - (void)addSearchBarToFriendPickerView
 {

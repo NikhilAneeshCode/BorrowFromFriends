@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <FacebookSDK/FacebookSDK.h>
 #import "BFFConstants.h"
+#import "GAIDictionaryBuilder.h"
+#import "GAI.h"
+#import "GAIFields.h"
 @interface BFFLoginViewController : UIViewController <FBLoginViewDelegate>
 - (IBAction)unwindToLogin:(UIStoryboardSegue *) segue;
 @end
