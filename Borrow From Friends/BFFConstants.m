@@ -22,4 +22,5 @@ NSString* const profilePictureDataKey = @"profpic";
 NSString* const transactionArrayKey = @"transactions";
 NSString* const repeatNotificationKey = @"notification";
 NSString* const currentUserKey = @"currentuser";
+NSString* const currentUserIdKey = @"currentuserid";
 @end

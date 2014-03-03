@@ -50,6 +50,7 @@
 - (void)loginViewFetchedUserInfo:(FBLoginView *)loginView user:(id<FBGraphUser>)user
 {
     [[NSUserDefaults standardUserDefaults] setObject:user.first_name forKey:currentUserKey];
+    [[NSUserDefaults standardUserDefaults] setObject:user.id forKey:currentUserIdKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
     [self performSegueWithIdentifier:@"loginSegue" sender:self];
 }

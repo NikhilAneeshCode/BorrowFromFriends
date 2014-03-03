@@ -232,6 +232,28 @@
         [defaults setObject:transactionArray forKey:transactionArrayKey];
         [defaults synchronize];
         
+        
+        //analytics to log the item
+        id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+        
+        [tracker set:kGAIScreenName value:@"Add Item"];
+        NSString* actionName;
+        if(self.lent)
+        {
+            actionName = [NSString stringWithFormat:@"%@ lent",[[NSUserDefaults standardUserDefaults] objectForKey:currentUserIdKey]];
+        }
+        else
+        {
+            actionName = [NSString stringWithFormat:@"%@ borrowed",[[NSUserDefaults standardUserDefaults] objectForKey:currentUserIdKey]];
+        }
+        [tracker send:[[GAIDictionaryBuilder
+                        createEventWithCategory:@"Create Transaction"
+                        action:actionName
+                        label:[NSString stringWithFormat:@"friend:%@, amount:%d, itemname:%@",
+                               user.id, [self.amount intValue],self.name]
+                        value:nil] build]];
+        [tracker set:kGAIScreenName value:nil];
+        
         [self dismissViewControllerAnimated:NO completion:^() {
             [self performSegueWithIdentifier:@"mainSegue" sender:self];
             [Appirater userDidSignificantEvent:YES];
