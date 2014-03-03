@@ -49,6 +49,17 @@
 // This method will be called when the user information has been fetched
 - (void)loginViewFetchedUserInfo:(FBLoginView *)loginView user:(id<FBGraphUser>)user
 {
+    if([[NSUserDefaults standardUserDefaults] objectForKey:currentUserIdKey]==nil)
+    {
+        id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+        
+        [tracker set:kGAIScreenName value:@"Login"];
+        [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Login"
+                                                              action:@"first login"
+                                                               label:[NSString stringWithFormat:@"%@", user.id]
+                                                               value:nil] build]];
+        [tracker set:kGAIScreenName value:nil];
+    }
     [[NSUserDefaults standardUserDefaults] setObject:user.first_name forKey:currentUserKey];
     [[NSUserDefaults standardUserDefaults] setObject:user.id forKey:currentUserIdKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
@@ -62,7 +73,14 @@
 //Called when enter loggedout mode
 -(void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView
 {
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
     
+    [tracker set:kGAIScreenName value:@"Login"];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"First Page Shown"
+                                                          action:@"Splash screen displayed"
+                                                           label:@"User not logged in yet"
+                                                           value:nil] build]];
+    [tracker set:kGAIScreenName value:nil];
 }
 
 

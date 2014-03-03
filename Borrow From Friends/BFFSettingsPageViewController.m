@@ -42,7 +42,14 @@
 //called if login button pressed, handles logging out and sending to login screen
 -(void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView
 {
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
     
+    [tracker set:kGAIScreenName value:@"Settings"];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Logout"
+                                                          action:[NSString stringWithFormat:@"%@ logout", [[NSUserDefaults standardUserDefaults] objectForKey:currentUserIdKey]]
+                                                           label:@"user has been logged out"
+                                                           value:nil] build]];
+    [tracker set:kGAIScreenName value:nil];
     [self.navigationController popViewControllerAnimated:YES];
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
     

@@ -88,6 +88,14 @@
 
 -(IBAction)deleteTransaction:(id)sender
 {
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    
+    [tracker set:kGAIScreenName value:@"Transaction Detail"];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Delete Transaction"
+                                                          action:[NSString stringWithFormat:@"%@ deleted", [[NSUserDefaults standardUserDefaults] objectForKey:currentUserIdKey]]
+                                         label:[NSString stringWithFormat:@"friendid: %@, amount %d, itemname: %@", [self.transactionToShow objectForKey:userIDKey],[[self.transactionToShow objectForKey:amountKey] intValue],[self.transactionToShow objectForKey:itemNameKey]]
+                                         value:nil] build]];
+    [tracker set:kGAIScreenName value:nil];
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     NSMutableArray* transactionArray = [[defaults objectForKey:transactionArrayKey] mutableCopy];
     [transactionArray removeObjectAtIndex:self.transactionIndex];
@@ -114,6 +122,15 @@
 //The monolithic method for posting to a wall
 -(IBAction)postToWall:(id)sender
 {
+    //log the wall post
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    
+    [tracker set:kGAIScreenName value:@"Transaction Detail"];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Wall Post"
+                                                          action:[NSString stringWithFormat:@"%@ posted", [[NSUserDefaults standardUserDefaults] objectForKey:currentUserIdKey]]
+                                                           label:[NSString stringWithFormat:@"friendid: %@, amount %d, itemname: %@", [self.transactionToShow objectForKey:userIDKey],[[self.transactionToShow objectForKey:amountKey] intValue],[self.transactionToShow objectForKey:itemNameKey]]
+                                                           value:nil] build]];
+    [tracker set:kGAIScreenName value:nil];
         //share an open graph story using share dialog
     
         NSString* fullObjectName;
