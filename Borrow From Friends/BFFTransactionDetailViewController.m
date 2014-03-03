@@ -43,7 +43,6 @@
     NSString* stringToShow;
     NSNumber* isLent = [self.transactionToShow objectForKey:isLentKey];
     NSNumber* itemAmount = [self.transactionToShow objectForKey:amountKey];
-    [isLent boolValue];
     if([isLent boolValue])
     {
         self.title = @"Lent Item";
@@ -57,6 +56,7 @@
         }
         
         [self.communicateButton setTitle:@"Yell!" forState:UIControlStateNormal];
+        [self.communicateButton setBackgroundColor:[UIColor colorWithRed:1 green:.5 blue:0 alpha:1]];
     }
     else
     {
@@ -71,7 +71,12 @@
         }
         
         [self.communicateButton setTitle:@"Notify" forState:UIControlStateNormal];
+        [self.communicateButton setBackgroundColor:[UIColor colorWithRed:0 green:.5 blue:1 alpha:1]];
+
     }
+    [[self.communicateButton layer] setCornerRadius:5.0f];
+    [self.deleteButton setBackgroundColor:[UIColor colorWithRed:0 green:1 blue:0 alpha:1]];
+    [[self.deleteButton layer] setCornerRadius:5.0f];
     //TODO: We need to ensure that the text lable will expand vertically if it's going to get cut off by the edge of the screen.
     self.textLabel.numberOfLines = 0;
     self.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
