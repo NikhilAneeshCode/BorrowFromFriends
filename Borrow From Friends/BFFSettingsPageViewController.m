@@ -12,6 +12,7 @@
 #import "GAI.h"
 #import "GAIFields.h"
 @interface BFFSettingsPageViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *deleteAllButton;
 
 @end
 
@@ -36,6 +37,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.deleteAllButton setBackgroundColor:[UIColor colorWithRed:1 green:0 blue:0 alpha:1]];
+    [[self.deleteAllButton layer] setCornerRadius:5.0f];
+    [[self.deleteAllButton layer] setBorderWidth:1.0f];
 	// Do any additional setup after loading the view.
 }
 
