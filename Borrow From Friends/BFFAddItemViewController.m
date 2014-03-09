@@ -182,7 +182,7 @@
 //called when the stepper changes value
 - (IBAction)valueChanged:(UIStepper *)sender
 {
-    self.amountField.text = [NSString stringWithFormat:@"%d", (int)sender.value];
+    self.amountField.text = [NSString stringWithFormat:@"Amount: %d", (int)sender.value];
     
 }
 
