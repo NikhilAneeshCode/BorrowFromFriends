@@ -34,6 +34,7 @@
 		1EAB621718C4096400BF8FFE /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EAB621618C4096400BF8FFE /* libGoogleAnalyticsServices.a */; };
 		1EAB621918C4098100BF8FFE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EAB621818C4098100BF8FFE /* CoreData.framework */; };
 		1EAB621B18C409B500BF8FFE /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EAB621A18C409B500BF8FFE /* libz.dylib */; };
+		A528C63618CC370D00195877 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A528C63518CC370D00195877 /* libGoogleAnalyticsServices.a */; };
 		A54CE4DC18B6E22A0040F936 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54CE4DB18B6E22A0040F936 /* FacebookSDK.framework */; };
 		A54CE50E18B96A390040F936 /* settings-25.png in Resources */ = {isa = PBXBuildFile; fileRef = A54CE50618B96A390040F936 /* settings-25.png */; };
 		A54CE50F18B96A390040F936 /* settings-32.png in Resources */ = {isa = PBXBuildFile; fileRef = A54CE50718B96A390040F936 /* settings-32.png */; };
@@ -108,6 +109,7 @@
 		1EB099A218C1AA87001449E7 /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
 		1EB099A318C1AA87001449E7 /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
 		1EB099A418C1AA87001449E7 /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
+		A528C63518CC370D00195877 /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAnalyticsServices.a; path = "../../iPhone Resources/GoogleAnalyticsServicesiOS_3.03c/libGoogleAnalyticsServices.a"; sourceTree = "<group>"; };
 		A54CE4DB18B6E22A0040F936 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = "../../iPhone Resources/FacebookSDK/FacebookSDK.framework"; sourceTree = "<group>"; };
 		A54CE50618B96A390040F936 /* settings-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-25.png"; sourceTree = "<group>"; };
 		A54CE50718B96A390040F936 /* settings-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-32.png"; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				1E29E6AB18AB2A8D008B7667 /* FacebookSDK.framework in Frameworks */,
 				1E29E67E18A852AB008B7667 /* UIKit.framework in Frameworks */,
 				1E29E67A18A852AB008B7667 /* Foundation.framework in Frameworks */,
+				A528C63618CC370D00195877 /* libGoogleAnalyticsServices.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +186,7 @@
 		1E29E67818A852AB008B7667 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A528C63518CC370D00195877 /* libGoogleAnalyticsServices.a */,
 				1EAB621A18C409B500BF8FFE /* libz.dylib */,
 				1EAB621818C4098100BF8FFE /* CoreData.framework */,
 				1EAB621618C4096400BF8FFE /* libGoogleAnalyticsServices.a */,
@@ -557,6 +561,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/nikhilkhanna/Documents/Programming/Borrow\\ From\\ Friends",
+					"/Users/AneeshSachdeva/Documents/Programming/iPhone\\ Resources/GoogleAnalyticsServicesiOS_3.03c",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -581,6 +586,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/nikhilkhanna/Documents/Programming/Borrow\\ From\\ Friends",
+					"/Users/AneeshSachdeva/Documents/Programming/iPhone\\ Resources/GoogleAnalyticsServicesiOS_3.03c",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
