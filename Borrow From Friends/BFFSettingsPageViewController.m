@@ -39,7 +39,7 @@
     [super viewDidLoad];
     [self.deleteAllButton setBackgroundColor:[UIColor colorWithRed:1 green:0 blue:0 alpha:1]];
     [[self.deleteAllButton layer] setCornerRadius:5.0f];
-    [[self.deleteAllButton layer] setBorderWidth:1.0f];
+    //[[self.deleteAllButton layer] setBorderWidth:1.0f];
 	// Do any additional setup after loading the view.
 }
 
