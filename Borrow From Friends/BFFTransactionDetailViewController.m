@@ -146,32 +146,15 @@
         if([[self.transactionToShow objectForKey:isLentKey] boolValue])
         {
             fullActionName = @"borrowfromfriends:want";
-            if([[self.transactionToShow objectForKey:amountKey] integerValue]==1)
-            {
-                fullObjectName = @"borrowfromfriends:lent item";
-                objectName = @"lent item";
-            }
-            else
-            {
-                fullObjectName = @"borrowfromfriends:lent items";
-                objectName = @"lent items";
-            }
+            fullObjectName = @"borrowfromfriends:lent item";
+            objectName = @"lent item";
         }
         else
         {
-            fullActionName = @"borrowfromfriends:still_has";
-            if([[self.transactionToShow objectForKey:amountKey] integerValue]==1)
-            {
-                fullObjectName = @"borrowfromfriends:borrowed item";
-                objectName = @"borrowed item";
-            }
-            else
-            {
-                fullObjectName = @"borrowfromfriends:borrowed items";
-                objectName = @"borrowed items";
-            }
+            fullActionName = @"borrowfromfriends:has";
+            fullObjectName = @"borrowfromfriends:borrowed item";
+            objectName = @"borrowed item";
         }
-    
         id<FBOpenGraphObject> object = [FBGraphObject openGraphObjectForPost];
         [object setType:fullObjectName];
         //setting title,the variable in the "give me my <item> back" phrase
