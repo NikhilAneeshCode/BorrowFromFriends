@@ -32,8 +32,8 @@
     [Appirater setDaysUntilPrompt:2];
     [Appirater setUsesUntilPrompt:2];
     [Appirater setSignificantEventsUntilPrompt:3];
-    [Appirater setTimeBeforeReminding:2];
-    [Appirater setDebug:YES];//temp debug code
+    [Appirater setTimeBeforeReminding:3];
+    [Appirater setDebug:NO];//temp debug code
     
     application.applicationIconBadgeNumber = 0;
     

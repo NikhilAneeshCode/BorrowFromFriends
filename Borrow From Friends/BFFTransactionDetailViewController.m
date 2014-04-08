@@ -194,9 +194,7 @@
         }
         [object setTitle:title];
         [object setDescription:description];
-        //todo change image and url to icon and final app store url respecitively
         [object setImage:@"http://i.imgur.com/bgld4hX.png" ];
-        [object setUrl:@"https://itunes.apple.com/us/app/bounding-blob/id558312836?mt=8"];
         id<FBOpenGraphAction> action = (id<FBOpenGraphAction>)[FBGraphObject graphObject];
         [action setObject:object forKey:objectName];
         [action setTags:@[[self.transactionToShow objectForKey:userIDKey]]];
