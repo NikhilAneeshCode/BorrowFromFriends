@@ -157,43 +157,55 @@
         }
         id<FBOpenGraphObject> object = [FBGraphObject openGraphObjectForPost];
         [object setType:fullObjectName];
+        [object setProvisionedForPost:TRUE];
         //setting title,the variable in the "give me my <item> back" phrase
-        NSString* title;
+        NSString* description;
         if([[self.transactionToShow objectForKey:isLentKey] boolValue])
         {
             if([[self.transactionToShow objectForKey:amountKey] integerValue]==1)
             {
-                title = [NSString stringWithFormat:@"%@ needs to give me my %@ back!", [self.transactionToShow objectForKey:userFirstKey], [self.transactionToShow objectForKey:itemNameKey]];
+                description = [NSString stringWithFormat:@"%@ needs to give me my %@ back!", [self.transactionToShow objectForKey:userFirstKey], [self.transactionToShow objectForKey:itemNameKey]];
             }
             else
             {
-                title = [NSString stringWithFormat:@"%@ needs to give me my %d %@ back!", [self.transactionToShow objectForKey:userFirstKey], [[self.transactionToShow objectForKey:amountKey] integerValue], [self.transactionToShow   objectForKey:itemNameKey]];
+                description = [NSString stringWithFormat:@"%@ needs to give me my %d %@ back!", [self.transactionToShow objectForKey:userFirstKey], [[self.transactionToShow objectForKey:amountKey] integerValue], [self.transactionToShow   objectForKey:itemNameKey]];
             }
         }
         else
         {
             if([[self.transactionToShow objectForKey:amountKey] integerValue]==1)
             {
-                title = [NSString stringWithFormat:@"Hey %@, I still have your %@.", [self.transactionToShow objectForKey:userFirstKey], [self.transactionToShow objectForKey:itemNameKey]];
+                description = [NSString stringWithFormat:@"Hey %@, I still have your %@.", [self.transactionToShow objectForKey:userFirstKey], [self.transactionToShow objectForKey:itemNameKey]];
             }
             else
             {
-                title = [NSString stringWithFormat:@"Hey %@, I still have your %d %@.", [self.transactionToShow objectForKey:userFirstKey], [[self.transactionToShow objectForKey:amountKey] integerValue], [self.transactionToShow   objectForKey:itemNameKey]];
+                description = [NSString stringWithFormat:@"Hey %@, I still have your %d %@.", [self.transactionToShow objectForKey:userFirstKey], [[self.transactionToShow objectForKey:amountKey] integerValue], [self.transactionToShow   objectForKey:itemNameKey]];
             }
         }
-    
+        NSString* title;
+        NSString* capsName = [[self.transactionToShow objectForKey:itemNameKey] capitalizedString];
+        if([[self.transactionToShow objectForKey:amountKey] integerValue]==1)
+        {
+            title = capsName;
+        }
+        else
+        {
+            title = [NSString stringWithFormat:@"%d %@", [[self.transactionToShow objectForKey:amountKey] integerValue], capsName];
+        }
         [object setTitle:title];
+        [object setDescription:description];
         //todo change image and url to icon and final app store url respecitively
-        [object setImage:@"http://i.imgur.com/g3Qc1HN.png" ];
+        [object setImage:@"http://i.imgur.com/bgld4hX.png" ];
         [object setUrl:@"https://itunes.apple.com/us/app/bounding-blob/id558312836?mt=8"];
-    
         id<FBOpenGraphAction> action = (id<FBOpenGraphAction>)[FBGraphObject graphObject];
         [action setObject:object forKey:objectName];
         [action setTags:@[[self.transactionToShow objectForKey:userIDKey]]];
+        [action setMessage:description];
+        NSDate* endDate = [NSDate dateWithTimeIntervalSinceNow:604800];
+        [action setEnd_time:[endDate description]];
         FBOpenGraphActionShareDialogParams *params = [[FBOpenGraphActionShareDialogParams alloc] init];
         params.action = action;
         params.actionType = fullActionName;
-        
         if([FBDialogs canPresentShareDialogWithOpenGraphActionParams:params]) {
             // Show the share dialog
             [FBDialogs presentShareDialogWithOpenGraphAction:action
@@ -216,7 +228,7 @@
         {
             NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                                            title, @"name",
-                                           @"http://i.imgur.com/g3Qc1HN.png", @"picture",
+                                           @"http://i.imgur.com/bgld4hX.png", @"picture",
                                            nil];
             // Show the feed dialog
             [FBWebDialogs presentFeedDialogModallyWithSession:nil

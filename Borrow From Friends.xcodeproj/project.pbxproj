@@ -13,7 +13,6 @@
 		1E29E68418A852AB008B7667 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1E29E68218A852AB008B7667 /* InfoPlist.strings */; };
 		1E29E68618A852AB008B7667 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E29E68518A852AB008B7667 /* main.m */; };
 		1E29E68A18A852AB008B7667 /* BFFAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E29E68918A852AB008B7667 /* BFFAppDelegate.m */; };
-		1E29E68C18A852AB008B7667 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E29E68B18A852AB008B7667 /* Images.xcassets */; };
 		1E29E69318A852AC008B7667 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E29E69218A852AB008B7667 /* XCTest.framework */; };
 		1E29E69418A852AC008B7667 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E29E67918A852AB008B7667 /* Foundation.framework */; };
 		1E29E69518A852AC008B7667 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E29E67D18A852AB008B7667 /* UIKit.framework */; };
@@ -34,7 +33,6 @@
 		1EAB621718C4096400BF8FFE /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EAB621618C4096400BF8FFE /* libGoogleAnalyticsServices.a */; };
 		1EAB621918C4098100BF8FFE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EAB621818C4098100BF8FFE /* CoreData.framework */; };
 		1EAB621B18C409B500BF8FFE /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EAB621A18C409B500BF8FFE /* libz.dylib */; };
-		1EAB622118F203DD00BF8FFE /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EAB622018F203DD00BF8FFE /* Images-2.xcassets */; };
 		A528C63618CC370D00195877 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A528C63518CC370D00195877 /* libGoogleAnalyticsServices.a */; };
 		A54CE4DC18B6E22A0040F936 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54CE4DB18B6E22A0040F936 /* FacebookSDK.framework */; };
 		A54CE50E18B96A390040F936 /* settings-25.png in Resources */ = {isa = PBXBuildFile; fileRef = A54CE50618B96A390040F936 /* settings-25.png */; };
@@ -75,7 +73,6 @@
 		1E29E68718A852AB008B7667 /* Borrow From Friends-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Borrow From Friends-Prefix.pch"; sourceTree = "<group>"; };
 		1E29E68818A852AB008B7667 /* BFFAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BFFAppDelegate.h; sourceTree = "<group>"; };
 		1E29E68918A852AB008B7667 /* BFFAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BFFAppDelegate.m; sourceTree = "<group>"; };
-		1E29E68B18A852AB008B7667 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1E29E69118A852AB008B7667 /* Borrow From FriendsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Borrow From FriendsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E29E69218A852AB008B7667 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		1E29E69A18A852AC008B7667 /* Borrow From FriendsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Borrow From FriendsTests-Info.plist"; sourceTree = "<group>"; };
@@ -104,7 +101,6 @@
 		1EAB621618C4096400BF8FFE /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
 		1EAB621818C4098100BF8FFE /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		1EAB621A18C409B500BF8FFE /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		1EAB622018F203DD00BF8FFE /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
 		1EB0999F18C1AA87001449E7 /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
 		1EB099A018C1AA87001449E7 /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
 		1EB099A118C1AA87001449E7 /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
@@ -230,9 +226,7 @@
 				1E29E68818A852AB008B7667 /* BFFAppDelegate.h */,
 				1E29E68918A852AB008B7667 /* BFFAppDelegate.m */,
 				1E29E6A818A85C1F008B7667 /* iPhoneMain.storyboard */,
-				1E29E68B18A852AB008B7667 /* Images.xcassets */,
 				1EB0999818C1A7DA001449E7 /* Google Analytics */,
-				1EAB622018F203DD00BF8FFE /* Images-2.xcassets */,
 				1E29E68018A852AB008B7667 /* Supporting Files */,
 			);
 			path = "Borrow From Friends";
@@ -390,7 +384,6 @@
 				A54CE51418B96A390040F936 /* settings-256.png in Resources */,
 				1E29E68418A852AB008B7667 /* InfoPlist.strings in Resources */,
 				A5AB0A2618C2EF520036389C /* Borrow_From_Friends_Icon_Gray.png in Resources */,
-				1E29E68C18A852AB008B7667 /* Images.xcassets in Resources */,
 				A5AB0A2418C2D12C0036389C /* iTunesArtwork.png in Resources */,
 				A54CE51218B96A390040F936 /* settings-100.png in Resources */,
 				1E29E6A918A85C1F008B7667 /* iPhoneMain.storyboard in Resources */,
@@ -402,7 +395,6 @@
 				A5AB0A1E18BBF9930036389C /* blue_accessory_button.png in Resources */,
 				A54CE51318B96A390040F936 /* settings-128.png in Resources */,
 				A54CE51118B96A390040F936 /* settings-75.png in Resources */,
-				1EAB622118F203DD00BF8FFE /* Images-2.xcassets in Resources */,
 				A54CE51018B96A390040F936 /* settings-50.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
