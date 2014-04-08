@@ -44,6 +44,8 @@
 		A54CE51418B96A390040F936 /* settings-256.png in Resources */ = {isa = PBXBuildFile; fileRef = A54CE50C18B96A390040F936 /* settings-256.png */; };
 		A54CE51518B96A390040F936 /* settings-512.png in Resources */ = {isa = PBXBuildFile; fileRef = A54CE50D18B96A390040F936 /* settings-512.png */; };
 		A54CE51818B96EB30040F936 /* BFFSettingsPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A54CE51718B96EB30040F936 /* BFFSettingsPageViewController.m */; };
+		A5A4B6F718F3B2E2008B3AF9 /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5A4B6F618F3B2E2008B3AF9 /* Images-2.xcassets */; };
+		A5A4B6F918F3B4C0008B3AF9 /* BFF_Icon_DavidZhao.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A5A4B6F818F3B4BF008B3AF9 /* BFF_Icon_DavidZhao.jpg */; };
 		A5AB0A1B18BBE3B70036389C /* blackaccessorybutton.png in Resources */ = {isa = PBXBuildFile; fileRef = A5AB0A1A18BBE3B70036389C /* blackaccessorybutton.png */; };
 		A5AB0A1E18BBF9930036389C /* blue_accessory_button.png in Resources */ = {isa = PBXBuildFile; fileRef = A5AB0A1C18BBF9920036389C /* blue_accessory_button.png */; };
 		A5AB0A1F18BBF9930036389C /* orange_accessory_button.png in Resources */ = {isa = PBXBuildFile; fileRef = A5AB0A1D18BBF9920036389C /* orange_accessory_button.png */; };
@@ -119,6 +121,8 @@
 		A54CE50D18B96A390040F936 /* settings-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-512.png"; sourceTree = "<group>"; };
 		A54CE51618B96EB30040F936 /* BFFSettingsPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFFSettingsPageViewController.h; sourceTree = "<group>"; };
 		A54CE51718B96EB30040F936 /* BFFSettingsPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFFSettingsPageViewController.m; sourceTree = "<group>"; };
+		A5A4B6F618F3B2E2008B3AF9 /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
+		A5A4B6F818F3B4BF008B3AF9 /* BFF_Icon_DavidZhao.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BFF_Icon_DavidZhao.jpg; sourceTree = "<group>"; };
 		A5AB0A1A18BBE3B70036389C /* blackaccessorybutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackaccessorybutton.png; sourceTree = "<group>"; };
 		A5AB0A1C18BBF9920036389C /* blue_accessory_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_accessory_button.png; sourceTree = "<group>"; };
 		A5AB0A1D18BBF9920036389C /* orange_accessory_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orange_accessory_button.png; sourceTree = "<group>"; };
@@ -227,6 +231,7 @@
 				1E29E68918A852AB008B7667 /* BFFAppDelegate.m */,
 				1E29E6A818A85C1F008B7667 /* iPhoneMain.storyboard */,
 				1EB0999818C1A7DA001449E7 /* Google Analytics */,
+				A5A4B6F618F3B2E2008B3AF9 /* Images-2.xcassets */,
 				1E29E68018A852AB008B7667 /* Supporting Files */,
 			);
 			path = "Borrow From Friends";
@@ -285,6 +290,7 @@
 		A54CE4E518B968090040F936 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A5A4B6F818F3B4BF008B3AF9 /* BFF_Icon_DavidZhao.jpg */,
 				A5AB0A2518C2EF520036389C /* Borrow_From_Friends_Icon_Gray.png */,
 				A5AB0A2318C2D12C0036389C /* iTunesArtwork.png */,
 				A5AB0A1C18BBF9920036389C /* blue_accessory_button.png */,
@@ -383,11 +389,13 @@
 			files = (
 				A54CE51418B96A390040F936 /* settings-256.png in Resources */,
 				1E29E68418A852AB008B7667 /* InfoPlist.strings in Resources */,
+				A5A4B6F718F3B2E2008B3AF9 /* Images-2.xcassets in Resources */,
 				A5AB0A2618C2EF520036389C /* Borrow_From_Friends_Icon_Gray.png in Resources */,
 				A5AB0A2418C2D12C0036389C /* iTunesArtwork.png in Resources */,
 				A54CE51218B96A390040F936 /* settings-100.png in Resources */,
 				1E29E6A918A85C1F008B7667 /* iPhoneMain.storyboard in Resources */,
 				A54CE51518B96A390040F936 /* settings-512.png in Resources */,
+				A5A4B6F918F3B4C0008B3AF9 /* BFF_Icon_DavidZhao.jpg in Resources */,
 				A54CE50E18B96A390040F936 /* settings-25.png in Resources */,
 				A54CE50F18B96A390040F936 /* settings-32.png in Resources */,
 				A5AB0A1F18BBF9930036389C /* orange_accessory_button.png in Resources */,
