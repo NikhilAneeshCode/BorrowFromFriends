@@ -90,10 +90,10 @@
             return ; // Apple said to do this
         }
         
-        //localNotfication.fireDate = [date dateByAddingTimeInterval:60*60*24*notificationTimeInterval]; live code
-        localNotification.fireDate = [date dateByAddingTimeInterval:notificationInitialFireTime]; //comment this code out
-        //localNotification.repeatInterval = NSWeekCalendarUnit; live code
-        localNotification.repeatInterval = NSMinuteCalendarUnit; //comment this code out in final
+        localNotification.fireDate = [date dateByAddingTimeInterval:60*60*24*notificationInitialFireTime]; //live code
+        //localNotification.fireDate = [date dateByAddingTimeInterval:notificationInitialFireTime]; //comment this code out
+        localNotification.repeatInterval = NSWeekCalendarUnit;//live code
+        //localNotification.repeatInterval = NSMinuteCalendarUnit; //comment this code out in final
         localNotification.timeZone = [NSTimeZone defaultTimeZone];
         NSString *alertMessage = [[NSString alloc] init];
         
