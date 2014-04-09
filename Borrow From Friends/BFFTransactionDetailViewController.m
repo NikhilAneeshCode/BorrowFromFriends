@@ -197,8 +197,10 @@
         [object setImage:@"http://i.imgur.com/bgld4hX.png" ];
         id<FBOpenGraphAction> action = (id<FBOpenGraphAction>)[FBGraphObject graphObject];
         [action setObject:object forKey:objectName];
-        [action setTags:@[[self.transactionToShow objectForKey:userIDKey]]];
-        [action setMessage:description];
+    
+    [action setMessage:[NSString stringWithFormat:@"You would love this [%@]", [self.transactionToShow objectForKey:userIDKey]]];
+        //sets action tags (might hack this in after submission lol)
+        //[action setTags:@[[self.transactionToShow objectForKey:userIDKey]]];
         NSDate* endDate = [NSDate dateWithTimeIntervalSinceNow:604800];
         [action setEnd_time:[endDate description]];
         FBOpenGraphActionShareDialogParams *params = [[FBOpenGraphActionShareDialogParams alloc] init];
