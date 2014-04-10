@@ -67,7 +67,7 @@
         }
         else
         {
-            stringToShow = [NSString stringWithFormat:@"You still have %d of %@'s  %@",[[self.transactionToShow objectForKey:amountKey] intValue], [self.transactionToShow objectForKey:userFirstKey], [self.transactionToShow objectForKey:itemNameKey] ];
+            stringToShow = [NSString stringWithFormat:@"You still have %d of %@'s %@",[[self.transactionToShow objectForKey:amountKey] intValue], [self.transactionToShow objectForKey:userFirstKey], [self.transactionToShow objectForKey:itemNameKey] ];
         }
         
         [self.communicateButton setTitle:@"Notify" forState:UIControlStateNormal];
