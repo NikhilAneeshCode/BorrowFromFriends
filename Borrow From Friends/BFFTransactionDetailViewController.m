@@ -39,6 +39,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //set textured background
+    //self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
+    
     //setting the label based on lent/borrowed and the item amount
     NSString* stringToShow;
     NSNumber* isLent = [self.transactionToShow objectForKey:isLentKey];

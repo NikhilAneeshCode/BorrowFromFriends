@@ -28,6 +28,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //set textured background /*and hide navigation item bar*/
+    //self.navigationController.navigationBarHidden = NO;
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
+    
     self.loginButton.readPermissions = @[@"basic_info"];
     //uncomment these lines to delete nsuserdefault data upon loading of the
     //NSString *domainName = [[NSBundle mainBundle] bundleIdentifier];
