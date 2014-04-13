@@ -15,6 +15,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *emptyLabel;
 @property (weak, nonatomic) IBOutlet UITableView *transactionTable;
+@property UIColor *background;
 @end
 
 @implementation BFFMainPageViewController
@@ -33,6 +34,8 @@
     [super viewDidLoad];
     NSString* userFirst = [[NSUserDefaults standardUserDefaults]objectForKey:currentUserKey];
     self.title = [NSString stringWithFormat:@"Welcome, %@", userFirst];
+    self.background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"background.png"]];
+    self.transactionTable.backgroundColor = self.background;
     [self fillTransactionTable];
 	// Do any additional setup after loading the view.
 }
@@ -156,7 +159,7 @@
     //cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
     UIImageView *buttonView = [[UIImageView alloc] initWithImage:buttonImage];
     [cell setAccessoryView:buttonView];
-
+    cell.backgroundColor = self.background;
     return cell;
 }
 - (NSString *) getCellTitle: (NSDictionary*) user

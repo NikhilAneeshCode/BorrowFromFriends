@@ -33,6 +33,7 @@
 		1EAB621718C4096400BF8FFE /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EAB621618C4096400BF8FFE /* libGoogleAnalyticsServices.a */; };
 		1EAB621918C4098100BF8FFE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EAB621818C4098100BF8FFE /* CoreData.framework */; };
 		1EAB621B18C409B500BF8FFE /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EAB621A18C409B500BF8FFE /* libz.dylib */; };
+		1EAB622318FA4E1400BF8FFE /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EAB622218FA4E1400BF8FFE /* background.png */; };
 		A528C63618CC370D00195877 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A528C63518CC370D00195877 /* libGoogleAnalyticsServices.a */; };
 		A54CE4DC18B6E22A0040F936 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54CE4DB18B6E22A0040F936 /* FacebookSDK.framework */; };
 		A54CE50E18B96A390040F936 /* settings-25.png in Resources */ = {isa = PBXBuildFile; fileRef = A54CE50618B96A390040F936 /* settings-25.png */; };
@@ -103,6 +104,7 @@
 		1EAB621618C4096400BF8FFE /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
 		1EAB621818C4098100BF8FFE /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		1EAB621A18C409B500BF8FFE /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		1EAB622218FA4E1400BF8FFE /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		1EB0999F18C1AA87001449E7 /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
 		1EB099A018C1AA87001449E7 /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
 		1EB099A118C1AA87001449E7 /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
@@ -290,6 +292,7 @@
 		A54CE4E518B968090040F936 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				1EAB622218FA4E1400BF8FFE /* background.png */,
 				A5A4B6F818F3B4BF008B3AF9 /* BFF_Icon_DavidZhao.jpg */,
 				A5AB0A2518C2EF520036389C /* Borrow_From_Friends_Icon_Gray.png */,
 				A5AB0A2318C2D12C0036389C /* iTunesArtwork.png */,
@@ -394,6 +397,7 @@
 				A5AB0A2418C2D12C0036389C /* iTunesArtwork.png in Resources */,
 				A54CE51218B96A390040F936 /* settings-100.png in Resources */,
 				1E29E6A918A85C1F008B7667 /* iPhoneMain.storyboard in Resources */,
+				1EAB622318FA4E1400BF8FFE /* background.png in Resources */,
 				A54CE51518B96A390040F936 /* settings-512.png in Resources */,
 				A5A4B6F918F3B4C0008B3AF9 /* BFF_Icon_DavidZhao.jpg in Resources */,
 				A54CE50E18B96A390040F936 /* settings-25.png in Resources */,
