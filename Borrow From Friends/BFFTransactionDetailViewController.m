@@ -225,7 +225,7 @@
         else
         {
             NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                           title, @"name",
+                                           description, @"name",
                                            @"http://i.imgur.com/bgld4hX.png", @"picture",
                                            nil];
             // Show the feed dialog
