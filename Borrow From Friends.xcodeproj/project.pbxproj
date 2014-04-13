@@ -53,6 +53,7 @@
 		A5AB0A2218BE634F0036389C /* BFFGlobalMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = A5AB0A2118BE634F0036389C /* BFFGlobalMethods.m */; };
 		A5AB0A2418C2D12C0036389C /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = A5AB0A2318C2D12C0036389C /* iTunesArtwork.png */; };
 		A5AB0A2618C2EF520036389C /* Borrow_From_Friends_Icon_Gray.png in Resources */ = {isa = PBXBuildFile; fileRef = A5AB0A2518C2EF520036389C /* Borrow_From_Friends_Icon_Gray.png */; };
+		A5B3B7F718FA584500162440 /* BFF_IconDZ_Rounded.png in Resources */ = {isa = PBXBuildFile; fileRef = A5B3B7F618FA584500162440 /* BFF_IconDZ_Rounded.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +133,7 @@
 		A5AB0A2118BE634F0036389C /* BFFGlobalMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFFGlobalMethods.m; sourceTree = "<group>"; };
 		A5AB0A2318C2D12C0036389C /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		A5AB0A2518C2EF520036389C /* Borrow_From_Friends_Icon_Gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Borrow_From_Friends_Icon_Gray.png; sourceTree = "<group>"; };
+		A5B3B7F618FA584500162440 /* BFF_IconDZ_Rounded.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BFF_IconDZ_Rounded.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -292,6 +294,7 @@
 		A54CE4E518B968090040F936 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A5B3B7F618FA584500162440 /* BFF_IconDZ_Rounded.png */,
 				1EAB622218FA4E1400BF8FFE /* background.png */,
 				A5A4B6F818F3B4BF008B3AF9 /* BFF_Icon_DavidZhao.jpg */,
 				A5AB0A2518C2EF520036389C /* Borrow_From_Friends_Icon_Gray.png */,
@@ -394,6 +397,7 @@
 				1E29E68418A852AB008B7667 /* InfoPlist.strings in Resources */,
 				A5A4B6F718F3B2E2008B3AF9 /* Images-2.xcassets in Resources */,
 				A5AB0A2618C2EF520036389C /* Borrow_From_Friends_Icon_Gray.png in Resources */,
+				A5B3B7F718FA584500162440 /* BFF_IconDZ_Rounded.png in Resources */,
 				A5AB0A2418C2D12C0036389C /* iTunesArtwork.png in Resources */,
 				A54CE51218B96A390040F936 /* settings-100.png in Resources */,
 				1E29E6A918A85C1F008B7667 /* iPhoneMain.storyboard in Resources */,

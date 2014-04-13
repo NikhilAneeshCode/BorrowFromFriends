@@ -17,14 +17,14 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vKM-2O-Q5T" customClass="FBLoginView">
-                                <rect key="frame" x="98" y="391" width="137" height="39"/>
+                                <rect key="frame" x="92" y="396" width="137" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="delegate" destination="gCA-yq-tdK" id="wAm-8X-zc9"/>
                                 </connections>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BFF_Icon_DavidZhao.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="8ea-Hf-Zk7">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BFF_IconDZ_Rounded.png" translatesAutoresizingMaskIntoConstraints="NO" id="8ea-Hf-Zk7">
                                 <rect key="frame" x="30" y="91" width="260" height="260"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -290,7 +290,6 @@
                                 <rect key="frame" x="34" y="66" width="256" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SNg-nb-fOn" customClass="FBProfilePictureView">
@@ -337,6 +336,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="BFF_IconDZ_Rounded.png" width="960" height="960"/>
         <image name="BFF_Icon_DavidZhao.jpg" width="960" height="960"/>
         <image name="settings-25.png" width="25" height="25"/>
     </resources>

@@ -34,7 +34,7 @@
     [super viewDidLoad];
     NSString* userFirst = [[NSUserDefaults standardUserDefaults]objectForKey:currentUserKey];
     self.title = [NSString stringWithFormat:@"Welcome, %@", userFirst];
-    self.background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"background.png"]];
+    //self.background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"background.png"]];
     self.transactionTable.backgroundColor = self.background;
     [self fillTransactionTable];
 	// Do any additional setup after loading the view.
@@ -126,6 +126,7 @@
     cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
     cell.textLabel.numberOfLines = 0;
     cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:17];
+    //cell.textLabel.textColor = [UIColor colorWithRed:255 green:255 blue:255 alpha:1];
     cell.textLabel.text = cellTitle;
     cell.imageView.image = profilePic;
     
