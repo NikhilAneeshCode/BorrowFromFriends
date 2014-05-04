@@ -28,7 +28,7 @@
     //place code here to add custom code after application launch
     //TO DO CALL APPIRATER DID SOMETHING SIGNIFICANT WHEN NECCESSARY
     //note about appirater: call [Appirater userDidSignificantEvent:YES] when the user does something significant
-    [Appirater setAppId:@"558312836"];//temporary app id TODO SWITCH THIS TO REAL APP ID
+    [Appirater setAppId:@"872723120"];//temporary app id TODO SWITCH THIS TO REAL APP ID
     [Appirater setDaysUntilPrompt:2];
     [Appirater setUsesUntilPrompt:2];
     [Appirater setSignificantEventsUntilPrompt:3];

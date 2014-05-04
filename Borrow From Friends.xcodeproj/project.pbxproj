@@ -363,7 +363,7 @@
 				ORGANIZATIONNAME = "Nikhil and Aneesh";
 				TargetAttributes = {
 					1E29E67518A852AB008B7667 = {
-						DevelopmentTeam = FUFG886MT6;
+						DevelopmentTeam = 74CGEC2294;
 					};
 					1E29E69018A852AB008B7667 = {
 						TestTargetID = 1E29E67518A852AB008B7667;
@@ -562,6 +562,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/nikhilkhanna/Documents/FacebookSDK,
@@ -576,7 +577,8 @@
 					"/Users/AneeshSachdeva/Documents/Programming/iPhone\\ Resources/GoogleAnalyticsServicesiOS_3.03c",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -587,6 +589,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/nikhilkhanna/Documents/FacebookSDK,
@@ -601,7 +604,8 @@
 					"/Users/AneeshSachdeva/Documents/Programming/iPhone\\ Resources/GoogleAnalyticsServicesiOS_3.03c",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
